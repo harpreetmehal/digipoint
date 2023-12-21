@@ -83,8 +83,8 @@ p {
     <h1>Reward Points Calculator</h1>
 
     <form id="cardForm">
-        <label for="hdfc"><input type="checkbox" id="hdfc"> HDFC</label>
-        <label for="iciciAmazon"><input type="checkbox" id="iciciAmazon"> ICICI AMAZON</label>
+        <label for="hdfc"><input type="checkbox" id="hdfc"> HDFC Regalia</label>
+        <label for="iciciAmazon"><input type="checkbox" id="iciciAmazon"> ICICI AMAZON (assuming 5% for prime)</label>
         <label for="iciciCoral"><input type="checkbox" id="iciciCoral"> ICICI CORAL</label>
         <label for="hsbc"><input type="checkbox" id="hsbc"> HSBC Platinum</label>
         <label for="oneCard"><input type="checkbox" id="oneCard"> One Card</label>
@@ -114,7 +114,7 @@ p {
         function calculateCashback() {
             // Card details
             const cards = {
-                hdfc: { name: "HDFC", spendToEarnRP: 37.5, rpValue: 0.5 },
+                hdfc: { name: "HDFC Regalia", spendToEarnRP: 37.5, rpValue: 0.5 },
                 iciciAmazon: { name: "ICICI AMAZON", spendToEarnRP: 20, rpValue: 1 },
                 iciciCoral: { name: "ICICI CORAL", spendToEarnRP: 50, rpValue: 0.25 },
                 hsbc: { name: "HSBC Platinum", spendToEarnRP: 75, rpValue: 0.2 },
@@ -151,11 +151,15 @@ p {
             cashbacks.sort((a, b) => b.cashbackValue - a.cashbackValue);
 
             // Display the results
-            let resultHTML = '<h2>All Cards:</h2>';
-            cashbacks.forEach((cashback, index) => {
-                resultHTML += `<p>${cashback.cardName}: Earned ${rewardPoints[index].rewardPointsValue} RP, Cashback: ₹${cashback.cashbackValue}</p>`;
-            });
-
+        let resultHTML = '<h2>Selected Cards:</h2>';
+        resultHTML += '<table>';
+        resultHTML += '<tr><th>Card Name</th><th>Reward Points</th><th>Cashback Value</th></tr>';
+        cashbacks.forEach((cashback, index) => {
+            const isBestCard = index < 2; // Marking the best two cards
+            const cardClass = isBestCard ? 'best-card' : '';
+            resultHTML += `<tr class="${cardClass}"><td>${cashback.cardName}</td><td>${rewardPoints[index].rewardPointsValue} RP</td><td>₹${cashback.cashbackValue}</td></tr>`;
+        });
+        resultHTML += '</table>';
             // Display the best two cards
             resultHTML += '<h2>Best Cards:</h2>';
             resultHTML += `<p>1. ${cashbacks[0].cardName}: ₹${cashbacks[0].cashbackValue}</p>`;
