@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reward Points Calculator</title>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #007bff;
+}
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px; /* Reduced margin */
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#result {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+p {
+    margin: 10px 0;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Reward Points Calculator</h1>
+
+    <form id="cardForm">
+        <label for="hdfc"><input type="checkbox" id="hdfc"> HDFC</label>
+        <label for="iciciAmazon"><input type="checkbox" id="iciciAmazon"> ICICI AMAZON</label>
+        <label for="iciciCoral"><input type="checkbox" id="iciciCoral"> ICICI CORAL</label>
+        <label for="hsbc"><input type="checkbox" id="hsbc"> HSBC Platinum</label>
+        <label for="oneCard"><input type="checkbox" id="oneCard"> One Card</label>
+        <label for="citibank"><input type="checkbox" id="citibank"> Citibank Indian FUEL</label>
+        <label for="idfcSelect"><input type="checkbox" id="idfcSelect"> IDFC Select</label>
+        <label for="sbi"><input type="checkbox" id="sbi"> SBI</label>
+        <label for="indusind"><input type="checkbox" id="indusind"> Indusind Legend</label>
+        <label for="rbl"><input type="checkbox" id="rbl"> RBL Shoprite</label>
+
+        <label for="amount">Amount to Spend (INR):</label>
+        <input type="number" id="amount" placeholder="Enter amount">
+
+        <button type="button" onclick="selectAll()">Select All</button>
+        <button type="button" onclick="calculateCashback()">Calculate</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function selectAll() {
+            // Select all checkboxes
+            document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+                checkbox.checked = true;
+            });
+        }
+
+        function calculateCashback() {
+            // Card details
+            const cards = {
+                hdfc: { name: "HDFC", spendToEarnRP: 37.5, rpValue: 0.5 },
+                iciciAmazon: { name: "ICICI AMAZON", spendToEarnRP: 20, rpValue: 1 },
+                iciciCoral: { name: "ICICI CORAL", spendToEarnRP: 50, rpValue: 0.25 },
+                hsbc: { name: "HSBC Platinum", spendToEarnRP: 75, rpValue: 0.2 },
+                oneCard: { name: "One Card", spendToEarnRP: 50, rpValue: 0.125 },
+                citibank: { name: "Citibank Indian FUEL", spendToEarnRP: 37.5, rpValue: 1 },
+                idfcSelect: { name: "IDFC Select", spendToEarnRP: 125, rpValue: 0.25 },
+                sbi: { name: "SBI", spendToEarnRP: 20, rpValue: 0.25 },
+                indusind: { name: "Indusind Legend", spendToEarnRP: 100, rpValue: 0.75 },
+                rbl: { name: "RBL Shoprite", spendToEarnRP: 100, rpValue: 0.25 }
+            };
+
+            // Get selected cards
+            const selectedCards = [];
+            document.querySelectorAll('input[type="checkbox"]:checked').forEach((checkbox) => {
+                selectedCards.push(checkbox.id);
+            });
+
+            // Get amount to spend
+            const amount = parseFloat(document.getElementById('amount').value);
+
+            // Calculate cashback and reward points for each selected card
+            let cashbacks = [];
+            let rewardPoints = [];
+            selectedCards.forEach((cardId) => {
+                const card = cards[cardId];
+                const earnedRP = amount / card.spendToEarnRP;
+                const rpValue = earnedRP * card.rpValue;
+                const cashback = rpValue.toFixed(2);
+                cashbacks.push({ cardName: card.name, cashbackValue: cashback });
+                rewardPoints.push({ cardName: card.name, rewardPointsValue: earnedRP.toFixed(2) });
+            });
+
+            // Sort cashbacks in descending order
+            cashbacks.sort((a, b) => b.cashbackValue - a.cashbackValue);
+
+            // Display the results
+            let resultHTML = '<h2>All Cards:</h2>';
+            cashbacks.forEach((cashback, index) => {
+                resultHTML += `<p>${cashback.cardName}: Earned ${rewardPoints[index].rewardPointsValue} RP, Cashback: ₹${cashback.cashbackValue}</p>`;
+            });
+
+            // Display the best two cards
+            resultHTML += '<h2>Best Cards:</h2>';
+            resultHTML += `<p>1. ${cashbacks[0].cardName}: ₹${cashbacks[0].cashbackValue}</p>`;
+            resultHTML += `<p>2. ${cashbacks[1].cardName}: ₹${cashbacks[1].cashbackValue}</p>`;
+
+            // Display the result
+            document.getElementById('result').innerHTML = resultHTML;
+        }
+    </script>
+</body>
+</html>
