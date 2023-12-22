@@ -166,8 +166,7 @@
                 const earnedRP = amount / card.spendToEarnRP;
                 const rpValue = earnedRP * card.rpValue;
                 const cashback = rpValue.toFixed(2);
-                cashbacks.push({ cardName: card.name, cashbackValue: cashback });
-                rewardPoints.push({ cardName: card.name, rewardPointsValue: earnedRP.toFixed(2) });
+                cashbacks.push({ cardName: card.name, cashbackValue: cashback, rewardPointsValue: earnedRP.toFixed(2) });
             });
 
             // Sort cashbacks in descending order
@@ -180,7 +179,7 @@
             cashbacks.forEach((cashback, index) => {
                 const isBestCard = index < 2; // Marking the best two cards
                 const cardClass = isBestCard ? 'best-card' : '';
-                resultHTML += `<tr class="${cardClass}"><td>${cashback.cardName}</td><td>${rewardPoints[index].rewardPointsValue} RP</td><td>₹${cashback.cashbackValue}</td></tr>`;
+                resultHTML += `<tr class="${cardClass}"><td>${cashback.cardName}</td><td>${cashback.rewardPointsValue} RP</td><td>₹${cashback.cashbackValue}</td></tr>`;
             });
             resultHTML += '</table>';
 
