@@ -109,6 +109,23 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: left;
         }
+        #bankHeaders {
+            margin-top: 20px;
+        }
+
+        h3 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        #cardForm h2 {
+    	text-align: center;
+    	}
+      
+        #result h2 {
+        text-align: left;
+        color: #007bff;
+        margin-bottom: 12px;
+        }
     </style>
 </head>
 <body>
@@ -118,34 +135,44 @@
         <ol>
             <li>Check the cards you have.</li>
             <li>Enter the amount you plan to spend (INR).</li>
-            <li>Click 'Select All' to select all cards or manually select the desired cards.</li>
+            <li>Click 'Select All' to select all cards or manually select the desired cards (Atleast 2)</li>
             <li>Click 'Calculate' to see the results.</li>
           	<li>De-select the card you want to exclude and Click 'Calculate' again to see the results.</li>
         </ol>
     </div>
     <form id="cardForm">
-        <h3>Select Cards</h3>
-        <label for="hdfc"><input id="hdfc" type="checkbox" /> HDFC Regalia/Gold</label>
-        <label for="iciciAmazon"><input id="iciciAmazon" type="checkbox" /> ICICI AMAZON (assuming 5% for prime)</label>
-        <label for="iciciCoral"><input id="iciciCoral" type="checkbox" /> ICICI CORAL</label>
-        <label for="hsbc"><input id="hsbc" type="checkbox" /> HSBC Platinum</label>
-        <label for="oneCard"><input id="oneCard" type="checkbox" />One Card</label>
-        <label for="citibank"><input id="citibank" type="checkbox" /> Citibank Indian Oil (FUEL)</label>
-        <label for="idfcSelect"><input id="idfcSelect" type="checkbox" /> IDFC First Select</label>
-        <label for="sbi"><input id="sbi" type="checkbox" /> SBI SimplyClick</label>
-        <label for="indusind"><input id="indusind" type="checkbox" /> Indusind Legend</label>
-        <label for="rbl"><input id="rbl" type="checkbox" /> RBL Shoprite</label>
-	    <label for="scapia"><input id="scapia" type="checkbox" /> Scapia</label>
+        <h2>Select Cards</h2>
+        <div id="bankHeaders">
+            <h3>HDFC Cards</h3>
+            <label for="hdfc"><input id="hdfc" type="checkbox" /> HDFC Regalia/Gold</label>
+            <h3>ICICI Cards</h3>
+            <label for="iciciAmazon"><input id="iciciAmazon" type="checkbox" /> ICICI AMAZON (assuming 5% for prime)</label>
+            <label for="iciciCoral"><input id="iciciCoral" type="checkbox" /> ICICI CORAL</label>
+            <h3>HSBC Cards</h3>
+            <label for="hsbc"><input id="hsbc" type="checkbox" /> HSBC Platinum</label>
+            <h3>Citibank Cards</h3>
+            <label for="citibank"><input id="citibank" type="checkbox" /> Citibank Indian Oil (FUEL)</label>
+            <h3>IDFC Cards</h3>
+            <label for="idfcSelect"><input id="idfcSelect" type="checkbox" /> IDFC First Select</label>
+            <h3>SBI Cards</h3>
+            <label for="sbi"><input id="sbi" type="checkbox" /> SBI SimplyClick</label>
+            <h3>INDUSIND Cards</h3>
+            <label for="indusind"><input id="indusind" type="checkbox" /> Indusind Legend</label>
+            <h3>RBL Cards</h3>
+            <label for="rbl"><input id="rbl" type="checkbox" /> RBL Shoprite</label>
+            <h3>Other Cards</h3>
+            <label for="oneCard"><input id="oneCard" type="checkbox" />One Card</label>
+            <label for="scapia"><input id="scapia" type="checkbox" /> Scapia</label>
+        </div>
+            &nbsp;
+            
+            <label for="amount">Amount to Spend (INR):</label>
+            <input id="amount" placeholder="Enter amount" type="number" />
 
-        &nbsp;
-        
-        <label for="amount">Amount to Spend (INR):</label>
-        <input id="amount" placeholder="Enter amount" type="number" />
-
-        <button onclick="selectAll()" type="button">Select All</button>
-        <button onclick="calculateCashback()" type="button">Calculate</button>
+            <button onclick="selectAll()" type="button">Select All</button>
+            <button onclick="calculateCashback()" type="button">Calculate</button>
     </form>
-
+    
     <div id="result"></div>
 
     <script>
