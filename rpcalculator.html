@@ -195,6 +195,7 @@
 
             <button onclick="selectAll()" type="button">Select All</button>
             <button onclick="calculateCashback()" type="button">Calculate</button>
+            <button onclick="resetForm()" type="button">Reset</button>
             <div id="messages"></div>
     </form>
   	
@@ -202,6 +203,13 @@
     <div id="result"></div>
 
     <script>
+        function resetForm() {
+        // Reset the form
+        document.getElementById('cardForm').reset();
+        // Clear the result and messages
+        document.getElementById('result').innerHTML = '';
+        document.getElementById('messages').innerHTML = '';
+        }
         function selectAll() {
             // Select all checkboxes
             document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
