@@ -100,12 +100,31 @@
         .best-card {
             background-color: #ffef96;
         }
+        #instructions {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
     </style>
 </head>
 <body>
     <h1>Reward Points Calculator</h1>
-
+    <div id="instructions">
+        <h2>How to Use the Reward Points Calculator</h2>
+        <ol>
+            <li>Check the cards you have.</li>
+            <li>Enter the amount you plan to spend (INR).</li>
+            <li>Click 'Select All' to select all cards or manually select the desired cards.</li>
+            <li>Click 'Calculate' to see the results.</li>
+          	<li>De-select the card you want to exclude and Click 'Calculate' again to see the results.</li>
+        </ol>
+    </div>
     <form id="cardForm">
+        <h3>Select Cards</h3>
         <label for="hdfc"><input id="hdfc" type="checkbox" /> HDFC Regalia/Gold</label>
         <label for="iciciAmazon"><input id="iciciAmazon" type="checkbox" /> ICICI AMAZON (assuming 5% for prime)</label>
         <label for="iciciCoral"><input id="iciciCoral" type="checkbox" /> ICICI CORAL</label>
@@ -116,7 +135,10 @@
         <label for="sbi"><input id="sbi" type="checkbox" /> SBI SimplyClick</label>
         <label for="indusind"><input id="indusind" type="checkbox" /> Indusind Legend</label>
         <label for="rbl"><input id="rbl" type="checkbox" /> RBL Shoprite</label>
+	    <label for="scapia"><input id="scapia" type="checkbox" /> Scapia</label>
 
+        &nbsp;
+        
         <label for="amount">Amount to Spend (INR):</label>
         <input id="amount" placeholder="Enter amount" type="number" />
 
@@ -146,7 +168,8 @@
                 idfcSelect: { name: "IDFC First Select", spendToEarnRP: 125, rpValue: 0.25 },
                 sbi: { name: "SBI SimplyClick", spendToEarnRP: 20, rpValue: 0.25 },
                 indusind: { name: "Indusind Legend", spendToEarnRP: 100, rpValue: 0.75 },
-                rbl: { name: "RBL Shoprite", spendToEarnRP: 100, rpValue: 0.25 }
+                rbl: { name: "RBL Shoprite", spendToEarnRP: 100, rpValue: 0.25 },
+                scapia: { name: "Scapia Forex Card", spendToEarnRP: 10, rpValue: 0.2 }
             };
 
             // Get selected cards
