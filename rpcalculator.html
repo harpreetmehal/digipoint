@@ -7,76 +7,99 @@
     <title>Reward Points Calculator</title>
     <style>
         body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
 
-h1 {
-    text-align: center;
-    color: #007bff;
-}
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
 
-form {
-    max-width: 600px;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-label {
-    display: block;
-    margin-bottom: 5px; /* Reduced margin */
-}
+        label {
+            display: block;
+            margin-bottom: 5px; /* Reduced margin */
+        }
 
-input[type="checkbox"] {
-    margin-right: 5px;
-}
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
 
-input[type="number"] {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
 
-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 4px;
-}
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
 
-button:hover {
-    background-color: #0056b3;
-}
+        button:hover {
+            background-color: #0056b3;
+        }
 
-#result {
-    max-width: 600px;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+        #result {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-h2 {
-    color: #007bff;
-    margin-bottom: 10px;
-}
+        h2 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
 
-p {
-    margin: 10px 0;
-}
+        p {
+            margin: 10px 0;
+        }
 
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .best-card {
+            background-color: #ffef96;
+        }
     </style>
 </head>
 <body>
@@ -151,15 +174,16 @@ p {
             cashbacks.sort((a, b) => b.cashbackValue - a.cashbackValue);
 
             // Display the results
-        let resultHTML = '<h2>Selected Cards:</h2>';
-        resultHTML += '<table>';
-        resultHTML += '<tr><th>Card Name</th><th>Reward Points</th><th>Cashback Value</th></tr>';
-        cashbacks.forEach((cashback, index) => {
-            const isBestCard = index < 2; // Marking the best two cards
-            const cardClass = isBestCard ? 'best-card' : '';
-            resultHTML += `<tr class="${cardClass}"><td>${cashback.cardName}</td><td>${rewardPoints[index].rewardPointsValue} RP</td><td>₹${cashback.cashbackValue}</td></tr>`;
-        });
-        resultHTML += '</table>';
+            let resultHTML = '<h2>Selected Cards:</h2>';
+            resultHTML += '<table>';
+            resultHTML += '<tr><th>Card Name</th><th>Reward Points</th><th>Cashback Value</th></tr>';
+            cashbacks.forEach((cashback, index) => {
+                const isBestCard = index < 2; // Marking the best two cards
+                const cardClass = isBestCard ? 'best-card' : '';
+                resultHTML += `<tr class="${cardClass}"><td>${cashback.cardName}</td><td>${rewardPoints[index].rewardPointsValue} RP</td><td>₹${cashback.cashbackValue}</td></tr>`;
+            });
+            resultHTML += '</table>';
+
             // Display the best two cards
             resultHTML += '<h2>Best Cards:</h2>';
             resultHTML += `<p>1. ${cashbacks[0].cardName}: ₹${cashbacks[0].cashbackValue}</p>`;
