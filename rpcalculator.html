@@ -126,6 +126,11 @@
         color: #007bff;
         margin-bottom: 12px;
         }
+        #messages {
+        color: #ff0000; /* Red color */
+        font-weight: bold;
+        margin-bottom: 15px; /* Adjust the margin for better visibility */
+        }
     </style>
 </head>
 <body>
@@ -190,6 +195,7 @@
 
             <button onclick="selectAll()" type="button">Select All</button>
             <button onclick="calculateCashback()" type="button">Calculate</button>
+            <div id="messages"></div>
     </form>
   	
 	&nbsp;
@@ -202,8 +208,19 @@
                 checkbox.checked = true;
             });
         }
-
+    
+        function resetForm() {
+            // Reset the form
+            document.getElementById('cardForm').reset();
+            // Clear the result
+            document.getElementById('result').innerHTML = '';
+        }
+    
         function calculateCashback() {
+            // Reset previous messages
+            document.getElementById('result').innerHTML = '';
+            document.getElementById('messages').innerHTML = '';
+    
             // Card details
             const cards = {
                 hdfc: { name: "HDFC Regalia", spendToEarnRP: 37.5, rpValue: 0.5 },
@@ -225,48 +242,65 @@
                 amexplat: { name: "American Express Platinum", spendToEarnRP: 40, rpValue: 1 },
                 sbisimplysave: { name: "SBI Simply Save", spendToEarnRP: 150, rpValue: 0.25 }
             };
-
+    
             // Get selected cards
             const selectedCards = [];
             document.querySelectorAll('input[type="checkbox"]:checked').forEach((checkbox) => {
                 selectedCards.push(checkbox.id);
             });
-
+    
             // Get amount to spend
             const amount = parseFloat(document.getElementById('amount').value);
-
-            // Calculate cashback and reward points for each selected card
-            let cashbacks = [];
-            let rewardPoints = [];
-            selectedCards.forEach((cardId) => {
-                const card = cards[cardId];
-                const earnedRP = amount / card.spendToEarnRP;
-                const rpValue = earnedRP * card.rpValue;
-                const cashback = rpValue.toFixed(2);
-                cashbacks.push({ cardName: card.name, cashbackValue: cashback, rewardPointsValue: earnedRP.toFixed(2) });
-            });
-
-            // Sort cashbacks in descending order
-            cashbacks.sort((a, b) => b.cashbackValue - a.cashbackValue);
-
-            // Display the results
-            let resultHTML = '<h2>Selected Cards:</h2>';
-            resultHTML += '<table>';
-            resultHTML += '<tr><th>Card Name</th><th>Reward Points</th><th>Cashback Value</th></tr>';
-            cashbacks.forEach((cashback, index) => {
-                const isBestCard = index < 2; // Marking the best two cards
-                const cardClass = isBestCard ? 'best-card' : '';
-                resultHTML += `<tr class="${cardClass}"><td>${cashback.cardName}</td><td>${cashback.rewardPointsValue} RP</td><td>₹${cashback.cashbackValue}</td></tr>`;
-            });
-            resultHTML += '</table>';
-
-            // Display the best two cards
-            resultHTML += '<h2>Best Cards:</h2>';
-            resultHTML += `<p>1. ${cashbacks[0].cardName}: ₹${cashbacks[0].cashbackValue}</p>`;
-            resultHTML += `<p>2. ${cashbacks[1].cardName}: ₹${cashbacks[1].cashbackValue}</p>`;
-
-            // Display the result
-            document.getElementById('result').innerHTML = resultHTML;
+    
+            // Validate inputs
+            if (isNaN(amount) || amount <= 0) {
+                document.getElementById('messages').innerHTML = '<p>Please enter a valid amount.</p>';
+                return;
+            }
+    
+            if (selectedCards.length < 2) {
+                document.getElementById('messages').innerHTML = '<p>Please select at least two cards.</p>';
+                return;
+            }
+    
+            // Show loading spinner
+            document.getElementById('result').innerHTML = '<div class="loading-spinner"></div>';
+    
+            // Simulate a delay to show the loading spinner (you can replace this with your actual calculation logic)
+            setTimeout(() => {
+                // Calculate cashback and reward points for each selected card
+                let cashbacks = [];
+                let rewardPoints = [];
+                selectedCards.forEach((cardId) => {
+                    const card = cards[cardId];
+                    const earnedRP = amount / card.spendToEarnRP;
+                    const rpValue = earnedRP * card.rpValue;
+                    const cashback = rpValue.toFixed(2);
+                    cashbacks.push({ cardName: card.name, cashbackValue: cashback, rewardPointsValue: earnedRP.toFixed(2) });
+                });
+    
+                // Sort cashbacks in descending order
+                cashbacks.sort((a, b) => b.cashbackValue - a.cashbackValue);
+    
+                // Display the results
+                let resultHTML = '<h2>Selected Cards:</h2>';
+                resultHTML += '<table>';
+                resultHTML += '<tr><th>Card Name</th><th>Reward Points</th><th>Cashback Value</th></tr>';
+                cashbacks.forEach((cashback, index) => {
+                    const isBestCard = index < 2; // Marking the best two cards
+                    const cardClass = isBestCard ? 'best-card' : '';
+                    resultHTML += `<tr class="${cardClass}"><td>${cashback.cardName}</td><td>${cashback.rewardPointsValue} RP</td><td>₹${cashback.cashbackValue}</td></tr>`;
+                });
+                resultHTML += '</table>';
+    
+                // Display the best two cards
+                resultHTML += '<h2>Best Cards:</h2>';
+                resultHTML += `<p>1. ${cashbacks[0].cardName}: ₹${cashbacks[0].cashbackValue}</p>`;
+                resultHTML += `<p>2. ${cashbacks[1].cardName}: ₹${cashbacks[1].cashbackValue}</p>`;
+    
+                // Display the result
+                document.getElementById('result').innerHTML = resultHTML;
+            }, 1000); // Simulating a 1-second delay (you can adjust this)
         }
     </script>
 </body>
