@@ -131,6 +131,15 @@
         font-weight: bold;
         margin-bottom: 15px; /* Adjust the margin for better visibility */
         }
+        #iciciAmazonPercentContainer {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        #iciciAmazonPercentContainer label {
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
@@ -154,7 +163,14 @@
             <label for="hdfcneu"><input id="hdfcneu" type="checkbox" /> Tata Neu Infinity HDFC</label>
 
             <h3>ICICI Cards</h3>
-            <label for="iciciAmazon"><input id="iciciAmazon" type="checkbox" /> ICICI AMAZON (assuming 5% for prime)</label>
+            <div id="iciciAmazonPercentContainer">
+                <input type="checkbox" id="iciciAmazon" name="iciciAmazon" />
+                <label for="iciciAmazon">ICICI AMAZON:</label>
+                <label for="iciciAmazon1"><input type="radio" id="iciciAmazon1" name="iciciAmazonPercent" value="1" /> 1%</label>
+                <label for="iciciAmazon2"><input type="radio" id="iciciAmazon2" name="iciciAmazonPercent" value="2" /> 2%</label>
+                <label for="iciciAmazon3"><input type="radio" id="iciciAmazon3" name="iciciAmazonPercent" value="3" /> 3%</label>
+                <label for="iciciAmazon5"><input type="radio" id="iciciAmazon5" name="iciciAmazonPercent" value="5" checked="true"/> 5%</label>
+            </div>
             <label for="iciciCoral"><input id="iciciCoral" type="checkbox" /> ICICI CORAL</label>
 
             <h3>American Express Cards</h3>
@@ -233,7 +249,7 @@
             // Card details
             const cards = {
                 hdfc: { name: "HDFC Regalia", spendToEarnRP: 37.5, rpValue: 0.5 },
-                iciciAmazon: { name: "ICICI AMAZON (5%)", spendToEarnRP: 20, rpValue: 1 },
+                iciciAmazon: { name: "ICICI AMAZON", spendToEarnRP: 100, rpValue: 1 },
                 iciciCoral: { name: "ICICI CORAL", spendToEarnRP: 50, rpValue: 0.25 },
                 hsbc: { name: "HSBC Platinum", spendToEarnRP: 75, rpValue: 0.2 },
                 oneCard: { name: "One Card", spendToEarnRP: 50, rpValue: 0.125 },
@@ -283,7 +299,27 @@
                 let rewardPoints = [];
                 selectedCards.forEach((cardId) => {
                     const card = cards[cardId];
-                    const earnedRP = amount / card.spendToEarnRP;
+                    let earnedRP;
+
+                    if (cardId === 'iciciAmazon' && document.getElementById('iciciAmazon1').checked) {
+                        const iciciAmazonPercent = parseFloat(document.querySelector('input[name="iciciAmazonPercent"]:checked').value) / 100;
+                        earnedRP = amount * iciciAmazonPercent;
+                    }
+                    else if (cardId === 'iciciAmazon' && document.getElementById('iciciAmazon2').checked) {
+                        const iciciAmazonPercent = parseFloat(document.querySelector('input[name="iciciAmazonPercent"]:checked').value) / 100;
+                        earnedRP = amount * iciciAmazonPercent;
+                                        } 
+                    else if (cardId === 'iciciAmazon' && document.getElementById('iciciAmazon3').checked) {
+                        const iciciAmazonPercent = parseFloat(document.querySelector('input[name="iciciAmazonPercent"]:checked').value) / 100;
+                        earnedRP = amount * iciciAmazonPercent;
+                    } 
+                    else if (cardId === 'iciciAmazon' && document.getElementById('iciciAmazon5').checked) {
+                        const iciciAmazonPercent = parseFloat(document.querySelector('input[name="iciciAmazonPercent"]:checked').value) / 100;
+                        earnedRP = amount * iciciAmazonPercent;
+                    } 
+                    else {
+                        earnedRP = amount / card.spendToEarnRP;
+                    }
                     const rpValue = earnedRP * card.rpValue;
                     const cashback = rpValue.toFixed(2);
                     cashbacks.push({ cardName: card.name, cashbackValue: cashback, rewardPointsValue: earnedRP.toFixed(2) });
