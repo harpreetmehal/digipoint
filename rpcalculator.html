@@ -146,11 +146,54 @@
             margin: 0 auto; /* Set left and right margins to 'auto' */
             display: block; /* Make the image a block element to apply margins */
         }
+        #container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        #container h2
+        {
+            color: #007bff;
+        }
+
+        #centered-image {
+            margin: 0 auto;
+            display: block;
+            height: 300px;
+            width: 350px;
+        }
+
+        marquee {
+            height: 260px;
+            scrollamount: 2;
+            behavior: scroll;
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
     <h1>Reward Points Calculator</h1>
-    <img id="centered-image" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEihqdKoNpghZqbd98t9L2U6S5xjgGYNzV4r7-o441IugraiwyyjR2D1_dV75mN5Q587x1UpBJTEIO_bTFW8Dhuu0Odq-ec9rGJxsHYfyAqPoqeaQFHOLtcLtRoSGUNUfKk5JyJ0__KVi4PTKiCfxd5dXz1crAeXBkk3XrWezqrmwG_XM4jlwtSE9_FKSbg/s1600/_a04f19da-108c-4b10-9893-d8d2217af491.jpeg" alt="Description of the image" height="300" width="350">
+    <div id="container">
+        <img id="centered-image" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEihqdKoNpghZqbd98t9L2U6S5xjgGYNzV4r7-o441IugraiwyyjR2D1_dV75mN5Q587x1UpBJTEIO_bTFW8Dhuu0Odq-ec9rGJxsHYfyAqPoqeaQFHOLtcLtRoSGUNUfKk5JyJ0__KVi4PTKiCfxd5dXz1crAeXBkk3XrWezqrmwG_XM4jlwtSE9_FKSbg/s1600/_a04f19da-108c-4b10-9893-d8d2217af491.jpeg" alt="Description of the image" height="300" width="350">
+
+        <!-- Recent updates marquee -->
+        <marquee direction="up" height="300" scrollamount="2" behavior="scroll">
+            <h2>Recent updates</h2>
+            <li>New card added: Standard Chartered Platinum</li>
+            <li>New card added: HDFC Infinia Metal</li>
+            <li>Updated rewards for ICICI Amazon card</li>
+            <li>Added IDFC First Select - 6x variant</li>
+            <li>New card added: SBI Prime</li>
+            <!-- Add more updates as needed -->
+        </marquee>
+    </div>
     <div id="instructions">
         <h2>How to Use the Reward Points Calculator</h2>
         <ol>
