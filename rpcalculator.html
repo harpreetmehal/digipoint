@@ -111,10 +111,6 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: left;
         }
-        #instructions h2
-        {
-            color: #007bff;
-        }
         #bankHeaders {
             margin-top: 20px;
         }
@@ -146,78 +142,15 @@
         #iciciAmazonPercentContainer label {
             margin-right: 10px;
         }
-
-        #image-and-updates-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap; /* Wrap items to the next line if space is limited */
-            margin-top: 20px; /* Adjust as needed */
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin: 20px auto;
-            max-width: 700px;
-        }
-
-        /* Image styles */
         #centered-image {
-            margin: 0 auto; /* Left the image horizontally */
-            display: block;
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* Scrolling text container styles */
-        #scrolling-text-container {
-            overflow: hidden;
-            height: 200px; /* Adjust the height as needed */
-            width: 150px;
-            flex-grow: 1; /* Allow the updates to take remaining space */
-            margin-left: 20px; /* Adjust as needed for spacing */
-            font-weight: bold;
-            margin-top: 20px;
-        }
-
-        /* Scrolling text animation */
-        #scrolling-text {
-            animation: scroll-up 8s linear infinite; /* Adjust the duration as needed */
-            white-space: normal; /* Allow text to wrap within the container */
-            font-weight: bold; /* Make the text bold */
-        }
-        #scrolling-text h2{
-            color: #007bff;
-        }
-
-        /* Keyframe animation for scrolling text */
-        @keyframes scroll-up {
-            from {
-                transform: translateY(0);
-            }
-            to {
-                transform: translateY(-100%);
-            }
+            margin: 0 auto; /* Set left and right margins to 'auto' */
+            display: block; /* Make the image a block element to apply margins */
         }
     </style>
 </head>
 <body>
     <h1>Reward Points Calculator</h1>
-    <div id="image-and-updates-container">
-        <img id="left-image" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEihqdKoNpghZqbd98t9L2U6S5xjgGYNzV4r7-o441IugraiwyyjR2D1_dV75mN5Q587x1UpBJTEIO_bTFW8Dhuu0Odq-ec9rGJxsHYfyAqPoqeaQFHOLtcLtRoSGUNUfKk5JyJ0__KVi4PTKiCfxd5dXz1crAeXBkk3XrWezqrmwG_XM4jlwtSE9_FKSbg/s1600/_a04f19da-108c-4b10-9893-d8d2217af491.jpeg" alt="Description of the image" height="300" width="350">
-    <div id="scrolling-text-container">
-        <div id="scrolling-text">
-            <h2>Recent Updates</h2>
-            <!-- Add your recent updates here -->
-            <li>New card added: Standard Chartered Platinum</li>
-            <li>New card added: HDFC Infinia Metal</li>
-            <li>Updated rewards for ICICI Amazon card</li>
-            <li>Added IDFC First Select - 6x variant</li>
-            <li>New card added: SBI Prime</li>
-            <!-- Add more updates as needed -->
-        </div>
-        </div>
-    </div></div>
+    <img id="centered-image" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEihqdKoNpghZqbd98t9L2U6S5xjgGYNzV4r7-o441IugraiwyyjR2D1_dV75mN5Q587x1UpBJTEIO_bTFW8Dhuu0Odq-ec9rGJxsHYfyAqPoqeaQFHOLtcLtRoSGUNUfKk5JyJ0__KVi4PTKiCfxd5dXz1crAeXBkk3XrWezqrmwG_XM4jlwtSE9_FKSbg/s1600/_a04f19da-108c-4b10-9893-d8d2217af491.jpeg" alt="Description of the image" height="300" width="350">
     <div id="instructions">
         <h2>How to Use the Reward Points Calculator</h2>
         <ol>
@@ -227,7 +160,6 @@
             <li>Click 'Calculate' to see the results.</li>
           	<li>De-select the card you want to exclude and Click 'Calculate' again to see the results.</li>
         </ol>
-    </div>
     </div>
     <form id="cardForm">
         <h2>Select Cards</h2>
