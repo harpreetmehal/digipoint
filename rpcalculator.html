@@ -6,6 +6,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
     <meta name="keywords" content="credit cards,	credit card rewards,	credit card benefits,	credit card comparison,	best credit cards,	redeeming reward points,	maximizing credit card rewards,	loyalty programs,	points and miles,	HDFC Regalia,	American Express Platinum,	Axis Bank Reserve,	HSBC Platinum,	SBI SimplyClick,	Indusind Legend,	RBL Shoprite,	cashback,	APR (Annual Percentage Rate),	spending analysis,	financial planning,	reward points value,	spend-to-earn ratio,	card exclusions,	travel rewards credit cards,	online shopping rewards,	e-commerce cashback,	best credit cards for online shopping,	travel credit cards,	hotel rewards,	travel insurance,	budgeting tools,	money management,	personal finance tips,	cashback credit cards,	travel rewards cards,	business credit cards,	compare credit card rewards,	benefits vs. drawbacks,	features analysis,">
 	<!-- credit cards,	credit card rewards,	credit card benefits,	credit card comparison,	best credit cards,	redeeming reward points,	maximizing credit card rewards,	loyalty programs,	points and miles,	HDFC Regalia,	American Express Platinum,	Axis Bank Reserve,	HSBC Platinum,	SBI SimplyClick,	Indusind Legend,	RBL Shoprite,	cashback,	APR (Annual Percentage Rate),	spending analysis,	financial planning,	reward points value,	spend-to-earn ratio,	card exclusions,	travel rewards credit cards,	online shopping rewards,	e-commerce cashback,	best credit cards for online shopping,	travel credit cards,	hotel rewards,	travel insurance,	budgeting tools,	money management,	personal finance tips,	cashback credit cards,	travel rewards cards,	business credit cards,	compare credit card rewards,	benefits vs. drawbacks,	features analysis, -->
+    <meta name="description" content="Explore the world of credit cards with our Reward Points Calculator. Compare, analyze, and maximize credit card rewards, benefits, and cashback. Discover the best credit cards for travel, online shopping, and more. Plan your financial journey with our tools and tips for effective money management. Your guide to optimizing credit card usage and unlocking the full potential of loyalty programs.">
     <title>Reward Points Calculator</title>
     <style>
         body {
@@ -176,6 +177,35 @@
             behavior: scroll;
             padding: 20px;
         }
+        .result-container {
+        max-width: 600px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .best-card-container {
+        margin-top: 20px;
+    }
+
+    .best-card {
+        background-color: #ffc107;
+        padding: 10px;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+
+    .best-card h3 {
+        color: #333;
+        margin-bottom: 5px;
+    }
+
+    .best-card p {
+        margin: 0;
+        color: #555;
+    }
     </style>
 </head>
 <body>
@@ -395,13 +425,16 @@
                 });
                 resultHTML += '</table>';
     
-                // Display the best two cards
-                resultHTML += '<h2>Best Cards:</h2>';
-                resultHTML += `<p>1. ${cashbacks[0].cardName}: ₹${cashbacks[0].cashbackValue}</p>`;
-                resultHTML += `<p>2. ${cashbacks[1].cardName}: ₹${cashbacks[1].cashbackValue}</p>`;
-    
-                // Display the result
-                document.getElementById('result').innerHTML = resultHTML;
+                // Display the best two cards in a separate container
+        resultHTML += '<div class="best-card-container">';
+        resultHTML += '<div class="best-card"><h3>Best Card: ' + cashbacks[0].cardName + '</h3><p>Cashback Value: ₹' + cashbacks[0].cashbackValue + '</p></div>';
+        resultHTML += '<div class="best-card"><h3>Second Best Card: ' + cashbacks[1].cardName + '</h3><p>Cashback Value: ₹' + cashbacks[1].cashbackValue + '</p></div>';
+        resultHTML += '</div>';
+
+        resultHTML += '</div>';
+
+        // Display the result
+        document.getElementById('result').innerHTML = resultHTML;
             }, 1000); // Simulating a 1-second delay (you can adjust this)
         }
     </script>
