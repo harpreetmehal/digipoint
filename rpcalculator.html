@@ -449,8 +449,15 @@
                 // Sort cashbacks in descending order
                 cashbacks.sort((a, b) => b.cashbackValue - a.cashbackValue);
     
+                // Display the best two cards in a separate container
+                let resultHTML = '<div class="best-card-container">';
+                resultHTML += '<h2>Result</h2>';
+                resultHTML += '<div class="best-card"><h3>Best Card: ' + cashbacks[0].cardName + '</h3><p>Cashback Value: ₹' + cashbacks[0].cashbackValue + '</p></div>';
+                resultHTML += '<div class="best-card"><h3>Second Best Card: ' + cashbacks[1].cardName + '</h3><p>Cashback Value: ₹' + cashbacks[1].cashbackValue + '</p></div>';
+                resultHTML += '</div>';
+
                 // Display the results
-                let resultHTML = '<h2>Selected Cards:</h2>';
+                resultHTML += '<h2>Selected Cards:</h2>';
                 resultHTML += '<table>';
                 resultHTML += '<tr><th>Card Name</th><th>Reward Points</th><th>Cashback Value</th></tr>';
                 cashbacks.forEach((cashback, index) => {
@@ -459,14 +466,6 @@
                     resultHTML += `<tr class="${cardClass}"><td>${cashback.cardName}</td><td>${cashback.rewardPointsValue} RP</td><td>₹${cashback.cashbackValue}</td></tr>`;
                 });
                 resultHTML += '</table>';
-    
-                // Display the best two cards in a separate container
-        resultHTML += '<div class="best-card-container">';
-        resultHTML += '<div class="best-card"><h3>Best Card: ' + cashbacks[0].cardName + '</h3><p>Cashback Value: ₹' + cashbacks[0].cashbackValue + '</p></div>';
-        resultHTML += '<div class="best-card"><h3>Second Best Card: ' + cashbacks[1].cardName + '</h3><p>Cashback Value: ₹' + cashbacks[1].cashbackValue + '</p></div>';
-        resultHTML += '</div>';
-
-        resultHTML += '</div>';
 
         // Display the result
         document.getElementById('result').innerHTML = resultHTML;
