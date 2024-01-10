@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .calculator-container {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        select,
+        button {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #4caf50; /* Green color for positive results */
+        }
+    </style>
+    <title>Purchase Parity Calculator</title>
+</head>
+<body>
+
+    <div class="calculator-container">
+        <h1>Purchase Power Parity Calculator</h1>
+
+        <label for="selectCountry">Select Your Country:</label>
+        <select id="selectCountry" class="country-dropdown"></select>
+
+        <label for="salary">Enter Your Salary:</label>
+        <input type="number" id="salary" placeholder="Enter your salary">
+
+        <label for="compareCountry">Compare with:</label>
+        <select id="compareCountry" class="country-dropdown"></select>
+
+        <button onclick="calculatePurchaseParity()">Calculate</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        // Sample data for countries with price levels
+        const countryData = [{'name': 'Afghanistan', 'priceLevel': 1.0}, {'name': 'Albania', 'priceLevel': 41.38093875}, {'name': 'Algeria', 'priceLevel': 46.61998791}, {'name': 'American Samoa', 'priceLevel': 1.0}, {'name': 'Andorra', 'priceLevel': 1.0}, {'name': 'Angola', 'priceLevel': 214.9891638}, {'name': 'Antigua and Barbuda', 'priceLevel': 2.039912967}, {'name': 'Argentina', 'priceLevel': 67.20589837}, {'name': 'Armenia', 'priceLevel': 161.2147221}, {'name': 'Aruba', 'priceLevel': 1.222730566}, {'name': 'Australia', 'priceLevel': 1.41926}, {'name': 'Austria', 'priceLevel': 0.728706}, {'name': 'Azerbaijan', 'priceLevel': 0.740132108}, {'name': 'Bahamas, The', 'priceLevel': 0.768348005}, {'name': 'Bahrain', 'priceLevel': 0.185070704}, {'name': 'Bangladesh', 'priceLevel': 31.36327336}, {'name': 'Barbados', 'priceLevel': 2.222804501}, {'name': 'Belarus', 'priceLevel': 0.919629992}, {'name': 'Belgium', 'priceLevel': 0.724081}, {'name': 'Belize', 'priceLevel': 1.248311312}, {'name': 'Benin', 'priceLevel': 200.3467749}, {'name': 'Bermuda', 'priceLevel': 1.238930863}, {'name': 'Bhutan', 'priceLevel': 1.0}, {'name': 'Bolivia', 'priceLevel': 2.554699943}, {'name': 'Bosnia and Herzegovina', 'priceLevel': 0.70396654}, {'name': 'Botswana', 'priceLevel': 5.222121976}, {'name': 'Brazil', 'priceLevel': 2.583101465}, {'name': 'British Virgin Islands', 'priceLevel': 1.0}, {'name': 'Brunei Darussalam', 'priceLevel': 0.739295229}, {'name': 'Bulgaria', 'priceLevel': 0.7668991}, {'name': 'Burkina Faso', 'priceLevel': 203.0419318}, {'name': 'Burundi', 'priceLevel': 739.1910143}, {'name': 'Cabo Verde', 'priceLevel': 45.45605605}, {'name': 'Cambodia', 'priceLevel': 1347.85192}, {'name': 'Cameroon', 'priceLevel': 221.7440988}, {'name': 'Canada', 'priceLevel': 1.225042}, {'name': 'Cayman Islands', 'priceLevel': 0.98505909}, {'name': 'Central African Republic', 'priceLevel': 273.7042396}, {'name': 'Chad', 'priceLevel': 267.9613116}, {'name': 'Channel Islands', 'priceLevel': 1.0}, {'name': 'Chile', 'priceLevel': 443.416042}, {'name': 'China', 'priceLevel': 3.989193952}, {'name': 'Colombia', 'priceLevel': 1390.999847}, {'name': 'Comoros', 'priceLevel': 180.9508858}, {'name': 'Congo, Dem. Rep.', 'priceLevel': 981.9739454}, {'name': 'Congo, Rep.', 'priceLevel': 381.1902392}, {'name': 'Costa Rica', 'priceLevel': 342.717452}, {'name': "Cote d'Ivoire", 'priceLevel': 237.1275366}, {'name': 'Croatia', 'priceLevel': 0.438242832}, {'name': 'Cuba', 'priceLevel': 1.0}, {'name': 'Curacao', 'priceLevel': 1.344144899}, {'name': 'Cyprus', 'priceLevel': 0.59298863}, {'name': 'Czechia', 'priceLevel': 12.925078}, {'name': 'Denmark', 'priceLevel': 6.404699}, {'name': 'Djibouti', 'priceLevel': 94.57501329}, {'name': 'Dominica', 'priceLevel': 1.665276782}, {'name': 'Dominican Republic', 'priceLevel': 24.4097022}, {'name': 'Ecuador', 'priceLevel': 0.49829272}, {'name': 'Egypt, Arab Rep.', 'priceLevel': 4.680676991}, {'name': 'El Salvador', 'priceLevel': 0.462000019}, {'name': 'Equatorial Guinea', 'priceLevel': 254.2462722}, {'name': 'Eritrea', 'priceLevel': 1.0}, {'name': 'Estonia', 'priceLevel': 0.576164}, {'name': 'Eswatini', 'priceLevel': 6.096949317}, {'name': 'Ethiopia', 'priceLevel': 17.74467474}, {'name': 'Faroe Islands', 'priceLevel': 1.0}, {'name': 'Fiji', 'priceLevel': 0.805831638}, {'name': 'Finland', 'priceLevel': 0.813035}, {'name': 'France', 'priceLevel': 0.700999}, {'name': 'French Polynesia', 'priceLevel': 1.0}, {'name': 'Gabon', 'priceLevel': 334.1503673}, {'name': 'Gambia, The', 'priceLevel': 17.89665966}, {'name': 'Georgia', 'priceLevel': 0.964973017}, {'name': 'Germany', 'priceLevel': 0.728312}, {'name': 'Ghana', 'priceLevel': 2.816077232}, {'name': 'Gibraltar', 'priceLevel': 1.0}, {'name': 'Greece', 'priceLevel': 0.534484}, {'name': 'Greenland', 'priceLevel': 1.0}, {'name': 'Grenada', 'priceLevel': 1.531387206}, {'name': 'Guam', 'priceLevel': 1.0}, {'name': 'Guatemala', 'priceLevel': 3.918750116}, {'name': 'Guinea', 'priceLevel': 4131.967357}, {'name': 'Guinea-Bissau', 'priceLevel': 220.8555152}, {'name': 'Guyana', 'priceLevel': 90.1544188}, {'name': 'Haiti', 'priceLevel': 56.6086431}, {'name': 'Honduras', 'priceLevel': 11.03924818}, {'name': 'Hong Kong SAR, China', 'priceLevel': 5.553761922}, {'name': 'Hungary', 'priceLevel': 164.158043}, {'name': 'Iceland', 'priceLevel': 142.763866}, {'name': 'India', 'priceLevel': 22.88213035}, {'name': 'Indonesia', 'priceLevel': 4850.73995}, {'name': 'Iran, Islamic Rep.', 'priceLevel': 64529.24229}, {'name': 'Iraq', 'priceLevel': 792.3240301}, {'name': 'Ireland', 'priceLevel': 0.778517}, {'name': 'Isle of Man', 'priceLevel': 1.0}, {'name': 'Israel', 'priceLevel': 3.709128}, {'name': 'Italy', 'priceLevel': 0.625417}, {'name': 'Jamaica', 'priceLevel': 77.71277886}, {'name': 'Japan', 'priceLevel': 97.572648}, {'name': 'Jordan', 'priceLevel': 0.273045314}, {'name': 'Kazakhstan', 'priceLevel': 171.5839117}, {'name': 'Kenya', 'priceLevel': 42.9142644}, {'name': 'Kiribati', 'priceLevel': 1.037268883}, {'name': "Korea, Dem. People's Rep.", 'priceLevel': 1.0}, {'name': 'Korea, Rep.', 'priceLevel': 831.940773}, {'name': 'Kosovo', 'priceLevel': 0.338761724}, {'name': 'Kuwait', 'priceLevel': 0.215608806}, {'name': 'Kyrgyz Republic', 'priceLevel': 23.24722396}, {'name': 'Lao PDR', 'priceLevel': 3071.615179}, {'name': 'Latvia', 'priceLevel': 0.519327}, {'name': 'Lebanon', 'priceLevel': 6724.340123}, {'name': 'Lesotho', 'priceLevel': 5.995872522}, {'name': 'Liberia', 'priceLevel': 1.0}, {'name': 'Libya', 'priceLevel': 1.382462269}, {'name': 'Liechtenstein', 'priceLevel': 1.0}, {'name': 'Lithuania', 'priceLevel': 0.487143}, {'name': 'Luxembourg', 'priceLevel': 0.844202}, {'name': 'Macao SAR, China', 'priceLevel': 4.555440611}, {'name': 'Madagascar', 'priceLevel': 1192.771217}, {'name': 'Malawi', 'priceLevel': 353.3875719}, {'name': 'Malaysia', 'priceLevel': 1.574419684}, {'name': 'Maldives', 'priceLevel': 7.214719589}, {'name': 'Mali', 'priceLevel': 206.3470125}, {'name': 'Malta', 'priceLevel': 0.580109408}, {'name': 'Marshall Islands', 'priceLevel': 0.877771461}, {'name': 'Mauritania', 'priceLevel': 12.1302585}, {'name': 'Mauritius', 'priceLevel': 16.79632597}, {'name': 'Mexico', 'priceLevel': 10.377268}, {'name': 'Micronesia, Fed. Sts.', 'priceLevel': 0.963443285}, {'name': 'Moldova', 'priceLevel': 6.870738525}, {'name': 'Monaco', 'priceLevel': 1.0}, {'name': 'Mongolia', 'priceLevel': 1111.217462}, {'name': 'Montenegro', 'priceLevel': 0.355120466}, {'name': 'Morocco', 'priceLevel': 3.662980292}, {'name': 'Mozambique', 'priceLevel': 24.12958715}, {'name': 'Myanmar', 'priceLevel': 460.8625527}, {'name': 'Namibia', 'priceLevel': 7.136073065}, {'name': 'Nauru', 'priceLevel': 1.267011594}, {'name': 'Nepal', 'priceLevel': 34.17009436}, {'name': 'Netherlands', 'priceLevel': 0.764114}, {'name': 'New Caledonia', 'priceLevel': 1.0}, {'name': 'New Zealand', 'priceLevel': 1.464355}, {'name': 'Nicaragua', 'priceLevel': 11.76548907}, {'name': 'Niger', 'priceLevel': 242.5384655}, {'name': 'Nigeria', 'priceLevel': 157.957002}, {'name': 'North Macedonia', 'priceLevel': 19.0005594}, {'name': 'Northern Mariana Islands', 'priceLevel': 1.0}, {'name': 'Norway', 'priceLevel': 8.882011}, {'name': 'Oman', 'priceLevel': 0.230828035}, {'name': 'Pakistan', 'priceLevel': 44.48319643}, {'name': 'Palau', 'priceLevel': 1.0}, {'name': 'Panama', 'priceLevel': 0.441752136}, {'name': 'Papua New Guinea', 'priceLevel': 2.474219969}, {'name': 'Paraguay', 'priceLevel': 2688.251737}, {'name': 'Peru', 'priceLevel': 1.815568306}, {'name': 'Philippines', 'priceLevel': 18.80235559}, {'name': 'Poland', 'priceLevel': 1.887557}, {'name': 'Portugal', 'priceLevel': 0.55611}, {'name': 'Puerto Rico', 'priceLevel': 0.869113173}, {'name': 'Qatar', 'priceLevel': 2.797806562}, {'name': 'Romania', 'priceLevel': 1.793912942}, {'name': 'Russian Federation', 'priceLevel': 28.80409}, {'name': 'Rwanda', 'priceLevel': 356.4092301}, {'name': 'Samoa', 'priceLevel': 1.602535694}, {'name': 'San Marino', 'priceLevel': 1.0}, {'name': 'Sao Tome and Principe', 'priceLevel': 13.78806233}, {'name': 'Saudi Arabia', 'priceLevel': 1.926109576}, {'name': 'Senegal', 'priceLevel': 236.8494126}, {'name': 'Serbia', 'priceLevel': 44.53420149}, {'name': 'Seychelles', 'priceLevel': 6.352239452}, {'name': 'Sierra Leone', 'priceLevel': 3.461499477}, {'name': 'Singapore', 'priceLevel': 0.894655554}, {'name': 'Sint Maarten (Dutch part)', 'priceLevel': 1.296157661}, {'name': 'Slovak Republic', 'priceLevel': 0.538908}, {'name': 'Slovenia', 'priceLevel': 0.559115}, {'name': 'Solomon Islands', 'priceLevel': 6.774061052}, {'name': 'Somalia', 'priceLevel': 9285.779618}, {'name': 'South Africa', 'priceLevel': 6.951546198}, {'name': 'South Sudan', 'priceLevel': 1.0}, {'name': 'Spain', 'priceLevel': 0.608216}, {'name': 'Sri Lanka', 'priceLevel': 75.54843461}, {'name': 'St. Kitts and Nevis', 'priceLevel': 1.609922297}, {'name': 'St. Lucia', 'priceLevel': 1.97264541}, {'name': 'St. Martin (French part)', 'priceLevel': 1.0}, {'name': 'St. Vincent and the Grenadines', 'priceLevel': 1.431429339}, {'name': 'Sudan', 'priceLevel': 145.457295}, {'name': 'Suriname', 'priceLevel': 8.14509548}, {'name': 'Sweden', 'priceLevel': 8.750849}, {'name': 'Switzerland', 'priceLevel': 1.051951}, {'name': 'Syrian Arab Republic', 'priceLevel': 1.0}, {'name': 'Tajikistan', 'priceLevel': 2.379671061}, {'name': 'Tanzania', 'priceLevel': 886.1154576}, {'name': 'Thailand', 'priceLevel': 11.71581515}, {'name': 'Timor-Leste', 'priceLevel': 0.513012621}, {'name': 'Togo', 'priceLevel': 225.9967401}, {'name': 'Tonga', 'priceLevel': 1.0}, {'name': 'Trinidad and Tobago', 'priceLevel': 4.818347642}, {'name': 'Tunisia', 'priceLevel': 0.932049558}, {'name': 'Turkiye', 'priceLevel': 4.717589}, {'name': 'Turkmenistan', 'priceLevel': 1.76758426}, {'name': 'Turks and Caicos Islands', 'priceLevel': 1.018228454}, {'name': 'Tuvalu', 'priceLevel': 1.388092994}, {'name': 'Uganda', 'priceLevel': 1278.995566}, {'name': 'Ukraine', 'priceLevel': 11.56876993}, {'name': 'United Arab Emirates', 'priceLevel': 2.229006895}, {'name': 'United Kingdom', 'priceLevel': 0.68126}, {'name': 'United States', 'priceLevel': 1.0}, {'name': 'Uruguay', 'priceLevel': 29.67196832}, {'name': 'Uzbekistan', 'priceLevel': 2613.31915}, {'name': 'Vanuatu', 'priceLevel': 113.2779567}, {'name': 'Venezuela, RB', 'priceLevel': 1.0}, {'name': 'Viet Nam', 'priceLevel': 7197.827905}, {'name': 'Virgin Islands (U.S.)', 'priceLevel': 1.0}, {'name': 'West Bank and Gaza', 'priceLevel': 0.560632617}, {'name': 'Yemen, Rep.', 'priceLevel': 1.0}, {'name': 'Zambia', 'priceLevel': 6.206963307}, {'name': 'Zimbabwe', 'priceLevel': 291.0627028}];
+
+        // Populate country dropdowns
+        const countryDropdowns = document.querySelectorAll('.country-dropdown');
+        countryData.forEach(country => {
+            const option = document.createElement('option');
+            option.value = country.name;
+            option.text = country.name;
+            countryDropdowns.forEach(dropdown => dropdown.add(option.cloneNode(true)));
+        });
+
+        // Function to calculate purchase parity
+        function calculatePurchaseParity() {
+            const selectedCountry = document.getElementById('selectCountry').value;
+            const salary = parseFloat(document.getElementById('salary').value);
+            const compareCountry = document.getElementById('compareCountry').value;
+
+            if (!isNaN(salary)) {
+                // Retrieve price levels for selected and compared countries
+                const selectedCountryPriceLevel = getCountryPriceLevel(selectedCountry);
+                const compareCountryPriceLevel = getCountryPriceLevel(compareCountry);
+
+                // Calculate purchasing power parity factor
+                const parityFactor = compareCountryPriceLevel / selectedCountryPriceLevel;
+
+                // Calculate adjusted salary based on PPP
+                const adjustedSalary = salary * parityFactor;
+
+                const resultContainer = document.getElementById('result');
+                resultContainer.innerHTML = `
+                    <p>Your salary in ${compareCountry} would allow you to lead a more comfortable life, equivalent to: ${adjustedSalary.toFixed(2)}</p>
+                    <p>Enjoy your increased purchasing power!</p>
+                `;
+            } else {
+                alert('Please enter a valid salary.');
+            }
+        }
+
+        function getCountryPriceLevel(countryName) {
+            // Replace this logic with actual data fetching or use an API
+            const country = countryData.find(country => country.name === countryName);
+            return country ? country.priceLevel : 1.0;
+        }
+    </script>
+</body>
+</html>
