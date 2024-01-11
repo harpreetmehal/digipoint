@@ -3,6 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Purchase Power Parity Calculator - Compare salaries between countries and determine purchasing power">
+    <meta name="keywords" content="Purchase Power Parity, Salary Comparison, International Salaries">
+    <meta name="author" content="Digipoint">
+
+    <!-- Open Graph tags for better sharing on social media -->
+    <meta property="og:title" content="Purchase Power Parity Calculator">
+    <meta property="og:description" content="Compare salaries between countries and determine purchasing power">
+    <meta property="og:image" content="URL_TO_AN_IMAGE">
+    <meta property="og:url" content="URL_TO_YOUR_PAGE">
+    <meta property="og:type" content="website">
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -12,7 +24,7 @@
         }
 
         .calculator-container {
-            max-width: 400px;
+            max-width: 600px;
             margin: 50px auto;
             background-color: #fff;
             padding: 20px;
@@ -38,6 +50,14 @@
             background-color: #4caf50;
             color: white;
             cursor: pointer;
+            max-width: 200px;
+            font-size: 15px;
+            border-radius: 5px;
+
+        }
+
+        .calculate-button-container {
+            text-align: center;
         }
 
         button:hover {
@@ -47,7 +67,38 @@
         #result {
             margin-top: 20px;
             font-weight: bold;
-            color: #4caf50; /* Green color for positive results */
+            color: #000300; /* Green color for positive results */
+        }
+        footer {
+            margin-top: 50px;
+            background-color: #b9b4b4;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 12px;
+            color: #060606;
+        }
+        .learn-more-content {
+            display: none;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fefefe;
+            border: 1px solid #888;
+        }
+        .learn-more-button {
+            background-color: #ffffff;
+            color: #001f3f;
+            border: 2px solid #001f3f;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            width: 150px;
+        }
+
+        .image-container {
+            max-width: 100%;
+            margin: 0 auto;
+            text-align: center;
         }
     </style>
     <title>Purchase Parity Calculator</title>
@@ -56,6 +107,10 @@
 
     <div class="calculator-container">
         <h1>Purchase Power Parity Calculator - 2024</h1>
+        <!-- Add an image after the title -->
+        <div class="image-container">
+            <img  src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiEWZn30m2XtArQPg1p880zEhxkhspARn4jahapNPiETQN_Fv3coqifA6Hfh2Ri-OIM50qHHSKS2AT6srpdhFzA5uJI6c7SqcmS1esWdipmA7Af1_nrcVz6yuGWXp8QHl8Fa1u5_W-Zk4qPDCBHJX59qd5nOWAp0Clc9UJu0yAwvHH5m_Wgs-ewoGIs6w8/w1684-h1069-p-k-no-nu/Create%20an%20image%20for%20my%20new%20purchase%20power%20parity%20calculator%20and%20show%20currency%20power%20with%20more.png" width="300px" height="300px" alt="Purchase Power Parity Calculator Image" style="max-width: 100%; height: auto;">
+        </div>
 
         <label for="selectCountry">Select Your Country:</label>
         <select id="selectCountry" class="country-dropdown"></select>
@@ -66,9 +121,40 @@
         <label for="compareCountry">Compare with:</label>
         <select id="compareCountry" class="country-dropdown"></select>
 
-        <button onclick="calculatePurchaseParity()">Calculate</button>
-
+        <div class="calculate-button-container">
+            <button onclick="calculatePurchaseParity()">Calculate</button>
+        </div>
         <div id="result"></div>
+        <!-- Learn More button -->
+        <button class="learn-more-button" onclick="toggleLearnMore()">Learn More</button>
+        <!-- Learn More content -->
+        <div id="learnMoreContent" class="learn-more-content">
+            <h2>Purchase Power Parity Calculator</h2>
+            <p>Understanding Purchase Power Parity (PPP):</p>
+        <p>Purchase Power Parity is a measure of the relative value of currencies. This calculator uses PPP to adjust your salary based on the cost of living in different countries, giving you insights into your potential purchasing power abroad.</p>
+        <p>Currency Conversion Example:</p>
+        <p>If you're moving from a country with a high cost of living to one with a lower cost of living, your adjusted salary might allow you to lead a more comfortable life.</p>
+    
+            <h3>Why is this calculator needed?</h3>
+            <p>This calculator allows you to understand the relative purchasing power of salaries in different countries, helping you make informed decisions about living and working internationally.</p>
+
+            <p>How to use the calculator:</p>
+            <p>1. Select your country.</p>
+            <p>2. Enter your salary.</p>
+            <p>3. Choose a country to compare.</p>
+            <p>4. Click "Calculate" to see the adjusted salary based on purchasing power parity.</p>
+
+            <h3>Example: Currency Conversion</h3>
+            <p>Suppose you are considering a job offer in the United States and want to compare your salary with your home country, let's say India.</p>
+            <p>1. Select "United States" as your country and "India" as the comparison country.</p>
+            <p>2. Enter your salary in the provided field.</p>
+            <p>3. Click "Calculate" to see the adjusted salary based on purchasing power parity.</p>
+            <p>This way, you can understand how your salary would fare in terms of purchasing power in a different country.</p>
+        </div>
+    </div>
+        <footer>
+        <p>Data sourced from the <a href="https://www.worldbank.org/en/home"    target="_blank">World Bank</a>.</p>
+        </footer>
     </div>
 
     <script>
@@ -103,8 +189,8 @@
 
                 const resultContainer = document.getElementById('result');
                 resultContainer.innerHTML = `
-                    <p>Your salary in ${compareCountry} would allow you to lead a more comfortable life, equivalent to: ${adjustedSalary.toFixed(2)}</p>
-                    <p>Enjoy your increased purchasing power!</p>
+                <p>Your salary in ${compareCountry} enables a more comfortable life, equivalent to: ${adjustedSalary.toFixed(2)}</p>
+    <p>Embrace your increased purchasing power and enjoy the enhanced lifestyle!</p>
                 `;
             } else {
                 alert('Please enter a valid salary.');
@@ -115,6 +201,10 @@
             // Replace this logic with actual data fetching or use an API
             const country = countryData.find(country => country.name === countryName);
             return country ? country.priceLevel : 1.0;
+        }
+        function toggleLearnMore() {
+            const learnMoreContent = document.getElementById('learnMoreContent');
+            learnMoreContent.style.display = (learnMoreContent.style.display === 'none' || learnMoreContent.style.display === '') ? 'block' : 'none';
         }
     </script>
 </body>
