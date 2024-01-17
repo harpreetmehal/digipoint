@@ -467,7 +467,26 @@
     
             // Show loading spinner
             document.getElementById('result').innerHTML = '<div class="lds-hourglass"></div>';
-    
+            
+            function calculateEarnedRP(cardId, amount, specificData) {
+                let earnedRP;
+
+                if (cardId === 'iciciAmazon') {
+                    const iciciAmazonPercent = specificData.percent / 100;
+                    earnedRP = amount * iciciAmazonPercent;
+                } else if (cardId === 'rbl') {
+                    const rblPercent = specificData.percent / 100;
+                    if (specificData.grocery) {
+                        earnedRP = amount * rblPercent * 4;
+                    } else {
+                        earnedRP = amount * rblPercent;
+                    }
+                } else {
+                    earnedRP = amount / cards[cardId].spendToEarnRP;
+                }
+
+                return earnedRP;
+            }
             // Simulate a delay to show the loading spinner (you can replace this with your actual calculation logic)
             setTimeout(() => {
                 // Calculate cashback and reward points for each selected card
