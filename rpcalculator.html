@@ -354,8 +354,12 @@
             <label for="indusind"><input id="indusind" type="checkbox" /> Indusind Legend</label>
             
             <h3>RBL Cards</h3>
-            <label for="rbl"><input id="rbl" type="checkbox" /> RBL Shoprite</label>
-            
+            <div id="iciciAmazonPercentContainer">
+                <input type="checkbox" id="rbl" name="rbl" />
+                <label for="rbl"> RBL Shoprite : </label>
+                <label for="rblothr"><input type="radio" id="rblothr" name="rblPercent" value="1" checked="true"/> Other spends</label>
+                <label for="rblgroc"><input type="radio" id="rblgroc" name="rblPercent" value="5" /> Grocery</label>
+            </div>
             <h3>Standard Chartered Cards</h3>
             <label for="stdchartered"><input id="stdchartered" type="checkbox" /> Standard Chartered Platinum Rewards [Dining/Fuel]</label>
 
@@ -488,7 +492,15 @@
                     else if (cardId === 'iciciAmazon' && document.getElementById('iciciAmazon5').checked) {
                         const iciciAmazonPercent = parseFloat(document.querySelector('input[name="iciciAmazonPercent"]:checked').value) / 100;
                         earnedRP = amount * iciciAmazonPercent;
-                    } 
+                    }
+                    else if (cardId === 'rbl' && document.getElementById('rblothr').checked) {
+                        const rblPercent = parseFloat(document.querySelector('input[name="rblPercent"]:checked').value) / 100;
+                        earnedRP = amount * rblPercent;
+                    }
+                    else if (cardId === 'rbl' && document.getElementById('rblgroc').checked) {
+                        const rblPercent = parseFloat(document.querySelector('input[name="rblPercent"]:checked').value) / 100;
+                        earnedRP = amount * rblPercent * 4;
+                    }
                     else {
                         earnedRP = amount / card.spendToEarnRP;
                     }
