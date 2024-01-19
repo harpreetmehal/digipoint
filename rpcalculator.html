@@ -296,7 +296,7 @@
         <div id="bankHeaders">
             <h3>HDFC Cards</h3>
             <label for="hdfc"><input id="hdfc" type="checkbox" /> HDFC Regalia</label>
-            <label for="hdfcinfinia"><input id="hdfcinfinia" type="checkbox" /> HDFC Infinia Meta</label>
+            <label for="hdfcinfinia"><input id="hdfcinfinia" type="checkbox" /> HDFC Infinia Metal</label>
             <label for="hdfcneu"><input id="hdfcneu" type="checkbox" /> Tata Neu Infinity HDFC</label>
 
             <h3>ICICI Cards</h3>
@@ -314,16 +314,26 @@
             <!-- <label for="amexplat"><input id="amexplat" type="checkbox" /> American Express Platinum</label> -->
             <label for="amexplat">
                 <input id="amexplat" type="checkbox" /> American Express Platinum
-                <span class="info-icon" id="amex-info-icon" onmouseover="showInfoBox()" onmouseout="hideInfoBox()">
+                <span class="info-icon" id="amex-info-icon-plat" onmouseover="showInfoBox('plat')" onmouseout="hideInfoBox('plat')">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Minimalist_info_Icon.png" alt="Info Icon" width="15" height="15"/>
                 </span>
-                <div class="info-box" id="amex-info-box">1RP for every INR40 
-                    <br> 2X - FUEL
-                    <br> 3X - All international transactions
-                    <br>10X on Bvlgari, Kapoor Watch & Co. etc 
-                    <br>20X on Darveys &amp; RAS Luxury skincare.
-                </div>
             </label>
+            <div class="info-box" id="amex-info-box-plat">1RP for every INR40 
+                <br> 2X - FUEL
+                <br> 3X - All international transactions
+                <br>10X on Bvlgari, Kapoor Watch & Co. etc 
+                <br>20X on Darveys &amp; RAS Luxury skincare.
+            </div>
+            <label for="amexplatreserve">
+                <input id="amexplatreserve" type="checkbox" /> American Express Platinum Reserve
+                <span class="info-icon" id="amex-info-icon-reserve" onmouseover="showInfoBox('reserve')" onmouseout="hideInfoBox('reserve')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Minimalist_info_Icon.png" alt="Info Icon" width="15" height="15"/>
+                </span>
+            </label>
+            <div class="info-box" id="amex-info-box-reserve">1RP for every INR50 except for spend on
+                <br>Fuel, Insurance, Utilities, Cash Transactions 
+                <br> and EMI conversion at Point of Sale
+            </div>
 
             <h3>Axis Cards</h3>
             <label for="axisreserve"><input id="axisreserve" type="checkbox" /> Axis Bank Reserve</label>
@@ -382,13 +392,13 @@
     <div id="result"></div>
 
     <script>
-        function showInfoBox() {
-        document.getElementById('amex-info-box').style.display = 'block';
-    }
+        function showInfoBox(card) {
+            document.getElementById('amex-info-box-' + card).style.display = 'block';
+        }
 
-    function hideInfoBox() {
-        document.getElementById('amex-info-box').style.display = 'none';
-    }
+        function hideInfoBox(card) {
+            document.getElementById('amex-info-box-' + card).style.display = 'none';
+        }
         function resetForm() {
         // Reset the form
         document.getElementById('cardForm').reset();
@@ -436,6 +446,7 @@
                 hdfcinfinia: { name: "HDFC Infinia Metal", spendToEarnRP: 37.5, rpValue: 1 },
                 idfcwealth: { name: "IDFC First Wealth", spendToEarnRP: 16.66, rpValue: 0.25 },
                 amexplat: { name: "American Express Platinum [2x - Fuel]", spendToEarnRP: 40, rpValue: 1 },
+                amexplatreserve: { name: "American Express Platinum Reserve", spendToEarnRP: 50, rpValue: 1 },
                 sbisimplysave: { name: "SBI Simply Save", spendToEarnRP: 150, rpValue: 0.25 },
                 stdchartered: { name: "Standard Chartered Platinum Rewards [Dining/Fuel]", spendToEarnRP: 30, rpValue: 0.25 },
                 axisNeo: { name: "Axis Neo", spendToEarnRP: 50, rpValue: 0.2 },
