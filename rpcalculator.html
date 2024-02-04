@@ -356,7 +356,12 @@
             <label for="idfcwealth"><input id="idfcwealth" type="checkbox" /> IDFC First Wealth</label>
 
             <h3>SBI Cards</h3>
-            <label for="sbi"><input id="sbi" type="checkbox" /> SBI SimplyClick</label>
+            <div id="iciciAmazonPercentContainer">
+                <input type="checkbox" id="sbi" name="sbi" />
+                <label for="sbi"> SBI SimplyClick : </label>
+                <label for="sbioffline"><input type="radio" id="sbioffline" name="sbiPercent" value="1" checked="true"/> Offline</label>
+                <label for="sbionline"><input type="radio" id="sbionline" name="sbiPercent" value="5" /> Online</label>
+            </div>
             <label for="sbisimplysave"><input id="sbisimplysave" type="checkbox" /> SBI SimplySave</label>
             <label for="sbiprime"><input id="sbiprime" type="checkbox" /> SBI Prime</label>
 
@@ -435,9 +440,9 @@
                 citibank: { name: "Citibank Indian Oil (FUEL)", spendToEarnRP: 37.5, rpValue: 1 },
                 idfcSelect3: { name: "IDFC First Select - 3x", spendToEarnRP: 41.66, rpValue: 0.25 },
                 idfcSelect6: { name: "IDFC First Select - 6x", spendToEarnRP: 20.833, rpValue: 0.25 },
-                sbi: { name: "SBI SimplyClick", spendToEarnRP: 20, rpValue: 0.25 },
+                sbi: { name: "SBI SimplyClick", spendToEarnRP: 100, rpValue: 0.25 },
                 sbiprime: { name: "SBI Prime [Dining/Groceries/Movies]", spendToEarnRP: 10, rpValue: 0.25 },
-                indusind: { name: "Indusind Legend", spendToEarnRP: 100, rpValue: 0.75 },
+                indusind: { name: "Indusind Legend [2x on weekends]", spendToEarnRP: 100, rpValue: 0.75 },
                 rbl: { name: "RBL Shoprite", spendToEarnRP: 100, rpValue: 0.25 },
                 scapia: { name: "Scapia Forex Card", spendToEarnRP: 10, rpValue: 0.2 },
                 idfcvistara: { name: "Club Vistara IDFC First", spendToEarnRP: 200, rpValue: 1 },
@@ -492,7 +497,10 @@
                     } else {
                         earnedRP = amount * rblPercent;
                     }
-                } else {
+                } else if (cardId === 'sbi') {
+                const rblPercent = specificData.percent / 100;
+                earnedRP = amount * sbiPercent;
+                }else {
                     earnedRP = amount / cards[cardId].spendToEarnRP;
                 }
 
@@ -531,7 +539,14 @@
                         const rblPercent = parseFloat(document.querySelector('input[name="rblPercent"]:checked').value) / 100;
                         earnedRP = amount * rblPercent * 4;
                     }
-                    else {
+                    else if (cardId === 'sbi' && document.getElementById('sbioffline').checked) {
+                        const rblPercent = parseFloat(document.querySelector('input[name="sbiPercent"]:checked').value) / 100;
+                        earnedRP = amount * rblPercent;
+                    }
+                    else if (cardId === 'sbi' && document.getElementById('sbionline').checked) {
+                        const rblPercent = parseFloat(document.querySelector('input[name="sbiPercent"]:checked').value) / 100;
+                        earnedRP = amount * rblPercent;
+                    } else {
                         earnedRP = amount / card.spendToEarnRP;
                     }
                     const rpValue = earnedRP * card.rpValue;
