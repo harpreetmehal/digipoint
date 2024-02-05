@@ -540,12 +540,12 @@
                         earnedRP = amount * rblPercent * 4;
                     }
                     else if (cardId === 'sbi' && document.getElementById('sbioffline').checked) {
-                        const rblPercent = parseFloat(document.querySelector('input[name="sbiPercent"]:checked').value) / 100;
-                        earnedRP = amount * rblPercent;
+                        const sbiPercent = parseFloat(document.querySelector('input[name="sbiPercent"]:checked').value) / 100;
+                        earnedRP = amount * sbiPercent;
                     }
                     else if (cardId === 'sbi' && document.getElementById('sbionline').checked) {
-                        const rblPercent = parseFloat(document.querySelector('input[name="sbiPercent"]:checked').value) / 100;
-                        earnedRP = amount * rblPercent;
+                        const sbiPercent = parseFloat(document.querySelector('input[name="sbiPercent"]:checked').value) / 100;
+                        earnedRP = amount * sbiPercent;
                     } else {
                         earnedRP = amount / card.spendToEarnRP;
                     }
