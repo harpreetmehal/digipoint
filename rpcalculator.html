@@ -1,5 +1,7 @@
 
 <html lang="en">
+  <!--Google tag (gtag.js)-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-NR1YZCQFF4"></script>
 <head>
     <meta charset="UTF-8"></meta>
     <meta content="IE=edge" http-equiv="X-UA-Compatible"></meta>
@@ -416,6 +418,13 @@
             document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
                 checkbox.checked = true;
             });
+        }
+    
+        function resetForm() {
+            // Reset the form
+            document.getElementById('cardForm').reset();
+            // Clear the result
+            document.getElementById('result').innerHTML = '';
         }
     
         function calculateCashback() {
