@@ -275,6 +275,7 @@
         <!-- Recent updates marquee -->
         <marquee direction="up" height="300" scrollamount="2" behavior="scroll">
             <h2>Recent updates</h2>
+            <li>New card added: ICICI Coral RuPay credit card</li>
             <li>New card added: Standard Chartered Platinum</li>
             <li>New card added: SBI Prime</li>
             <li>New card added: Axis Bank other variants</li>
@@ -309,6 +310,12 @@
                 <label for="iciciAmazon2"><input type="radio" id="iciciAmazon2" name="iciciAmazonPercent" value="2" /> 2%</label>
                 <label for="iciciAmazon3"><input type="radio" id="iciciAmazon3" name="iciciAmazonPercent" value="3" /> 3%</label>
                 <label for="iciciAmazon5"><input type="radio" id="iciciAmazon5" name="iciciAmazonPercent" value="5" checked="true"/> 5%</label>
+            </div>
+            <div id="iciciAmazonPercentContainer">
+                <input type="checkbox" id="iciciCoralRupay" name="iciciCoralRupay" />
+                <label for="iciciCoralRupay"> ICICI Coral RuPay : </label>
+                <label for="iciciCoralInsurance"><input type="radio" id="iciciCoralInsurance" name="iciciCoralPercent" value="1"/> Insurance/Utilities</label>
+                <label for="iciciCoralOther"><input type="radio" id="iciciCoralOther" name="iciciCoralPercent" value="2" checked="true"/> All other spends</label>
             </div>
             <label for="iciciCoral"><input id="iciciCoral" type="checkbox" /> ICICI CORAL</label>
 
@@ -437,6 +444,7 @@
                 hdfc: { name: "HDFC Regalia", spendToEarnRP: 37.5, rpValue: 0.5 },
                 iciciAmazon: { name: "ICICI AMAZON", spendToEarnRP: 100, rpValue: 1 },
                 iciciCoral: { name: "ICICI CORAL", spendToEarnRP: 50, rpValue: 0.25 },
+                iciciCoralRupay: { name: "ICICI Coral Rupay", spendToEarnRP: 100, rpValue: 0.25 },
                 hsbc: { name: "HSBC Platinum", spendToEarnRP: 75, rpValue: 0.2 },
                 oneCard: { name: "One Card", spendToEarnRP: 50, rpValue: 0.125 },
                 citibank: { name: "Citibank Indian Oil (FUEL)", spendToEarnRP: 37.5, rpValue: 1 },
@@ -502,7 +510,16 @@
                 } else if (cardId === 'sbi') {
                 const rblPercent = specificData.percent / 100;
                 earnedRP = amount * sbiPercent;
-                }else {
+                }
+                else if (cardId === 'iciciCoralRupay') {
+                const iciciCoralPercent = specificData.percent / 100;
+                if (specificData.insurance) {
+                    earnedRP = amount * iciciCoralPercent; // Assuming 4x reward points for Insurance
+                } else {
+                    earnedRP = amount * iciciCoralPercent * 2;
+                }
+            }
+                else {
                     earnedRP = amount / cards[cardId].spendToEarnRP;
                 }
 
@@ -548,7 +565,16 @@
                     else if (cardId === 'sbi' && document.getElementById('sbionline').checked) {
                         const sbiPercent = parseFloat(document.querySelector('input[name="sbiPercent"]:checked').value) / 100;
                         earnedRP = amount * sbiPercent;
-                    } else {
+                    } 
+                    else if (cardId === 'iciciCoralRupay' && document.getElementById('iciciCoralInsurance').checked) {
+                        const iciciCoralPercent = parseFloat(document.querySelector('input[name="iciciCoralPercent"]:checked').value) / 100;
+                        earnedRP = amount * iciciCoralPercent; // Assuming 4x reward points for Insurance
+                    }
+                    else if (cardId === 'iciciCoralRupay' && document.getElementById('iciciCoralOther').checked) {
+                        const iciciCoralPercent = parseFloat(document.querySelector('input[name="iciciCoralPercent"]:checked').value) / 100;
+                        earnedRP = amount * iciciCoralPercent;
+                    }
+                    else {
                         earnedRP = amount / card.spendToEarnRP;
                     }
                     const rpValue = earnedRP * card.rpValue;
