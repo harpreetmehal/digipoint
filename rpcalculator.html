@@ -109,8 +109,8 @@
             color: white;
         }
 
-        .best-card {
-            background-color: #ffef96;
+        .best-cards {
+            background-color: #ffc107;
         }
         #instructions {
             max-width: 600px;
@@ -157,17 +157,17 @@
             display: block; /* Make the image a block element to apply margins */
         }
         #container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 600px;
-    margin: 20px auto;
-    background-color: #f5f5f5; /* Light grey background */
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    transition: all 0.3s ease; /* Smooth transition */
-    font-family: Arial, sans-serif; /* Change font */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 600px;
+        margin: 20px auto;
+        background-color: #f5f5f5; /* Light grey background */
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        transition: all 0.3s ease; /* Smooth transition */
+        font-family: Arial, sans-serif; /* Change font */
 }
 
 #container:hover {
@@ -235,19 +235,38 @@
     .best-card {
         background-color: #ffc107;
         padding: 10px;
-        border-radius: 4px;
-        margin-bottom: 10px;
+        width: 300px; /* Card width */
+        height: 180px; /* Card height */
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+        margin-bottom: 20px; /* Spacing between cards */
+        position: relative; /* Positioning */
+        display: flex; /* Flexbox layout */
+        flex-direction: column; /* Layout direction */
+        justify-content: center; /* Center content vertically */
     }
-
     .best-card h3 {
         color: #333;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
+        font-size: 16px;
     }
 
     .best-card p {
         margin: 0;
         color: #555;
+        font-size: 14px; /* Text font size */
     }
+    .best-card img {
+    max-width: 40px; /* Maximum image width */
+    margin-left: 10%; /* Auto margin for image */
+    margin-right: auto; /* Auto margin for image */
+    margin-bottom: 5px; /* Spacing below image */
+    border-color: #333;
+}
+.best-card:hover {
+    transform: translateY(-5px); /* Lift on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
     .lds-hourglass {
   display: inline-block;
   position: relative;
@@ -474,13 +493,6 @@
             });
         }
     
-        function resetForm() {
-            // Reset the form
-            document.getElementById('cardForm').reset();
-            // Clear the result
-            document.getElementById('result').innerHTML = '';
-        }
-    
         function calculateCashback() {
             // Reset previous messages
             document.getElementById('result').innerHTML = '';
@@ -643,18 +655,18 @@
     
                 // Display the best two cards in a separate container
                 let resultHTML = '<div class="best-card-container">';
-                resultHTML += '<h2>Result</h2>';
-                resultHTML += '<div class="best-card"><h3>Best Card: ' + cashbacks[0].cardName + '</h3><p>Cashback Value: ₹' + cashbacks[0].cashbackValue + '</p></div>';
-                resultHTML += '<div class="best-card"><h3>Second Best Card: ' + cashbacks[1].cardName + '</h3><p>Cashback Value: ₹' + cashbacks[1].cashbackValue + '</p></div>';
+                resultHTML += '<h2>Result :</h2>';
+                resultHTML += '<div class="best-card"><img src="https://i.pinimg.com/originals/c9/93/db/c993dbe12a541cd7c193084d39c5d2d0.png" alt="Credit Card Logo"><h3>Best Card: ' + cashbacks[0].cardName + '</h3><p>Cashback Value: ₹' + cashbacks[0].cashbackValue + '</p></div>';
+                resultHTML += '<div class="best-card"><img src="https://i.pinimg.com/originals/c9/93/db/c993dbe12a541cd7c193084d39c5d2d0.png" alt="Credit Card Logo"><h3>2nd Best Card: ' + cashbacks[1].cardName + '</h3><p>Cashback Value: ₹' + cashbacks[1].cashbackValue + '</p></div>';
                 resultHTML += '</div>';
 
                 // Display the results
-                resultHTML += '<h2>Selected Cards:</h2>';
+                resultHTML += '<h2>Selected Cards :</h2>';
                 resultHTML += '<table>';
                 resultHTML += '<tr><th>Card Name</th><th>Reward Points</th><th>Cashback Value</th></tr>';
                 cashbacks.forEach((cashback, index) => {
                     const isBestCard = index < 2; // Marking the best two cards
-                    const cardClass = isBestCard ? 'best-card' : '';
+                    const cardClass = isBestCard ? 'best-cards' : '';
                     resultHTML += `<tr class="${cardClass}"><td>${cashback.cardName}</td><td>${cashback.rewardPointsValue} RP</td><td>₹${cashback.cashbackValue}</td></tr>`;
                 });
                 resultHTML += '</table>';
