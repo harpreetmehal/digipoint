@@ -253,17 +253,26 @@
         display: flex; /* Flexbox layout */
         flex-direction: column; /* Layout direction */
         justify-content: center; /* Center content vertically */
+        background-image: url('https://www.shutterstock.com/image-photo/credit-card-on-png-background-600nw-2259495135.jpg');
+        background-size: cover; /* Adjust as needed */
+        background-repeat: no-repeat;
+        background-position: center;
     }
     .best-card h3 {
-        color: #333;
-        margin-bottom: 10px;
+        color: #bbb8b8;
+        margin-bottom: 12px;
         font-size: 16px;
+        font-family: 'Courier New', Courier, monospace;
+        padding-left: 20px;
+        padding-top: 60px;
     }
 
     .best-card p {
         margin: 0;
-        color: #555;
+        color: #bbb8b8;
         font-size: 14px; /* Text font size */
+        font-family: 'Courier New', Courier, monospace;
+        padding-left: 20px;
     }
     .best-card img {
     max-width: 40px; /* Maximum image width */
@@ -663,9 +672,10 @@
     
                 // Display the best two cards in a separate container
                 let resultHTML = '<div class="best-card-container">';
-                resultHTML += '<h2>Result :</h2>';
-                resultHTML += '<div class="best-card"><img src="https://i.pinimg.com/originals/c9/93/db/c993dbe12a541cd7c193084d39c5d2d0.png" alt="Credit Card Logo"><h3>Best Card: ' + cashbacks[0].cardName + '</h3><p>Cashback Value: ₹' + cashbacks[0].cashbackValue + '</p></div>';
-                resultHTML += '<div class="best-card"><img src="https://i.pinimg.com/originals/c9/93/db/c993dbe12a541cd7c193084d39c5d2d0.png" alt="Credit Card Logo"><h3>2nd Best Card: ' + cashbacks[1].cardName + '</h3><p>Cashback Value: ₹' + cashbacks[1].cashbackValue + '</p></div>';
+                resultHTML += '<h2>Best Card : </h2>';
+                resultHTML += '<div class="best-card"><h3>' + cashbacks[0].cardName + '</h3><p>Cashback Value: ₹' + cashbacks[0].cashbackValue + '</p></div>';
+                resultHTML += '<h2>2nd Best Card : </h2>';
+                resultHTML += '<div class="best-card"><h3>' + cashbacks[1].cardName + '</h3><p>Cashback Value: ₹' + cashbacks[1].cashbackValue + '</p></div>';
                 resultHTML += '</div>';
 
                 // Display the results
