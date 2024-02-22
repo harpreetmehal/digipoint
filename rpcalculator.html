@@ -691,6 +691,7 @@
 
         // Display the result
         document.getElementById('result').innerHTML = resultHTML;
+        document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
             }, 2500); // Simulating a 1-second delay (you can adjust this)
         }
     </script>
