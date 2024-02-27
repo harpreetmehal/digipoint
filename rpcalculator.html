@@ -264,7 +264,7 @@
         font-size: 16px;
         font-family: 'Courier New', Courier, monospace;
         padding-left: 20px;
-        padding-top: 60px;
+        padding-top: 40px;
     }
 
     .best-card p {
@@ -284,7 +284,32 @@
     transform: translateY(-5px); /* Lift on hover */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
-    .lds-hourglass {
+.card-info__right {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 1rem;
+}
+.mastercard {
+    display: flex;
+}
+
+.mastercard .circle {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
+
+.mastercard .circle--red {
+    background: #eb001b;
+}
+
+.mastercard .circle--yellow {
+    margin-left: -0.7rem;
+    background: rgba(255, 209, 0, 0.6);
+}
+
+.lds-hourglass {
   display: inline-block;
   position: relative;
   width: 70px;
@@ -673,9 +698,9 @@
                 // Display the best two cards in a separate container
                 let resultHTML = '<div class="best-card-container">';
                 resultHTML += '<h2>Best Card : </h2>';
-                resultHTML += '<div class="best-card"><h3>' + cashbacks[0].cardName + '</h3><p>Cashback Value: ₹' + cashbacks[0].cashbackValue + '</p></div>';
+                resultHTML += '<div class="best-card"><div class="card-info__right"><div class="mastercard"><div class="circle circle--red"></div><div class="circle circle--yellow"></div></div></div><h3>' + cashbacks[0].cardName + '</h3><p>Cashback Value: ₹' + cashbacks[0].cashbackValue + '</p></div>';
                 resultHTML += '<h2>2nd Best Card : </h2>';
-                resultHTML += '<div class="best-card"><h3>' + cashbacks[1].cardName + '</h3><p>Cashback Value: ₹' + cashbacks[1].cashbackValue + '</p></div>';
+                resultHTML += '<div class="best-card"><div class="card-info__right"><div class="mastercard"><div class="circle circle--red"></div><div class="circle circle--yellow"></div></div></div><h3>' + cashbacks[1].cardName + '</h3><p>Cashback Value: ₹' + cashbacks[1].cashbackValue + '</p></div>';
                 resultHTML += '</div>';
 
                 // Display the results
@@ -692,7 +717,7 @@
         // Display the result
         document.getElementById('result').innerHTML = resultHTML;
         document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 2500); // Simulating a 1-second delay (you can adjust this)
+            }, 2000); // Simulating a 1-second delay (you can adjust this)
         }
     </script>
 </body>
