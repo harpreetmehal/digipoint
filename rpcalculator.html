@@ -382,6 +382,7 @@
         <!-- Recent updates marquee -->
         <marquee direction="up" height="300" scrollamount="2" behavior="scroll">
             <h2>Recent updates</h2>
+            <li><b>New card added:</b> ICICI Rubyx / Sapphiro</li>
             <li><b>New card added:</b> HDFC Diners Black Metal</li>
             <li><b>New card feature:</b> Added weekday & weekend options for INDUSIND Legend</li>
             <li><b>New card added:</b> ICICI Coral RuPay credit card</li>
@@ -408,7 +409,7 @@
         <div id="bankHeaders">
             <h3>HDFC Cards</h3>
             <label for="hdfcdcb"><input id="hdfcdcb" type="checkbox" /> Diners Club Black Metal</label>
-            <label for="hdfc"><input id="hdfc" type="checkbox" /> HDFC Regalia</label>
+            <label for="hdfc"><input id="hdfc" type="checkbox" /> HDFC Regalia / Regalia Gold</label>
             <label for="hdfcinfinia"><input id="hdfcinfinia" type="checkbox" /> HDFC Infinia Metal</label>
             <label for="hdfcneu"><input id="hdfcneu" type="checkbox" /> Tata Neu Infinity HDFC</label>
 
@@ -426,6 +427,13 @@
                 <label for="iciciCoralRupay"> ICICI Coral RuPay : </label>
                 <label for="iciciCoralInsurance"><input type="radio" id="iciciCoralInsurance" name="iciciCoralPercent" value="1"/> Insurance/Utilities</label>
                 <label for="iciciCoralOther"><input type="radio" id="iciciCoralOther" name="iciciCoralPercent" value="2" checked="true"/> All other spends</label>
+            </div>
+            <div id="iciciAmazonPercentContainer">
+                <input type="checkbox" id="iciciRubyx" name="iciciRubyx" />
+                <label for="iciciRubyx"> ICICI Rubyx / Sapphiro : </label>
+                <label for="iciciRubyxDom"><input type="radio" id="iciciRubyxDom" name="iciciRubyxPercent" value="2" checked="true"/> Domestic</label>
+                <label for="iciciRubyxInsurance"><input type="radio" id="iciciRubyxInsurance" name="iciciRubyxPercent" value="1"/> Insurance/Utilities</label>
+                <label for="iciciRubyxIntl"><input type="radio" id="iciciRubyxIntl" name="iciciRubyxPercent" value="4"/> International</label>
             </div>
             <label for="iciciCoral"><input id="iciciCoral" type="checkbox" /> ICICI CORAL</label>
 
@@ -498,7 +506,7 @@
                 <input type="checkbox" id="rbl" name="rbl" />
                 <label for="rbl"> RBL Shoprite : </label>
                 <label for="rblothr"><input type="radio" id="rblothr" name="rblPercent" value="1" checked="true"/> Other spends</label>
-                <label for="rblgroc"><input type="radio" id="rblgroc" name="rblPercent" value="5" /> Grocery</label>
+                <label for="rblgroc"><input type="radio" id="rblgroc" name="rblPercent" value="20" /> Grocery</label>
             </div>
             <h3>Standard Chartered Cards</h3>
             <label for="stdchartered"><input id="stdchartered" type="checkbox" /> Standard Chartered Platinum Rewards [Dining/Fuel]</label>
@@ -550,10 +558,11 @@
     
             // Card details
             const cards = {
-                hdfc: { name: "HDFC Regalia", spendToEarnRP: 37.5, rpValue: 0.5 },
+                hdfc: { name: "HDFC Regalia / Regalia Gold", spendToEarnRP: 37.5, rpValue: 0.5 },
                 iciciAmazon: { name: "ICICI AMAZON", spendToEarnRP: 100, rpValue: 1 },
                 iciciCoral: { name: "ICICI CORAL", spendToEarnRP: 50, rpValue: 0.25 },
                 iciciCoralRupay: { name: "ICICI Coral Rupay", spendToEarnRP: 100, rpValue: 0.25 },
+                iciciRubyx: { name: "ICICI Rubyx / Sapphiro", spendToEarnRP: 50, rpValue: 0.25 },
                 hsbc: { name: "HSBC Platinum", spendToEarnRP: 75, rpValue: 0.2 },
                 oneCard: { name: "One Card", spendToEarnRP: 50, rpValue: 0.125 },
                 citibank: { name: "Citibank Indian Oil (FUEL)", spendToEarnRP: 37.5, rpValue: 1 },
@@ -604,37 +613,38 @@
             // Show loading spinner
             document.getElementById('result').innerHTML = '<div class="lds-hourglass"></div>';
             
-            function calculateEarnedRP(cardId, amount, specificData) {
-                let earnedRP;
+            // function calculateEarnedRP(cardId, amount, specificData) {
+            //     let earnedRP;
 
-                if (cardId === 'iciciAmazon') {
-                    const iciciAmazonPercent = specificData.percent / 100;
-                    earnedRP = amount * iciciAmazonPercent;
-                } else if (cardId === 'rbl') {
-                    const rblPercent = specificData.percent / 100;
-                    if (specificData.grocery) {
-                        earnedRP = amount * rblPercent * 4;
-                    } else {
-                        earnedRP = amount * rblPercent;
-                    }
-                } else if (cardId === 'sbi') {
-                const rblPercent = specificData.percent / 100;
-                earnedRP = amount * sbiPercent;
-                }
-                else if (cardId === 'iciciCoralRupay') {
-                const iciciCoralPercent = specificData.percent / 100;
-                if (specificData.insurance) {
-                    earnedRP = amount * iciciCoralPercent; // Assuming 4x reward points for Insurance
-                } else {
-                    earnedRP = amount * iciciCoralPercent * 2;
-                }
-            }
-                else {
-                    earnedRP = amount / cards[cardId].spendToEarnRP;
-                }
+            //     if (cardId === 'iciciAmazon') {
+            //         const iciciAmazonPercent = specificData.percent / 100;
+            //         earnedRP = amount * iciciAmazonPercent;
+            //     } else if (cardId === 'rbl') {
+            //         const rblPercent = specificData.percent / 100;
+            //         if (specificData.grocery) {
+            //             earnedRP = amount * rblPercent * 4;
+            //         } else {
+            //             earnedRP = amount * rblPercent;
+            //         }
+            //     } else if (cardId === 'sbi') {
+            //     const rblPercent = specificData.percent / 100;
+            //     earnedRP = amount * sbiPercent;
+            //     }
+            //     else if (cardId === 'iciciCoralRupay') 
+            //     {
+            //     const iciciCoralPercent = specificData.percent / 100;
+            //     if (specificData.insurance) {
+            //         earnedRP = amount * iciciCoralPercent; // Assuming 4x reward points for Insurance
+            //     } else {
+            //         earnedRP = amount * iciciCoralPercent * 2;
+            //     }
+            // }
+            //     else {
+            //         earnedRP = amount / cards[cardId].spendToEarnRP;
+            //     }
 
-                return earnedRP;
-            }
+            //     return earnedRP;
+            // }
             // Simulate a delay to show the loading spinner (you can replace this with your actual calculation logic)
             setTimeout(() => {
                 // Calculate cashback and reward points for each selected card
@@ -666,7 +676,7 @@
                     }
                     else if (cardId === 'rbl' && document.getElementById('rblgroc').checked) {
                         const rblPercent = parseFloat(document.querySelector('input[name="rblPercent"]:checked').value) / 100;
-                        earnedRP = amount * rblPercent * 4;
+                        earnedRP = amount * rblPercent;
                     }
                     else if (cardId === 'sbi' && document.getElementById('sbioffline').checked) {
                         const sbiPercent = parseFloat(document.querySelector('input[name="sbiPercent"]:checked').value) / 100;
@@ -683,6 +693,18 @@
                     else if (cardId === 'iciciCoralRupay' && document.getElementById('iciciCoralOther').checked) {
                         const iciciCoralPercent = parseFloat(document.querySelector('input[name="iciciCoralPercent"]:checked').value) / 100;
                         earnedRP = amount * iciciCoralPercent;
+                    }
+                    else if (cardId === 'iciciRubyx' && document.getElementById('iciciRubyxInsurance').checked) {
+                        const iciciRubyxPercent = parseFloat(document.querySelector('input[name="iciciRubyxPercent"]:checked').value) / 100;
+                        earnedRP = amount * iciciRubyxPercent; 
+                    }
+                    else if (cardId === 'iciciRubyx' && document.getElementById('iciciRubyxDom').checked) {
+                        const iciciRubyxPercent = parseFloat(document.querySelector('input[name="iciciRubyxPercent"]:checked').value) / 100;
+                        earnedRP = amount * iciciRubyxPercent;
+                    }
+                    else if (cardId === 'iciciRubyx' && document.getElementById('iciciRubyxIntl').checked) {
+                        const iciciRubyxPercent = parseFloat(document.querySelector('input[name="iciciRubyxPercent"]:checked').value) / 100;
+                        earnedRP = amount * iciciRubyxPercent;
                     }
                     else if (cardId === 'indusind' && document.getElementById('indusindWeekday').checked)
                     {
