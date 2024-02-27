@@ -152,13 +152,13 @@
         font-weight: bold;
         margin-bottom: 15px; /* Adjust the margin for better visibility */
         }
-        #iciciAmazonPercentContainer {
+        #labelcontainer {
             display: flex;
             align-items: center;
             margin-top: 10px;
         }
 
-        #iciciAmazonPercentContainer label {
+        #labelcontainer label {
             margin-right: 10px;
         }
         #centered-image {
@@ -382,13 +382,13 @@
         <!-- Recent updates marquee -->
         <marquee direction="up" height="300" scrollamount="2" behavior="scroll">
             <h2>Recent updates</h2>
+            <li><b>New card added:</b> SBI Cashback credit card</li>
             <li><b>New card added:</b> ICICI Rubyx / Sapphiro</li>
             <li><b>New card added:</b> HDFC Diners Black Metal</li>
             <li><b>New card feature:</b> Added weekday & weekend options for INDUSIND Legend</li>
             <li><b>New card added:</b> ICICI Coral RuPay credit card</li>
             <li><b>New card added:</b> Standard Chartered Platinum</li>
             <li><b>New card added:</b> SBI Prime</li>
-            <li><b>New card added:</b> Axis Bank other variants</li>
             <!-- Add more updates as needed -->
         </marquee>
     </div>
@@ -414,7 +414,7 @@
             <label for="hdfcneu"><input id="hdfcneu" type="checkbox" /> Tata Neu Infinity HDFC</label>
 
             <h3>ICICI Cards</h3>
-            <div id="iciciAmazonPercentContainer">
+            <div id="labelcontainer">
                 <input type="checkbox" id="iciciAmazon" name="iciciAmazon" />
                 <label for="iciciAmazon"> ICICI AMAZON :</label>
                 <label for="iciciAmazon1"><input type="radio" id="iciciAmazon1" name="iciciAmazonPercent" value="1" /> 1%</label>
@@ -422,13 +422,13 @@
                 <label for="iciciAmazon3"><input type="radio" id="iciciAmazon3" name="iciciAmazonPercent" value="3" /> 3%</label>
                 <label for="iciciAmazon5"><input type="radio" id="iciciAmazon5" name="iciciAmazonPercent" value="5" checked="true"/> 5%</label>
             </div>
-            <div id="iciciAmazonPercentContainer">
+            <div id="labelcontainer">
                 <input type="checkbox" id="iciciCoralRupay" name="iciciCoralRupay" />
                 <label for="iciciCoralRupay"> ICICI Coral RuPay : </label>
                 <label for="iciciCoralInsurance"><input type="radio" id="iciciCoralInsurance" name="iciciCoralPercent" value="1"/> Insurance/Utilities</label>
                 <label for="iciciCoralOther"><input type="radio" id="iciciCoralOther" name="iciciCoralPercent" value="2" checked="true"/> All other spends</label>
             </div>
-            <div id="iciciAmazonPercentContainer">
+            <div id="labelcontainer">
                 <input type="checkbox" id="iciciRubyx" name="iciciRubyx" />
                 <label for="iciciRubyx"> ICICI Rubyx / Sapphiro : </label>
                 <label for="iciciRubyxDom"><input type="radio" id="iciciRubyxDom" name="iciciRubyxPercent" value="2" checked="true"/> Domestic</label>
@@ -483,7 +483,13 @@
             <label for="idfcwealth"><input id="idfcwealth" type="checkbox" /> IDFC First Wealth</label>
 
             <h3>SBI Cards</h3>
-            <div id="iciciAmazonPercentContainer">
+            <div id="labelcontainer">
+                <input type="checkbox" id="sbicashback" name="sbicashback" />
+                <label for="sbicashback"> SBI Cashback : </label>
+                <label for="sbicashoffline"><input type="radio" id="sbicashoffline" name="sbicashPercent" value="1" checked="true"/> Offline</label>
+                <label for="sbicashonline"><input type="radio" id="sbicashonline" name="sbicashPercent" value="5" /> Online</label>
+            </div>
+            <div id="labelcontainer">
                 <input type="checkbox" id="sbi" name="sbi" />
                 <label for="sbi"> SBI SimplyClick : </label>
                 <label for="sbioffline"><input type="radio" id="sbioffline" name="sbiPercent" value="1" checked="true"/> Offline</label>
@@ -493,8 +499,8 @@
             <label for="sbiprime"><input id="sbiprime" type="checkbox" /> SBI Prime</label>
 
             <h3>INDUSIND Cards</h3>
-            <div id="iciciAmazonPercentContainer">
-                <label for="indusind"><input id="indusind" type="checkbox" /> Indusind Legend</label>
+            <div id="labelcontainer">
+                <label for="indusind"><input id="indusind" type="checkbox" /> Indusind Legend : </label>
                 <input type="radio" id="indusindWeekday" name="indusindWeekdayWeekend" value="weekday" checked>
                 <label for="indusindWeekday">Weekday</label>
                 <input type="radio" id="indusindWeekend" name="indusindWeekdayWeekend" value="weekend">
@@ -502,7 +508,7 @@
             </div>
             
             <h3>RBL Cards</h3>
-            <div id="iciciAmazonPercentContainer">
+            <div id="labelcontainer">
                 <input type="checkbox" id="rbl" name="rbl" />
                 <label for="rbl"> RBL Shoprite : </label>
                 <label for="rblothr"><input type="radio" id="rblothr" name="rblPercent" value="1" checked="true"/> Other spends</label>
@@ -569,6 +575,7 @@
                 idfcSelect3: { name: "IDFC First Select - 3x", spendToEarnRP: 41.66, rpValue: 0.25 },
                 idfcSelect6: { name: "IDFC First Select - 6x", spendToEarnRP: 20.833, rpValue: 0.25 },
                 sbi: { name: "SBI SimplyClick", spendToEarnRP: 100, rpValue: 0.25 },
+                sbicashback: { name: "SBI Cashback", spendToEarnRP: 100, rpValue: 1 },
                 sbiprime: { name: "SBI Prime [Dining/Groceries/Movies]", spendToEarnRP: 10, rpValue: 0.25 },
                 indusind: { name: "Indusind Legend [2x on weekends]", spendToEarnRP: 100, rpValue: 0.75 },
                 rbl: { name: "RBL Shoprite", spendToEarnRP: 100, rpValue: 0.25 },
@@ -685,6 +692,14 @@
                     else if (cardId === 'sbi' && document.getElementById('sbionline').checked) {
                         const sbiPercent = parseFloat(document.querySelector('input[name="sbiPercent"]:checked').value) / 100;
                         earnedRP = amount * sbiPercent;
+                    }
+                    else if (cardId === 'sbicashback' && document.getElementById('sbicashoffline').checked) {
+                        const sbicashPercent = parseFloat(document.querySelector('input[name="sbicashPercent"]:checked').value) / 100;
+                        earnedRP = amount * sbicashPercent;
+                    }
+                    else if (cardId === 'sbicashback' && document.getElementById('sbicashonline').checked) {
+                        const sbicashPercent = parseFloat(document.querySelector('input[name="sbicashPercent"]:checked').value) / 100;
+                        earnedRP = amount * sbicashPercent;
                     } 
                     else if (cardId === 'iciciCoralRupay' && document.getElementById('iciciCoralInsurance').checked) {
                         const iciciCoralPercent = parseFloat(document.querySelector('input[name="iciciCoralPercent"]:checked').value) / 100;
