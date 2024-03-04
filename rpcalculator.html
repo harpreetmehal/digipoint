@@ -406,36 +406,6 @@
     <form id="cardForm">
         <h2>Select Cards</h2>
         <div id="bankHeaders">
-            <h3>HDFC Cards</h3>
-            <label for="hdfcdcb"><input id="hdfcdcb" type="checkbox" /> Diners Club Black Metal</label>
-            <label for="hdfc"><input id="hdfc" type="checkbox" /> HDFC Regalia / Regalia Gold</label>
-            <label for="hdfcinfinia"><input id="hdfcinfinia" type="checkbox" /> HDFC Infinia Metal</label>
-            <label for="hdfcneu"><input id="hdfcneu" type="checkbox" /> Tata Neu Infinity HDFC</label>
-
-            <h3>ICICI Cards</h3>
-            <div id="labelcontainer">
-                <input type="checkbox" id="iciciAmazon" name="iciciAmazon" />
-                <label for="iciciAmazon"> ICICI AMAZON :</label>
-                <label for="iciciAmazon1"><input type="radio" id="iciciAmazon1" name="iciciAmazonPercent" value="1" /> 1%</label>
-                <label for="iciciAmazon2"><input type="radio" id="iciciAmazon2" name="iciciAmazonPercent" value="2" /> 2%</label>
-                <label for="iciciAmazon3"><input type="radio" id="iciciAmazon3" name="iciciAmazonPercent" value="3" /> 3%</label>
-                <label for="iciciAmazon5"><input type="radio" id="iciciAmazon5" name="iciciAmazonPercent" value="5" checked="true"/> 5%</label>
-            </div>
-            <div id="labelcontainer">
-                <input type="checkbox" id="iciciCoralRupay" name="iciciCoralRupay" />
-                <label for="iciciCoralRupay"> ICICI Coral RuPay : </label>
-                <label for="iciciCoralInsurance"><input type="radio" id="iciciCoralInsurance" name="iciciCoralPercent" value="1"/> Insurance/Utilities</label>
-                <label for="iciciCoralOther"><input type="radio" id="iciciCoralOther" name="iciciCoralPercent" value="2" checked="true"/> All other spends</label>
-            </div>
-            <div id="labelcontainer">
-                <input type="checkbox" id="iciciRubyx" name="iciciRubyx" />
-                <label for="iciciRubyx"> ICICI Rubyx / Sapphiro : </label>
-                <label for="iciciRubyxDom"><input type="radio" id="iciciRubyxDom" name="iciciRubyxPercent" value="2" checked="true"/> Domestic</label>
-                <label for="iciciRubyxInsurance"><input type="radio" id="iciciRubyxInsurance" name="iciciRubyxPercent" value="1"/> Insurance/Utilities</label>
-                <label for="iciciRubyxIntl"><input type="radio" id="iciciRubyxIntl" name="iciciRubyxPercent" value="4"/> International</label>
-            </div>
-            <label for="iciciCoral"><input id="iciciCoral" type="checkbox" /> ICICI CORAL</label>
-
             <h3>American Express Cards</h3>
             <!-- <label for="amexplat"><input id="amexplat" type="checkbox" /> American Express Platinum</label> -->
             <label for="amexplat">
@@ -468,34 +438,48 @@
             <label for="ioclAxis"><input id="ioclAxis" type="checkbox" /> Axis IOCL [FUEL]</label>
             <label for="axisRewards"><input id="axisRewards" type="checkbox" /> Axis Rewards</label>
             <label for="axisPrivilege"><input id="axisPrivilege" type="checkbox" /> Axis Privilege</label>
-
-            <h3>HSBC Cards</h3>
-            <label for="hsbc"><input id="hsbc" type="checkbox" /> HSBC Platinum</label>
             
             <h3>Citibank Cards</h3>
             <label for="citibank"><input id="citibank" type="checkbox" /> Citibank Indian Oil (FUEL)</label>
             
+            <h3>HDFC Cards</h3>
+            <label for="hdfcdcb"><input id="hdfcdcb" type="checkbox" /> Diners Club Black Metal</label>
+            <label for="hdfc"><input id="hdfc" type="checkbox" /> HDFC Regalia / Regalia Gold</label>
+            <label for="hdfcinfinia"><input id="hdfcinfinia" type="checkbox" /> HDFC Infinia Metal</label>
+            <label for="hdfcneu"><input id="hdfcneu" type="checkbox" /> Tata Neu Infinity HDFC</label>
+            
+            <h3>HSBC Cards</h3>
+            <label for="hsbc"><input id="hsbc" type="checkbox" /> HSBC Platinum</label>
+            
+            <h3>ICICI Cards</h3>
+            <div id="labelcontainer">
+                <input type="checkbox" id="iciciAmazon" name="iciciAmazon" />
+                <label for="iciciAmazon"> ICICI AMAZON :</label>
+                <label for="iciciAmazon1"><input type="radio" id="iciciAmazon1" name="iciciAmazonPercent" value="1" checked="true"/> 1%</label>
+                <label for="iciciAmazon2"><input type="radio" id="iciciAmazon2" name="iciciAmazonPercent" value="2" /> 2%</label>
+                <label for="iciciAmazon3"><input type="radio" id="iciciAmazon3" name="iciciAmazonPercent" value="3" /> 3%</label>
+                <label for="iciciAmazon5"><input type="radio" id="iciciAmazon5" name="iciciAmazonPercent" value="5" /> 5%</label>
+            </div>
+            <div id="labelcontainer">
+                <input type="checkbox" id="iciciCoralRupay" name="iciciCoralRupay" />
+                <label for="iciciCoralRupay"> ICICI Coral RuPay : </label>
+                <label for="iciciCoralInsurance"><input type="radio" id="iciciCoralInsurance" name="iciciCoralPercent" value="1"/> Insurance/Utilities</label>
+                <label for="iciciCoralOther"><input type="radio" id="iciciCoralOther" name="iciciCoralPercent" value="2" checked="true"/> All other spends</label>
+            </div>
+            <div id="labelcontainer">
+                <input type="checkbox" id="iciciRubyx" name="iciciRubyx" />
+                <label for="iciciRubyx"> ICICI Rubyx / Sapphiro : </label>
+                <label for="iciciRubyxDom"><input type="radio" id="iciciRubyxDom" name="iciciRubyxPercent" value="2" checked="true"/> Domestic</label>
+                <label for="iciciRubyxInsurance"><input type="radio" id="iciciRubyxInsurance" name="iciciRubyxPercent" value="1"/> Insurance/Utilities</label>
+                <label for="iciciRubyxIntl"><input type="radio" id="iciciRubyxIntl" name="iciciRubyxPercent" value="4"/> International</label>
+            </div>
+            <label for="iciciCoral"><input id="iciciCoral" type="checkbox" /> ICICI CORAL</label>
+
             <h3>IDFC Cards</h3>
             <label for="idfcSelect3"><input id="idfcSelect3" type="checkbox" /> IDFC First Select (3x - Offline)</label>
             <label for="idfcSelect6"><input id="idfcSelect6" type="checkbox" /> IDFC First Select (6x - Online)</label>
             <label for="idfcvistara"><input id="idfcvistara" type="checkbox" /> Club Vistara IDFC First</label>
             <label for="idfcwealth"><input id="idfcwealth" type="checkbox" /> IDFC First Wealth</label>
-
-            <h3>SBI Cards</h3>
-            <div id="labelcontainer">
-                <input type="checkbox" id="sbicashback" name="sbicashback" />
-                <label for="sbicashback"> SBI Cashback : </label>
-                <label for="sbicashoffline"><input type="radio" id="sbicashoffline" name="sbicashPercent" value="1" checked="true"/> Offline</label>
-                <label for="sbicashonline"><input type="radio" id="sbicashonline" name="sbicashPercent" value="5" /> Online</label>
-            </div>
-            <div id="labelcontainer">
-                <input type="checkbox" id="sbi" name="sbi" />
-                <label for="sbi"> SBI SimplyClick : </label>
-                <label for="sbioffline"><input type="radio" id="sbioffline" name="sbiPercent" value="1" checked="true"/> Offline</label>
-                <label for="sbionline"><input type="radio" id="sbionline" name="sbiPercent" value="5" /> Online</label>
-            </div>
-            <label for="sbisimplysave"><input id="sbisimplysave" type="checkbox" /> SBI SimplySave</label>
-            <label for="sbiprime"><input id="sbiprime" type="checkbox" /> SBI Prime</label>
 
             <h3>INDUSIND Cards</h3>
             <div id="labelcontainer">
@@ -505,14 +489,31 @@
                 <input type="radio" id="indusindWeekend" name="indusindWeekdayWeekend" value="weekend">
                 <label for="indusindWeekend">Weekend</label>
             </div>
-            
+
             <h3>RBL Cards</h3>
             <div id="labelcontainer">
                 <input type="checkbox" id="rbl" name="rbl" />
-                <label for="rbl"> RBL Shoprite : </label>
+                <label for="rbl">RBL Shoprite : </label>
                 <label for="rblothr"><input type="radio" id="rblothr" name="rblPercent" value="1" checked="true"/> Other spends</label>
                 <label for="rblgroc"><input type="radio" id="rblgroc" name="rblPercent" value="20" /> Grocery</label>
             </div>
+            
+            <h3>SBI Cards</h3>
+            <div id="labelcontainer">
+                <input type="checkbox" id="sbicashback" name="sbicashback" />
+                <label for="sbicashback">SBI Cashback : </label>
+                <label for="sbicashoffline"><input type="radio" id="sbicashoffline" name="sbicashPercent" value="1" checked="true"/> Offline</label>
+                <label for="sbicashonline"><input type="radio" id="sbicashonline" name="sbicashPercent" value="5" /> Online</label>
+            </div>
+            <div id="labelcontainer">
+                <input type="checkbox" id="sbi" name="sbi" />
+                <label for="sbi">SBI SimplyClick : </label>
+                <label for="sbioffline"><input type="radio" id="sbioffline" name="sbiPercent" value="1" checked="true"/> Offline</label>
+                <label for="sbionline"><input type="radio" id="sbionline" name="sbiPercent" value="5" /> Online</label>
+            </div>
+            <label for="sbisimplysave"><input id="sbisimplysave" type="checkbox" /> SBI SimplySave</label>
+            <label for="sbiprime"><input id="sbiprime" type="checkbox" /> SBI Prime</label>
+            
             <h3>Standard Chartered Cards</h3>
             <label for="stdchartered"><input id="stdchartered" type="checkbox" /> Standard Chartered Platinum Rewards [Dining/Fuel]</label>
 
@@ -619,39 +620,6 @@
             // Show loading spinner
             document.getElementById('result').innerHTML = '<div class="lds-hourglass"></div>';
             
-            // function calculateEarnedRP(cardId, amount, specificData) {
-            //     let earnedRP;
-
-            //     if (cardId === 'iciciAmazon') {
-            //         const iciciAmazonPercent = specificData.percent / 100;
-            //         earnedRP = amount * iciciAmazonPercent;
-            //     } else if (cardId === 'rbl') {
-            //         const rblPercent = specificData.percent / 100;
-            //         if (specificData.grocery) {
-            //             earnedRP = amount * rblPercent * 4;
-            //         } else {
-            //             earnedRP = amount * rblPercent;
-            //         }
-            //     } else if (cardId === 'sbi') {
-            //     const rblPercent = specificData.percent / 100;
-            //     earnedRP = amount * sbiPercent;
-            //     }
-            //     else if (cardId === 'iciciCoralRupay') 
-            //     {
-            //     const iciciCoralPercent = specificData.percent / 100;
-            //     if (specificData.insurance) {
-            //         earnedRP = amount * iciciCoralPercent; // Assuming 4x reward points for Insurance
-            //     } else {
-            //         earnedRP = amount * iciciCoralPercent * 2;
-            //     }
-            // }
-            //     else {
-            //         earnedRP = amount / cards[cardId].spendToEarnRP;
-            //     }
-
-            //     return earnedRP;
-            // }
-            // Simulate a delay to show the loading spinner (you can replace this with your actual calculation logic)
             setTimeout(() => {
                 // Calculate cashback and reward points for each selected card
                 let cashbacks = [];
