@@ -381,6 +381,7 @@
         <!-- Recent updates marquee -->
         <marquee direction="up" height="300" scrollamount="2" behavior="scroll">
             <h2>Recent updates</h2>
+            <li><b>New card added:</b> Axis Magnus credit card</li>
             <li><b>New card added:</b> SBI Cashback credit card</li>
             <li><b>New card added:</b> ICICI Rubyx / Sapphiro</li>
             <li><b>New card added:</b> HDFC Diners Black Metal</li>
@@ -438,7 +439,21 @@
             <label for="ioclAxis"><input id="ioclAxis" type="checkbox" /> Axis IOCL [FUEL]</label>
             <label for="axisRewards"><input id="axisRewards" type="checkbox" /> Axis Rewards</label>
             <label for="axisPrivilege"><input id="axisPrivilege" type="checkbox" /> Axis Privilege</label>
-            
+            <div id="labelcontainer">
+                <input type="checkbox" id="axisMagnus" name="axisMagnus" />
+                <label for="axisMagnus"> Axis Magnus :  </label>
+                <label for="axisMagnusnormal"><input type="radio" id="axisMagnusnormal" name="axisMagnusPercent" checked="true"/> Normal spends</label>
+                <label for="axisMagnusportal"><input type="radio" id="axisMagnusportal" name="axisMagnusPercent" /> Trave EDGE portal</label>
+                <span class="info-icon" id="amex-info-icon-magnus" onmouseover="showInfoBox('magnus')" onmouseout="hideInfoBox('magnus')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Minimalist_info_Icon.png" alt="Info Icon" width="15" height="15"/>
+                </span>
+            </div>
+            <div class="info-box" id="amex-info-box-magnus">12 points per Rs. 200 spent (up to Rs. 1.5 Lakh)
+                <br>35 points per Rs. 200 spent (above Rs. 1.5 Lakh)
+                <br>60 points per Rs. 200 spent on TravelEDGE (up to Rs. 2 Lakh)
+                <br>35 points per Rs. 200 spent on TravelEDGE (above Rs. 2 Lakh)
+            </div>
+
             <h3>Citibank Cards</h3>
             <label for="citibank"><input id="citibank" type="checkbox" /> Citibank Indian Oil (FUEL)</label>
             
@@ -595,6 +610,7 @@
                 ioclAxis: { name: " Axis IOCL [FUEL]", spendToEarnRP: 100, rpValue: 0.2 },
                 axisRewards: { name: "Axis Rewards", spendToEarnRP: 62.5, rpValue: 0.2 },
                 axisPrivilege: { name: "Axis Privilege", spendToEarnRP: 20, rpValue: 0.2 },
+                axisMagnus: { name: "Axis Magnus", spendToEarnRP: 16.666, rpValue: 0.2},
             };
     
             // Get selected cards
@@ -695,6 +711,12 @@
                     else if (cardId === 'indusind' && document.getElementById('indusindWeekend').checked) 
                     {
                         earnedRP = amount / cards[cardId].spendToEarnRP * 2;
+                    }
+                    else if (cardId === 'axisMagnus' && document.getElementById('axisMagnusnormal').checked) {
+                        earnedRP = amount / cards[cardId].spendToEarnRP;
+                    }
+                    else if (cardId === 'axisMagnus' && document.getElementById('axisMagnusportal').checked) {
+                        earnedRP = amount / cards[cardId].spendToEarnRP * 5;
                     }
                     else {
                         earnedRP = amount / card.spendToEarnRP;
