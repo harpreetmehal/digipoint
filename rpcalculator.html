@@ -371,10 +371,71 @@
         font-size: 15px;
         text-align: center;
     }
+    /* Navigation bar */
+    nav {
+    background-color: #bfc2c6;
+    padding: 4px;
+    display: col;
+    justify-content: center;
+    padding-bottom: 4px;
+}
+
+.navbar {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 95%;
+    transition: all 0.3s ease; /* Smooth transition */
+    font-family: Arial, sans-serif; /* Change font */
+    font-size: small;
+}
+
+.navbar-item {
+    margin: 2px 10px;
+    color: #ddd;
+    background-color: #a4a5a8;
+    border-radius: 10px;
+}
+
+.navbar-link {
+    color: #000000;
+    text-decoration: none;
+    padding: 5px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-link:hover {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    /* background-color: #818485; */
+    
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-item {
+        margin: 5px 0;
+    }
+}
     </style>
 </head>
 <body>
     <h1>Reward Points Calculator</h1>
+    <nav>
+        <ul class="navbar" style="list-style-type: none;">
+          <li class="navbar-item"><a href="https://digiipoint.blogspot.com/p/rent-payment-charges-and-rewards.html" class="navbar-link">Rent payment charges</a></li>
+          <li class="navbar-item"><a href="#" class="navbar-link">Credit Cards Info (Coming soon)</a></li>
+        </ul>
+      </nav>
     <div id="container">
         <img id="centered-image" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEihqdKoNpghZqbd98t9L2U6S5xjgGYNzV4r7-o441IugraiwyyjR2D1_dV75mN5Q587x1UpBJTEIO_bTFW8Dhuu0Odq-ec9rGJxsHYfyAqPoqeaQFHOLtcLtRoSGUNUfKk5JyJ0__KVi4PTKiCfxd5dXz1crAeXBkk3XrWezqrmwG_XM4jlwtSE9_FKSbg/s1600/_a04f19da-108c-4b10-9893-d8d2217af491.jpeg" alt="Description of the image" height="300" width="350">
 
