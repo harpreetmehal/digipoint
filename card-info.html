@@ -58,8 +58,92 @@
         text-decoration: none;
         cursor: pointer;
     }
+    .nav-links {
+            display: flex;
+            align-items: center;
+            background: #a2cdc5;
+            padding: 15px 15px;
+            border-radius: 8px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-links li {
+            list-style: none;
+            margin: 0 12px;
+        }
+
+        .nav-links li a {
+            position: relative;
+            color: #333;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 6px 0;
+            text-decoration: none;
+        }
+
+        .nav-links li a:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            width: 0%;
+            background: #2d6f6f;
+            border-radius: 12px;
+            transition: all 0.4s ease;
+        }
+
+        .nav-links li a:hover:before {
+            width: 100%;
+        }
+
+        .nav-links li.center a:before {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .nav-links li.upward a:before {
+            width: 100%;
+            bottom: -5px;
+            opacity: 0;
+        }
+
+        .nav-links li.upward a:hover:before {
+            bottom: 0px;
+            opacity: 1;
+        }
+
+        .nav-links li.forward a:before {
+            width: 100%;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s ease;
+        }
+
+        .nav-links li.forward a:hover:before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        /* Media Query for Mobile Devices */
+        @media (max-width: 600px) {
+        .nav-links {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .nav-links {
+            margin: 5px 0;
+        }
+    }
 </style>
 <body>
+    <nav>
+        <ul class="nav-links" style="list-style-type: none;">
+            <li class="upward"><a href="https://digiipoint.blogspot.com/p/credit-cards-rp-calculator.html">Back</a></li>
+            <li class="center"><a href="https://digiipoint.blogspot.com/p/rent-payment-charges-and-rewards.html">Rent payment charges</a></li>
+            <!-- <li class="center"><a href="#">Credit Cards Info (Coming soon)</a></li> -->
+        </ul>
+    </nav>
     <div class="container">
         <h1>Credit Cards</h1>
         <div class="filter-container">
