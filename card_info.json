@@ -1,0 +1,362 @@
+[
+    {
+        "bank": "State Bank of India (SBI)",
+        "name": "SBI Card Elite",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "500",
+        "annualfee": "500",
+        "forexfee": "1%",
+        "atmcharges": "200+GST"
+    },
+    {
+        "bank": "State Bank of India (SBI)",
+        "name": "SBI SimplyCLICK",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "State Bank of India (SBI)",
+        "name": "SBI SimplySAVE",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "State Bank of India (SBI)",
+        "name": "SBI Card PRIME",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "HDFC Bank",
+        "name": "HDFC Regalia Credit Card",
+        "imageurl": "https://www.hdfcbank.com/content/api/contentstream-id/723fb80a-2dde-42a3-9793-7ae1be57c87f/cdd80c6c-737c-4251-b0e1-b3ac8af3129a/Personal/Pay/Cards/Credit%20Card/Credit%20Card%20Landing%20Page/Credit%20Cards/Super%20Premium/Regalia%20Gold%20Credit%20Card/RG-Card%20Facia.png",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "HDFC Bank",
+        "name": "HDFC Diners Club Black",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "HDFC Bank",
+        "name": "HDFC Bank Millennia Credit Card",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "HDFC Bank",
+        "name": "HDFC Bank MoneyBack Credit Card",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "ICICI Bank",
+        "name": "ICICI Bank Coral Credit Card",
+        "imageurl": "https://www.paisabazaar.com/wp-content/uploads/2018/05/Capture.jpg",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "ICICI Bank",
+        "name": "ICICI Bank Amazon Pay Credit Card",
+        "imageurl": "https://m.media-amazon.com/images/G/31/img18/AmazonPay/Affordability/CBCC/New_CBCCcard_500x315._CB408517060_.png",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "ICICI Bank",
+        "name": "ICICI Bank Platinum Chip Credit Card",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "ICICI Bank",
+        "name": "ICICI Bank Rubyx Credit Card",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "Axis Bank",
+        "name": "Axis Bank Flipkart Credit Card",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "Axis Bank",
+        "name": "Axis Bank Vistara Credit Card",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "Axis Bank",
+        "name": "Axis Bank Neo Credit Card",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "Axis Bank",
+        "name": "Axis Bank Ace Credit Card",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "Citibank India",
+        "name": "Citibank Rewards Credit Card",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "Citibank India",
+        "name": "IndianOil Citi Credit Card",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "Citibank India",
+        "name": "Citi PremierMiles Credit Card",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "Citibank India",
+        "name": "Citi Cashback Credit Card",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "Kotak Mahindra Bank",
+        "name": "Kotak Royale Signature Credit Card",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "Kotak Mahindra Bank",
+        "name": "Kotak PVR Gold Credit Card",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "Kotak Mahindra Bank",
+        "name": "Kotak Delight Platinum Credit Card",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "Kotak Mahindra Bank",
+        "name": "Kotak Urbane Gold Credit Card",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "Standard Chartered Bank",
+        "name": "Standard Chartered Manhattan Platinum Credit Card",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "Standard Chartered Bank",
+        "name": "Standard Chartered Super Value Titanium Credit Card",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "Standard Chartered Bank",
+        "name": "Standard Chartered DigiSmart Credit Card",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "American Express (Amex)",
+        "name": "American Express Platinum Card",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "American Express (Amex)",
+        "name": "American Express Gold Card",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "American Express (Amex)",
+        "name": "American Express Membership Rewards Credit Card",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "HSBC Bank",
+        "name": "HSBC Visa Platinum Card",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "HSBC Bank",
+        "name": "HSBC Cashback Credit Card",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "HSBC Bank",
+        "name": "HSBC Premier Mastercard",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "IndusInd Bank",
+        "name": "IndusInd Bank Platinum Credit Card",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "IndusInd Bank",
+        "name": "IndusInd Bank Iconia Credit Card",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    },
+    {
+        "bank": "IndusInd Bank",
+        "name": "IndusInd Bank Pinnacle Credit Card",
+        "imageurl": "[Image URL]",
+        "details": "[Details]",
+        "joiningfee": "",
+        "annualfee": "",
+        "forexfee": "",
+        "atmcharges": ""
+    }
+]
