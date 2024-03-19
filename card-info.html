@@ -1,28 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-NR1YZCQFF4"></script>
+      <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() { dataLayer.push(arguments); }
+          gtag('js', new Date());
+  
+          gtag('config', 'G-NR1YZCQFF4');
+      </script>
+      <meta charset="UTF-8">
+      </meta>
+      <meta content="IE=edge" http-equiv="X-UA-Compatible">
+      </meta>
+      <meta content="width=device-width, initial-scale=1.0" name="viewport">
+      </meta>
+      <meta name="keywords"
+          content="credit cards,	credit card rewards,	credit card benefits,	credit card comparison,	best credit cards,	redeeming reward points,	maximizing credit card rewards,	loyalty programs,	points and miles,	HDFC Regalia,	American Express Platinum,	Axis Bank Reserve,	HSBC Platinum,	SBI SimplyClick,	Indusind Legend,	RBL Shoprite,	cashback,	APR (Annual Percentage Rate),	spending analysis,	financial planning,	reward points value,	spend-to-earn ratio,	card exclusions,	travel rewards credit cards,	online shopping rewards,	e-commerce cashback,	best credit cards for online shopping,	travel credit cards,	hotel rewards,	travel insurance,	budgeting tools,	money management,	personal finance tips,	cashback credit cards,	travel rewards cards,	business credit cards,	compare credit card rewards,	benefits vs. drawbacks,	features analysis,">
+      <!-- credit cards,	credit card rewards,	credit card benefits,	credit card comparison,	best credit cards,	redeeming reward points,	maximizing credit card rewards,	loyalty programs,	points and miles,	HDFC Regalia,	American Express Platinum,	Axis Bank Reserve,	HSBC Platinum,	SBI SimplyClick,	Indusind Legend,	RBL Shoprite,	cashback,	APR (Annual Percentage Rate),	spending analysis,	financial planning,	reward points value,	spend-to-earn ratio,	card exclusions,	travel rewards credit cards,	online shopping rewards,	e-commerce cashback,	best credit cards for online shopping,	travel credit cards,	hotel rewards,	travel insurance,	budgeting tools,	money management,	personal finance tips,	cashback credit cards,	travel rewards cards,	business credit cards,	compare credit card rewards,	benefits vs. drawbacks,	features analysis, ausvsnz, australia, newzealand, deepika padukone, bitcoin, earn money, chelsea, sundar pichai, google adsense, patanjali-->
+      <meta name="description"
+          content="Unlock the full potential of credit cards with our Reward Points Calculator. Compare, analyze, and maximize rewards, benefits, and cashback. Find the best credit cards for travel, online shopping, and more. Plan your financial journey with our tools and tips for effective money management. Your guide to optimizing credit card usage and loyalty programs.">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Credit Cards</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Credit Cards Info</title>
 </head>
 <style>
-/* styles.css */
+    /* styles.css */
+    h1 {
+        margin-top: 0;
+        text-align: center;
+    }
+
     .container {
         text-align: center;
         padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
-    
+
     .card {
         display: inline-block;
         margin: 10px;
-        padding: 10px;
-        border: 1px solid #ccc;
+        padding: 20px;
+        border: 1px solid #b1adad;
         cursor: pointer;
+        height: auto;
+        overflow: hidden;
         width: 200px;
         border-radius: 10px;
+        background-color: #aed5ce;
+        align-items: center;
     }
-    
+
+    .card img {
+        width: 100%;
+        height: auto;
+        align-items: center;
+    }
+
+    .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #card-details {
+        padding: 20px;
+        text-align: left;
+    }
+    .filter-container {
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    }
+    #bank-filter {
+    margin-left: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    }
+
     .modal {
         display: none;
         position: fixed;
@@ -32,10 +96,10 @@
         width: 100%;
         height: 100%;
         overflow: auto;
-        background-color: rgb(0,0,0);
-        background-color: rgba(0,0,0,0.4);
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
     }
-    
+
     .modal-content {
         background-color: #eff0f0;
         margin: 15% auto;
@@ -44,88 +108,101 @@
         width: 80%;
         border-radius: 12px;
     }
-    
+
     .close {
         color: #aaa;
         float: right;
         font-size: 28px;
         font-weight: bold;
     }
-    
+
     .close:hover,
     .close:focus {
         color: black;
         text-decoration: none;
         cursor: pointer;
     }
+
     .nav-links {
-            display: flex;
-            align-items: center;
-            background: #a2cdc5;
-            padding: 15px 15px;
-            border-radius: 8px;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-        }
+        display: flex;
+        align-items: center;
+        background: #a2cdc5;
+        padding: 15px 15px;
+        border-radius: 8px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
 
-        .nav-links li {
-            list-style: none;
-            margin: 0 12px;
-        }
+    .nav-links li {
+        list-style: none;
+        margin: 0 12px;
+    }
 
-        .nav-links li a {
-            position: relative;
-            color: #333;
-            font-size: 14px;
-            font-weight: 600;
-            padding: 6px 0;
-            text-decoration: none;
-        }
+    .nav-links li a {
+        position: relative;
+        color: #333;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 6px 0;
+        text-decoration: none;
+    }
 
-        .nav-links li a:before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 3px;
-            width: 0%;
-            background: #2d6f6f;
-            border-radius: 12px;
-            transition: all 0.4s ease;
-        }
+    .nav-links li a:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        width: 0%;
+        background: #2d6f6f;
+        border-radius: 12px;
+        transition: all 0.4s ease;
+    }
 
-        .nav-links li a:hover:before {
+    .nav-links li a:hover:before {
+        width: 100%;
+    }
+
+    .nav-links li.center a:before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .nav-links li.upward a:before {
+        width: 100%;
+        bottom: -5px;
+        opacity: 0;
+    }
+
+    .nav-links li.upward a:hover:before {
+        bottom: 0px;
+        opacity: 1;
+    }
+
+    .nav-links li.forward a:before {
+        width: 100%;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.4s ease;
+    }
+
+    .nav-links li.forward a:hover:before {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+    /* Mobile styles for screens with a maximum width of 600px */
+    @media (max-width: 600px) {
+        .card {
+            display: block;
             width: 100%;
+            height: auto;
         }
 
-        .nav-links li.center a:before {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .nav-links li.upward a:before {
+        .card img {
             width: 100%;
-            bottom: -5px;
-            opacity: 0;
+            height: auto;
         }
 
-        .nav-links li.upward a:hover:before {
-            bottom: 0px;
-            opacity: 1;
-        }
-
-        .nav-links li.forward a:before {
-            width: 100%;
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.4s ease;
-        }
-
-        .nav-links li.forward a:hover:before {
-            transform: scaleX(1);
-            transform-origin: left;
-        }
-        /* Media Query for Mobile Devices */
-        @media (max-width: 600px) {
         .nav-links {
             flex-direction: column;
             align-items: flex-start;
@@ -136,442 +213,444 @@
         }
     }
 </style>
+
 <body>
     <nav>
         <ul class="nav-links" style="list-style-type: none;">
             <li class="upward"><a href="https://digiipoint.blogspot.com/p/credit-cards-rp-calculator.html">Back</a></li>
-            <li class="center"><a href="https://digiipoint.blogspot.com/p/rent-payment-charges-and-rewards.html">Rent payment charges</a></li>
+            <li class="center"><a href="https://digiipoint.blogspot.com/p/rent-payment-charges-and-rewards.html">Rent
+                    payment charges</a></li>
             <!-- <li class="center"><a href="#">Credit Cards Info (Coming soon)</a></li> -->
         </ul>
     </nav>
+    <h1>Credit Cards</h1>
     <div class="container">
-        <h1>Credit Cards</h1>
         <div class="filter-container">
             <label for="bank-filter">Filter by Bank:</label>
             <select id="bank-filter">
                 <option value="all">All Banks</option>
                 <!-- Bank options will be dynamically added here -->
             </select>
-        <div class="cards-container"></div>
-    </div>
-
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div id="card-details"></div>
+            <div class="cards-container"></div>
         </div>
-    </div>
 
-    <script>
-    // script.js
-    document.addEventListener("DOMContentLoaded", function() {
-    const cardsContainer = document.querySelector('.cards-container');
-    const modal = document.getElementById('modal');
-    const cardDetails = document.getElementById('card-details');
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="card-details"></div>
+            </div>
+        </div>
 
-    // Sample JSON data
-    const creditCards = [
-    {
-        "bank": "State Bank of India (SBI)",
-        "name": "SBI Card Elite",
-        "imageurl": "https://www.paisabazaar.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2017/10/Elite-CS6-01.png.webp",
-        "details": "[Details]",
-        "joiningfee": "500",
-        "annualfee": "500",
-        "forexfee": "1%",
-        "atmcharges": "200+GST"
-    },
-    {
-        "bank": "State Bank of India (SBI)",
-        "name": "SBI SimplyCLICK",
-        "imageurl": "https://www.sbicard.com/sbi-card-en/assets/media/images/personal/credit-cards/value-savings/card-faces/simplyclick-card-face.png",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "State Bank of India (SBI)",
-        "name": "SBI SimplySAVE",
-        "imageurl": "https://www.sbicard.com/sbi-card-en/assets/media/images/personal/credit-cards/value-savings/card-faces/simplysave-card-face.png",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "State Bank of India (SBI)",
-        "name": "SBI Card PRIME",
-        "imageurl": "https://www.sbicard.com/sbi-card-en/assets/media/images/personal/credit-cards/rewards/card-faces/sbi-prime-cardface.png",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "HDFC Bank",
-        "name": "HDFC Regalia Credit Card",
-        "imageurl": "https://www.hdfcbank.com/content/api/contentstream-id/723fb80a-2dde-42a3-9793-7ae1be57c87f/cdd80c6c-737c-4251-b0e1-b3ac8af3129a/Personal/Pay/Cards/Credit%20Card/Credit%20Card%20Landing%20Page/Credit%20Cards/Super%20Premium/Regalia%20Gold%20Credit%20Card/RG-Card%20Facia.png",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "HDFC Bank",
-        "name": "HDFC Diners Club Black",
-        "imageurl": "https://www.hdfcbank.com/content/api/contentstream-id/723fb80a-2dde-42a3-9793-7ae1be57c87f/01add616-8c41-4a2d-8dfb-17fe80a4a3e6/Personal/Pay/Cards/Credit%20Card/Credit%20Card%20Landing%20Page/Credit%20Cards/Super%20Premium/Diners%20Club%20Black/Diners%20Final%20Cards_18123_Diners%20F.png",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "HDFC Bank",
-        "name": "HDFC Bank Millennia Credit Card",
-        "imageurl": "https://www.hdfcbank.com/content/api/contentstream-id/723fb80a-2dde-42a3-9793-7ae1be57c87f/a6470e7a-ddb5-4512-a4a9-d628c97eb24e/Personal/Pay/Cards/Millennia%20Cards/Millennia%20Credit%20Card/Millennia-CC_new.png",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "HDFC Bank",
-        "name": "HDFC Bank MoneyBack Credit Card",
-        "imageurl": "https://www.hdfcbank.com/content/api/contentstream-id/723fb80a-2dde-42a3-9793-7ae1be57c87f/d97ad03d-7b0e-4513-ba2d-85bd0e185038/Personal/Pay/Cards/Credit%20Card/Credit%20Card%20Landing%20Page/Credit%20Cards/Commercial/HDFC%20Bank%20MoneyBack/Cards-11123-MoneyBack+-264-x-167.png",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "ICICI Bank",
-        "name": "ICICI Bank Coral Credit Card",
-        "imageurl": "https://www.paisabazaar.com/wp-content/uploads/2018/05/Capture.jpg",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "ICICI Bank",
-        "name": "ICICI Bank Amazon Pay Credit Card",
-        "imageurl": "https://m.media-amazon.com/images/G/31/img18/AmazonPay/Affordability/CBCC/New_CBCCcard_500x315._CB408517060_.png",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "ICICI Bank",
-        "name": "ICICI Bank Platinum Chip Credit Card",
-        "imageurl": "https://www.icicibank.com/content/dam/icicibank/india/managed-assets/images/personal-banking-commercial-cards/corporate/corporate-platinum-card.png",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "ICICI Bank",
-        "name": "ICICI Bank Rubyx Credit Card",
-        "imageurl": "https://www.paisabazaar.com/wp-content/uploads/2019/01/ICICI-Rubyx-Credit-Card.jpg",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "Axis Bank",
-        "name": "Axis Bank Flipkart Credit Card",
-        "imageurl": "https://www.paisabazaar.com/wp-content/uploads/2019/10/axis-bank-ace-credit-card.jpg",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "Axis Bank",
-        "name": "Axis Bank Vistara Credit Card",
-        "imageurl": "https://www.paisabazaar.com/wp-content/uploads/2017/10/Axis-Bank-Vistara-Credit-Card.png",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "Axis Bank",
-        "name": "Axis Bank Neo Credit Card",
-        "imageurl": "https://assets.paymatrix.in/static/new_home/credit_card_images/axis_bank_neo_credit_card.png",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "Axis Bank",
-        "name": "Axis Bank Ace Credit Card",
-        "imageurl": "https://www.cardexpert.in/wp-content/uploads/2020/10/axis-bank-ace-credit-card-1.jpg",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "Citibank India",
-        "name": "Citibank Rewards Credit Card",
-        "imageurl": "https://www.forbes.com/advisor/wp-content/uploads/2021/10/96eb2f40-fb6b-11eb-bb36-9183285abe2c-1.png",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "Citibank India",
-        "name": "IndianOil Citi Credit Card",
-        "imageurl": "https://www.cdn.citibank.com/v1/ingcb/cbol/files/styles/convert_webp/public/images/2021/banner-indianoil-439x272-27092021.png.webp?_bust=2024-03-12T09-24-36-403Z",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "Citibank India",
-        "name": "Citi PremierMiles Credit Card",
-        "imageurl": "https://www.cdn.citibank.com/v1/ingcb/cbol/files/styles/convert_webp/public/premiermiles-card-380x240-13092022.png.webp?_bust=2024-03-12T09-24-36-403Z",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "Citibank India",
-        "name": "Citi Cashback Credit Card",
-        "imageurl": "https://www.cdn.citibank.com/v1/ingcb/cbol/files/styles/convert_webp/public/cashback-card-380x240-13092022.png.webp?_bust=2024-03-12T09-24-36-403Z",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "Kotak Mahindra Bank",
-        "name": "Kotak Royale Signature Credit Card",
-        "imageurl": "https://www.kotak.com/content/dam/Kotak/herosliderbanner/Kotak-Royale-Signature-Card.jpg",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "Kotak Mahindra Bank",
-        "name": "Kotak PVR Gold Credit Card",
-        "imageurl": "https://www.kotak.com/content/dam/Kotak/herosliderbanner/pvr-gold-cc-d.jpg",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "Kotak Mahindra Bank",
-        "name": "Kotak Delight Platinum Credit Card",
-        "imageurl": "https://www.kotak.com/content/dam/Kotak/herosliderbanner/Delight-Card-platinum.jpg",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "Kotak Mahindra Bank",
-        "name": "Kotak Urbane Gold Credit Card",
-        "imageurl": "https://www.kotak.com/content/dam/Kotak/herosliderbanner/Kotak-Urbane-Gold-Card.jpg",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "Standard Chartered Bank",
-        "name": "Standard Chartered Manhattan Platinum Credit Card",
-        "imageurl": "https://av.sc.com/ae/content/images/ae-manhattan-rewards-plus-credit-card-360-reward.png",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "Standard Chartered Bank",
-        "name": "Standard Chartered DigiSmart Credit Card",
-        "imageurl": "https://apply.standardchartered.co.in/site/assets/files/28243/smart-card-banner-300x189_2.jpg",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "American Express (Amex)",
-        "name": "American Express Platinum Card",
-        "imageurl": "https://icm.aexp-static.com/Internet/internationalcardshop/en_in/images/cards/Platinum_Travel_Card.png",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "American Express (Amex)",
-        "name": "American Express Gold Card",
-        "imageurl": "https://icm.aexp-static.com/Internet/internationalcardshop/en_in/images/cards/Gold_Card.png",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "American Express (Amex)",
-        "name": "American Express Membership Rewards Credit Card",
-        "imageurl": "https://icm.aexp-static.com/Internet/internationalcardshop/en_in/images/cards/Membership_Rewards_Card.png",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "HSBC Bank",
-        "name": "HSBC Visa Platinum Card",
-        "imageurl": "https://www.hsbc.co.in/content/dam/hsbc/in/images/credit-card/11368-virat-platinum-card-300x198.png",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "HSBC Bank",
-        "name": "HSBC Cashback Credit Card",
-        "imageurl": "https://www.hsbc.co.in/content/dam/hsbc/in/images/credit-card/11779-virat-cashback-card-no-change-300x198.png",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "HSBC Bank",
-        "name": "HSBC Premier Mastercard",
-        "imageurl": "https://www.hsbc.co.in/content/dam/hsbc/in/images/credit-card/16-9/11597-premier-card-889x500.jpg",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "IndusInd Bank",
-        "name": "IndusInd Bank Platinum Credit Card",
-        "imageurl": "https://www.indusind.com/content/dam/indusind-platform-images/productCategory/desktopImage/creditCard/Platinum_card-image_396x257px.png",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "IndusInd Bank",
-        "name": "IndusInd Bank Iconia Credit Card",
-        "imageurl": "https://www.indusind.com/content/dam/indusind-platform-images/productCategory/desktopImage/creditCard/iconia_-card_american_express.jpg",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    },
-    {
-        "bank": "IndusInd Bank",
-        "name": "IndusInd Bank Pinnacle Credit Card",
-        "imageurl": "https://www.indusind.com/content/dam/indusind-platform-images/productCategory/desktopImage/creditCard/IB_Pinnacle-Card-Front.png",
-        "details": "[Details]",
-        "joiningfee": "",
-        "annualfee": "",
-        "forexfee": "",
-        "atmcharges": ""
-    }
-];
+        <script>
+            // script.js
+            document.addEventListener("DOMContentLoaded", function () {
+                const cardsContainer = document.querySelector('.cards-container');
+                const modal = document.getElementById('modal');
+                const cardDetails = document.getElementById('card-details');
 
-    // Extract unique bank names from the JSON data
-    const uniqueBanks = [...new Set(creditCards.map(card => card.bank))];
+                // Sample JSON data
+                const creditCards = [
+                    {
+                        "bank": "State Bank of India (SBI)",
+                        "name": "SBI Card Elite",
+                        "imageurl": "https://www.paisabazaar.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2017/10/Elite-CS6-01.png.webp",
+                        "details": "[Details]",
+                        "joiningfee": "500",
+                        "annualfee": "500",
+                        "forexfee": "1%",
+                        "atmcharges": "200+GST"
+                    },
+                    {
+                        "bank": "State Bank of India (SBI)",
+                        "name": "SBI SimplyCLICK",
+                        "imageurl": "https://www.sbicard.com/sbi-card-en/assets/media/images/personal/credit-cards/value-savings/card-faces/simplyclick-card-face.png",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "State Bank of India (SBI)",
+                        "name": "SBI SimplySAVE",
+                        "imageurl": "https://www.sbicard.com/sbi-card-en/assets/media/images/personal/credit-cards/value-savings/card-faces/simplysave-card-face.png",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "State Bank of India (SBI)",
+                        "name": "SBI Card PRIME",
+                        "imageurl": "https://www.sbicard.com/sbi-card-en/assets/media/images/personal/credit-cards/rewards/card-faces/sbi-prime-cardface.png",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "HDFC Bank",
+                        "name": "HDFC Regalia Credit Card",
+                        "imageurl": "https://www.hdfcbank.com/content/api/contentstream-id/723fb80a-2dde-42a3-9793-7ae1be57c87f/cdd80c6c-737c-4251-b0e1-b3ac8af3129a/Personal/Pay/Cards/Credit%20Card/Credit%20Card%20Landing%20Page/Credit%20Cards/Super%20Premium/Regalia%20Gold%20Credit%20Card/RG-Card%20Facia.png",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "HDFC Bank",
+                        "name": "HDFC Diners Club Black",
+                        "imageurl": "https://www.hdfcbank.com/content/api/contentstream-id/723fb80a-2dde-42a3-9793-7ae1be57c87f/01add616-8c41-4a2d-8dfb-17fe80a4a3e6/Personal/Pay/Cards/Credit%20Card/Credit%20Card%20Landing%20Page/Credit%20Cards/Super%20Premium/Diners%20Club%20Black/Diners%20Final%20Cards_18123_Diners%20F.png",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "HDFC Bank",
+                        "name": "HDFC Bank Millennia Credit Card",
+                        "imageurl": "https://www.hdfcbank.com/content/api/contentstream-id/723fb80a-2dde-42a3-9793-7ae1be57c87f/a6470e7a-ddb5-4512-a4a9-d628c97eb24e/Personal/Pay/Cards/Millennia%20Cards/Millennia%20Credit%20Card/Millennia-CC_new.png",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "HDFC Bank",
+                        "name": "HDFC Bank MoneyBack Credit Card",
+                        "imageurl": "https://www.hdfcbank.com/content/api/contentstream-id/723fb80a-2dde-42a3-9793-7ae1be57c87f/d97ad03d-7b0e-4513-ba2d-85bd0e185038/Personal/Pay/Cards/Credit%20Card/Credit%20Card%20Landing%20Page/Credit%20Cards/Commercial/HDFC%20Bank%20MoneyBack/Cards-11123-MoneyBack+-264-x-167.png",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "ICICI Bank",
+                        "name": "ICICI Bank Coral Credit Card",
+                        "imageurl": "https://www.paisabazaar.com/wp-content/uploads/2018/05/Capture.jpg",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "ICICI Bank",
+                        "name": "ICICI Bank Amazon Pay Credit Card",
+                        "imageurl": "https://m.media-amazon.com/images/G/31/img18/AmazonPay/Affordability/CBCC/New_CBCCcard_500x315._CB408517060_.png",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "ICICI Bank",
+                        "name": "ICICI Bank Platinum Chip Credit Card",
+                        "imageurl": "https://www.icicibank.com/content/dam/icicibank/india/managed-assets/images/personal-banking-commercial-cards/corporate/corporate-platinum-card.png",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "ICICI Bank",
+                        "name": "ICICI Bank Rubyx Credit Card",
+                        "imageurl": "https://www.paisabazaar.com/wp-content/uploads/2019/01/ICICI-Rubyx-Credit-Card.jpg",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "Axis Bank",
+                        "name": "Axis Bank Flipkart Credit Card",
+                        "imageurl": "https://www.paisabazaar.com/wp-content/uploads/2019/10/axis-bank-ace-credit-card.jpg",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "Axis Bank",
+                        "name": "Axis Bank Vistara Credit Card",
+                        "imageurl": "https://www.paisabazaar.com/wp-content/uploads/2017/10/Axis-Bank-Vistara-Credit-Card.png",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "Axis Bank",
+                        "name": "Axis Bank Neo Credit Card",
+                        "imageurl": "https://assets.paymatrix.in/static/new_home/credit_card_images/axis_bank_neo_credit_card.png",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "Axis Bank",
+                        "name": "Axis Bank Ace Credit Card",
+                        "imageurl": "https://www.cardexpert.in/wp-content/uploads/2020/10/axis-bank-ace-credit-card-1.jpg",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "Citibank India",
+                        "name": "Citibank Rewards Credit Card",
+                        "imageurl": "https://www.forbes.com/advisor/wp-content/uploads/2021/10/96eb2f40-fb6b-11eb-bb36-9183285abe2c-1.png",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "Citibank India",
+                        "name": "IndianOil Citi Credit Card",
+                        "imageurl": "https://www.cdn.citibank.com/v1/ingcb/cbol/files/styles/convert_webp/public/images/2021/banner-indianoil-439x272-27092021.png.webp?_bust=2024-03-12T09-24-36-403Z",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "Citibank India",
+                        "name": "Citi PremierMiles Credit Card",
+                        "imageurl": "https://www.cdn.citibank.com/v1/ingcb/cbol/files/styles/convert_webp/public/premiermiles-card-380x240-13092022.png.webp?_bust=2024-03-12T09-24-36-403Z",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "Citibank India",
+                        "name": "Citi Cashback Credit Card",
+                        "imageurl": "https://www.cdn.citibank.com/v1/ingcb/cbol/files/styles/convert_webp/public/cashback-card-380x240-13092022.png.webp?_bust=2024-03-12T09-24-36-403Z",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "Kotak Mahindra Bank",
+                        "name": "Kotak Royale Signature Credit Card",
+                        "imageurl": "https://www.kotak.com/content/dam/Kotak/herosliderbanner/Kotak-Royale-Signature-Card.jpg",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "Kotak Mahindra Bank",
+                        "name": "Kotak PVR Gold Credit Card",
+                        "imageurl": "https://www.kotak.com/content/dam/Kotak/herosliderbanner/pvr-gold-cc-d.jpg",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "Kotak Mahindra Bank",
+                        "name": "Kotak Delight Platinum Credit Card",
+                        "imageurl": "https://www.kotak.com/content/dam/Kotak/herosliderbanner/Delight-Card-platinum.jpg",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "Kotak Mahindra Bank",
+                        "name": "Kotak Urbane Gold Credit Card",
+                        "imageurl": "https://www.kotak.com/content/dam/Kotak/herosliderbanner/Kotak-Urbane-Gold-Card.jpg",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "Standard Chartered Bank",
+                        "name": "Standard Chartered Manhattan Platinum Credit Card",
+                        "imageurl": "https://av.sc.com/ae/content/images/ae-manhattan-rewards-plus-credit-card-360-reward.png",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "Standard Chartered Bank",
+                        "name": "Standard Chartered DigiSmart Credit Card",
+                        "imageurl": "https://apply.standardchartered.co.in/site/assets/files/28243/smart-card-banner-300x189_2.jpg",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "American Express (Amex)",
+                        "name": "American Express Platinum Card",
+                        "imageurl": "https://icm.aexp-static.com/Internet/internationalcardshop/en_in/images/cards/Platinum_Travel_Card.png",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "American Express (Amex)",
+                        "name": "American Express Gold Card",
+                        "imageurl": "https://icm.aexp-static.com/Internet/internationalcardshop/en_in/images/cards/Gold_Card.png",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "American Express (Amex)",
+                        "name": "American Express Membership Rewards Credit Card",
+                        "imageurl": "https://icm.aexp-static.com/Internet/internationalcardshop/en_in/images/cards/Membership_Rewards_Card.png",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "HSBC Bank",
+                        "name": "HSBC Visa Platinum Card",
+                        "imageurl": "https://www.hsbc.co.in/content/dam/hsbc/in/images/credit-card/11368-virat-platinum-card-300x198.png",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "HSBC Bank",
+                        "name": "HSBC Cashback Credit Card",
+                        "imageurl": "https://www.hsbc.co.in/content/dam/hsbc/in/images/credit-card/11779-virat-cashback-card-no-change-300x198.png",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "HSBC Bank",
+                        "name": "HSBC Premier Mastercard",
+                        "imageurl": "https://www.hsbc.co.in/content/dam/hsbc/in/images/credit-card/16-9/11597-premier-card-889x500.jpg",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "IndusInd Bank",
+                        "name": "IndusInd Bank Platinum Credit Card",
+                        "imageurl": "https://www.indusind.com/content/dam/indusind-platform-images/productCategory/desktopImage/creditCard/Platinum_card-image_396x257px.png",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "IndusInd Bank",
+                        "name": "IndusInd Bank Iconia Credit Card",
+                        "imageurl": "https://www.indusind.com/content/dam/indusind-platform-images/productCategory/desktopImage/creditCard/iconia_-card_american_express.jpg",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    },
+                    {
+                        "bank": "IndusInd Bank",
+                        "name": "IndusInd Bank Pinnacle Credit Card",
+                        "imageurl": "https://www.indusind.com/content/dam/indusind-platform-images/productCategory/desktopImage/creditCard/IB_Pinnacle-Card-Front.png",
+                        "details": "[Details]",
+                        "joiningfee": "",
+                        "annualfee": "",
+                        "forexfee": "",
+                        "atmcharges": ""
+                    }
+                ];
 
-    // Populate the dropdown select element with bank options
-    const bankFilterSelect = document.getElementById('bank-filter');
-    uniqueBanks.forEach(bank => {
-        const option = document.createElement('option');
-        option.value = bank;
-        option.textContent = bank;
-        bankFilterSelect.appendChild(option);
-    });
+                // Extract unique bank names from the JSON data
+                const uniqueBanks = [...new Set(creditCards.map(card => card.bank))];
 
-    // Add event listener to filter cards based on selected bank
-    bankFilterSelect.addEventListener('change', function() {
-        const selectedBank = bankFilterSelect.value;
-        filterCards(selectedBank);
-    });
+                // Populate the dropdown select element with bank options
+                const bankFilterSelect = document.getElementById('bank-filter');
+                uniqueBanks.forEach(bank => {
+                    const option = document.createElement('option');
+                    option.value = bank;
+                    option.textContent = bank;
+                    bankFilterSelect.appendChild(option);
+                });
 
-    // Function to filter cards based on selected bank
-    function filterCards(bank) {
-        const cards = document.querySelectorAll('.card');
-        cards.forEach(card => {
-            const cardBank = card.getAttribute('data-bank');
-            if (bank === 'all' || cardBank === bank) {
-                card.style.display = 'inline-block';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    }
+                // Add event listener to filter cards based on selected bank
+                bankFilterSelect.addEventListener('change', function () {
+                    const selectedBank = bankFilterSelect.value;
+                    filterCards(selectedBank);
+                });
 
-    // Function to create card elements
-    function createCard(card) {
-    const cardElement = document.createElement('div');
-    cardElement.classList.add('card');
-    cardElement.setAttribute('data-bank', card.bank); // Add data-bank attribute
-    cardElement.innerHTML = `
+                // Function to filter cards based on selected bank
+                function filterCards(bank) {
+                    const cards = document.querySelectorAll('.card');
+                    cards.forEach(card => {
+                        const cardBank = card.getAttribute('data-bank');
+                        if (bank === 'all' || cardBank === bank) {
+                            card.style.display = 'inline-block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                }
+
+                // Function to create card elements
+                function createCard(card) {
+                    const cardElement = document.createElement('div');
+                    cardElement.classList.add('card');
+                    cardElement.setAttribute('data-bank', card.bank); // Add data-bank attribute
+                    cardElement.innerHTML = `
         <img src="${card.imageurl}" alt="${card.name}">
-        <p>${card.name}</p>
+        <b><p>${card.name}</p>
     `;
-    cardElement.addEventListener('click', function () {
-        showModal(card);
-    });
-    return cardElement;
-}
+                    cardElement.addEventListener('click', function () {
+                        showModal(card);
+                    });
+                    return cardElement;
+                }
 
-    // Function to display card details in modal
-    function showModal(card) {
-            cardDetails.innerHTML = `
+                // Function to display card details in modal
+                function showModal(card) {
+                    cardDetails.innerHTML = `
                 <h2>${card.name}</h2>
                 <table>
                     <tr>
@@ -592,43 +671,44 @@
                     </tr>
                 </table>
             `;
-            modal.style.display = 'block';
-        }
+                    modal.style.display = 'block';
+                }
 
-    // Close modal when click on close button
-    document.querySelector('.close').addEventListener('click', function() {
-            modal.style.display = 'none';
-        });
+                // Close modal when click on close button
+                document.querySelector('.close').addEventListener('click', function () {
+                    modal.style.display = 'none';
+                });
 
-    // Close modal when click outside of modal content
-    window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        };
+                // Close modal when click outside of modal content
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = 'none';
+                    }
+                };
 
-    // Group cards by bank
-    const groupedCards = creditCards.reduce((acc, card) => {
-            if (!acc[card.bank]) {
-                acc[card.bank] = [];
-            }
-            acc[card.bank].push(card);
-            return acc;
-        }, {});
+                // Group cards by bank
+                const groupedCards = creditCards.reduce((acc, card) => {
+                    if (!acc[card.bank]) {
+                        acc[card.bank] = [];
+                    }
+                    acc[card.bank].push(card);
+                    return acc;
+                }, {});
 
-        // Sort cards within each group by name
-        for (const bank in groupedCards) {
-            groupedCards[bank].sort((a, b) => a.name.localeCompare(b.name));
-        }
+                // Sort cards within each group by name
+                for (const bank in groupedCards) {
+                    groupedCards[bank].sort((a, b) => a.name.localeCompare(b.name));
+                }
 
-        // Load cards
-        for (const bank in groupedCards) {
-            const sortedCards = groupedCards[bank];
-            sortedCards.forEach(card => {
-                cardsContainer.appendChild(createCard(card));
+                // Load cards
+                for (const bank in groupedCards) {
+                    const sortedCards = groupedCards[bank];
+                    sortedCards.forEach(card => {
+                        cardsContainer.appendChild(createCard(card));
+                    });
+                }
             });
-        }
-    });
-    </script>
+        </script>
 </body>
+
 </html>
