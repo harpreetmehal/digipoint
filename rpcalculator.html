@@ -754,7 +754,7 @@
                 hsbc: { name: "HSBC Platinum", spendToEarnRP: 75, rpValue: 0.2 },
                 oneCard: { name: "One Card", spendToEarnRP: 50, rpValue: 0.125 },
                 citibank: { name: "Citibank Indian Oil (FUEL)", spendToEarnRP: 37.5, rpValue: 1 },
-                idfcSelect3: { name: "IDFC First Select - 3x", spendToEarnRP: 50, rpValue: 0.25 },
+                idfcSelect3: { name: "IDFC First Select - 3x*", spendToEarnRP: 50, rpValue: 0.25 },
                 //idfcSelect6: { name: "IDFC First Select - 6x", spendToEarnRP: 20.833, rpValue: 0.25 },
                 sbi: { name: "SBI SimplyClick", spendToEarnRP: 100, rpValue: 0.25 },
                 sbicashback: { name: "SBI Cashback", spendToEarnRP: 100, rpValue: 1 },
@@ -767,7 +767,7 @@
                 hdfcneu: { name: "Tata Neu Infinity HDFC", spendToEarnRP: 66.66, rpValue: 1 },
                 hdfcinfinia: { name: "HDFC Infinia Metal", spendToEarnRP: 37.5, rpValue: 1 },
                 hdfcdcb: { name: "HDFC Diners Club Black Metal", spendToEarnRP: 30, rpValue: 1 },
-                idfcwealth: { name: "IDFC First Wealth", spendToEarnRP: 50, rpValue: 0.25 },
+                idfcwealth: { name: "IDFC First Wealth*", spendToEarnRP: 50, rpValue: 0.25 },
                 amexplat: { name: "American Express Platinum [2x - Fuel]", spendToEarnRP: 40, rpValue: 1 },
                 amexplatreserve: { name: "American Express Platinum Reserve", spendToEarnRP: 50, rpValue: 1 },
                 sbisimplysave: { name: "SBI Simply Save", spendToEarnRP: 150, rpValue: 0.25 },
@@ -883,6 +883,11 @@
                     else if (cardId === 'axisMagnus' && document.getElementById('axisMagnusportal').checked) {
                         earnedRP = amount / cards[cardId].spendToEarnRP * 5;
                     }
+                    else if (cardId === 'idfcSelect3' && amount > 20000) {
+                    earnedRP = 20000 / card.spendToEarnRP + (((amount - 20000) / card.spendToEarnRP) * 10);
+                    } else if (cardId === 'idfcwealth' && amount > 20000) {
+                        earnedRP = 20000 / card.spendToEarnRP + (((amount - 20000) / card.spendToEarnRP) * 10);
+                    }
                     else {
                         earnedRP = amount / card.spendToEarnRP;
                     }
@@ -912,6 +917,8 @@
                     resultHTML += `<tr class="${cardClass}"><td>${cashback.cardName}</td><td>${cashback.rewardPointsValue} RP</td><td>₹${cashback.cashbackValue}</td></tr>`;
                 });
                 resultHTML += '</table>';
+
+                resultHTML += '<p>*10x rewards for IDFC card included</p>';
 
                 // Display the result
                 document.getElementById('result').innerHTML = resultHTML;
