@@ -190,7 +190,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 600px;
+            max-width: 680px;
             margin: 20px auto;
             background-color: #f5f5f5;
             /* Light grey background */
@@ -524,14 +524,14 @@
         <!-- Recent updates marquee -->
         <marquee direction="up" height="300" scrollamount="2" behavior="scroll">
             <h2>Recent updates</h2>
-            <li><b>New card added:</b> Axis Magnus credit card</li>
-            <li><b>New card added:</b> SBI Cashback credit card</li>
             <li><b>New card added:</b> ICICI Rubyx / Sapphiro</li>
             <li><b>New card added:</b> HDFC Diners Black Metal</li>
             <li><b>New card feature:</b> Added weekday & weekend options for INDUSIND Legend</li>
             <li><b>New card added:</b> ICICI Coral RuPay credit card</li>
             <li><b>New card added:</b> Standard Chartered Platinum</li>
             <li><b>New card added:</b> SBI Prime</li>
+            <li><b>New card feature:</b> Added calculation for 10x rewards for IDFC cards when amount exceeds 20000INR</li>
+            <li><b>New card added:</b> SBI Aurum</li>
             <!-- Add more updates as needed -->
         </marquee>
     </div>
@@ -677,6 +677,7 @@
             </div>
 
             <h3>SBI Cards</h3>
+            <label for="sbiaurum"><input id="sbiaurum" type="checkbox" /> SBI Aurum</label>
             <div id="labelcontainer">
                 <input type="checkbox" id="sbicashback" name="sbicashback" />
                 <label for="sbicashback">SBI Cashback : </label>
@@ -771,6 +772,7 @@
                 amexplat: { name: "American Express Platinum [2x - Fuel]", spendToEarnRP: 40, rpValue: 1 },
                 amexplatreserve: { name: "American Express Platinum Reserve", spendToEarnRP: 50, rpValue: 1 },
                 sbisimplysave: { name: "SBI Simply Save", spendToEarnRP: 150, rpValue: 0.25 },
+                sbiaurum: { name: "SBI Aurum", spendToEarnRP: 25, rpValue: 0.25 },
                 stdchartered: { name: "Standard Chartered Platinum Rewards [Dining/Fuel]", spendToEarnRP: 30, rpValue: 0.25 },
                 axisNeo: { name: "Axis Neo", spendToEarnRP: 50, rpValue: 0.2 },
                 axisMyZone: { name: "Axis MyZone", spendToEarnRP: 100, rpValue: 0.2 },
@@ -917,7 +919,7 @@
                     resultHTML += `<tr class="${cardClass}"><td>${cashback.cardName}</td><td>${cashback.rewardPointsValue} RP</td><td>₹${cashback.cashbackValue}</td></tr>`;
                 });
                 resultHTML += '</table>';
-
+                
                 resultHTML += '<p>*10x rewards for IDFC card included</p>';
 
                 // Display the result
