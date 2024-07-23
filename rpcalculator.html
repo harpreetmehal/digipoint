@@ -524,14 +524,14 @@
         <!-- Recent updates marquee -->
         <marquee direction="up" height="300" scrollamount="2" behavior="scroll">
             <h2>Recent updates</h2>
-            <li><b>New card added:</b> ICICI Rubyx / Sapphiro</li>
-            <li><b>New card added:</b> HDFC Diners Black Metal</li>
             <li><b>New card feature:</b> Added weekday & weekend options for INDUSIND Legend</li>
             <li><b>New card added:</b> ICICI Coral RuPay credit card</li>
             <li><b>New card added:</b> Standard Chartered Platinum</li>
             <li><b>New card added:</b> SBI Prime</li>
             <li><b>New card feature:</b> Added calculation for 10x rewards for IDFC cards when amount exceeds 20000INR</li>
             <li><b>New card added:</b> SBI Aurum</li>
+            <li><b>New card added:</b> SBI BPCL</li>
+            <li><b>New card added:</b> SBI BPCL Octane</li>
             <!-- Add more updates as needed -->
         </marquee>
     </div>
@@ -679,6 +679,20 @@
             <h3>SBI Cards</h3>
             <label for="sbiaurum"><input id="sbiaurum" type="checkbox" /> SBI Aurum</label>
             <div id="labelcontainer">
+                <input type="checkbox" id="sbibpcl" name="sbibpcl" />
+                <label for="sbibpcl">SBI BPCL : </label>
+                <label for="sbibpcl"><input type="radio" id="sbibpclothr" name="sbibpclPercent" value="1" checked="true" />
+                    Other spends</label>
+                <label for="sbibpclgroc"><input type="radio" id="sbibpclgroc" name="sbibpclPercent" value="5" /> Grocery</label>
+            </div>
+            <div id="labelcontainer">
+                <input type="checkbox" id="sbibpcloctane" name="sbibpcloctane" />
+                <label for="sbibpcloctane">SBI BPCL Octane : </label>
+                <label for="sbibpcloctane"><input type="radio" id="sbibpcloctaneothr" name="sbibpcloctanePercent" value="1" checked="true" />
+                    Other spends</label>
+                <label for="sbibpcloctanegas"><input type="radio" id="sbibpcloctanegas" name="sbibpcloctanePercent" value="25" /> Bharat Gas (Website & app only)</label>
+            </div>
+            <div id="labelcontainer">
                 <input type="checkbox" id="sbicashback" name="sbicashback" />
                 <label for="sbicashback">SBI Cashback : </label>
                 <label for="sbicashoffline"><input type="radio" id="sbicashoffline" name="sbicashPercent" value="1"
@@ -780,6 +794,8 @@
                 axisRewards: { name: "Axis Rewards", spendToEarnRP: 62.5, rpValue: 0.2 },
                 axisPrivilege: { name: "Axis Privilege", spendToEarnRP: 20, rpValue: 0.2 },
                 axisMagnus: { name: "Axis Magnus", spendToEarnRP: 16.666, rpValue: 0.2 },
+                sbibpcl: { name: "SBI BPCL", spendToEarnRP: 100, rpValue: 0.25 },
+                sbibpcloctane: { name: "SBI BPCL Octane", spendToEarnRP: 100, rpValue: 0.25 },
             };
 
             // Get selected cards
@@ -852,6 +868,22 @@
                     else if (cardId === 'sbicashback' && document.getElementById('sbicashonline').checked) {
                         const sbicashPercent = parseFloat(document.querySelector('input[name="sbicashPercent"]:checked').value) / 100;
                         earnedRP = amount * sbicashPercent;
+                    }
+                    else if (cardId === 'sbibpcl' && document.getElementById('sbibpclothr').checked) {
+                        const sbibpclPercent = parseFloat(document.querySelector('input[name="sbibpclPercent"]:checked').value) / 100;
+                        earnedRP = amount * sbibpclPercent;
+                    }
+                    else if (cardId === 'sbibpcl' && document.getElementById('sbibpclgroc').checked) {
+                        const sbibpclPercent = parseFloat(document.querySelector('input[name="sbibpclPercent"]:checked').value) / 100;
+                        earnedRP = amount * sbibpclPercent;
+                    }
+                    else if (cardId === 'sbibpcloctane' && document.getElementById('sbibpcloctaneothr').checked) {
+                        const sbibpcloctanePercent = parseFloat(document.querySelector('input[name="sbibpcloctanePercent"]:checked').value) / 100;
+                        earnedRP = amount * sbibpcloctanePercent;
+                    }
+                    else if (cardId === 'sbibpcloctane' && document.getElementById('sbibpcloctanegas').checked) {
+                        const sbibpcloctanePercent = parseFloat(document.querySelector('input[name="sbibpcloctanePercent"]:checked').value) / 100;
+                        earnedRP = amount * sbibpcloctanePercent;
                     }
                     else if (cardId === 'iciciCoralRupay' && document.getElementById('iciciCoralInsurance').checked) {
                         const iciciCoralPercent = parseFloat(document.querySelector('input[name="iciciCoralPercent"]:checked').value) / 100;
