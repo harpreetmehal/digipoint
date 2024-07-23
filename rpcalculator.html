@@ -528,7 +528,8 @@
             <li><b>New card added:</b> ICICI Coral RuPay credit card</li>
             <li><b>New card added:</b> Standard Chartered Platinum</li>
             <li><b>New card added:</b> SBI Prime</li>
-            <li><b>New card feature:</b> Added calculation for 10x rewards for IDFC cards when amount exceeds 20000INR</li>
+            <li><b>New card feature:</b> Added calculation for 10x rewards for IDFC cards when amount exceeds 20000INR
+            </li>
             <li><b>New card added:</b> SBI Aurum</li>
             <li><b>New card added:</b> SBI BPCL</li>
             <li><b>New card added:</b> SBI BPCL Octane</li>
@@ -653,7 +654,23 @@
             <label for="iciciCoral"><input id="iciciCoral" type="checkbox" /> ICICI CORAL</label>
 
             <h3>IDFC Cards</h3>
-            <label for="idfcSelect3"><input id="idfcSelect3" type="checkbox" /> IDFC First Select (3x - Offline/Online)</label>
+            <div id="labelcontainer">
+                <label for="idfcSelect3"><input id="idfcSelect3" type="checkbox" /> IDFC First Select (3x -
+                    Offline/Online)</label>
+                <label for="idfcSelectOther"><input type="radio" id="idfcSelectOther" name="idfcSelectPercent" value="3"
+                        checked="true" /> All other spends</label>
+                <label for="idfcSelectInsurance"><input type="radio" id="idfcSelectInsurance" name="idfcSelectPercent"
+                        value="1" /> Insurance/Utilities</label>
+                <span class="info-icon" id="amex-info-icon-idfcsel" onmouseover="showInfoBox('idfcsel')"
+                    onmouseout="hideInfoBox('idfcsel')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Minimalist_info_Icon.png"
+                        alt="Info Icon" width="15" height="15" />
+                </span>
+            </div>
+            <div class="info-box" id="amex-info-box-idfcsel">Categories not included in the 10X Reward Points threshold
+                <br>Rental & Property Management, Utility, Insurance, Government Services, Education and Wallet Load.
+                <br>Reward Points program not applicable on fuel, EMI transactions, & cash withdrawals.
+            </div>
             <!-- <label for="idfcSelect6"><input id="idfcSelect6" type="checkbox" /> IDFC First Select (6x - Online)</label> -->
             <label for="idfcvistara"><input id="idfcvistara" type="checkbox" /> Club Vistara IDFC First</label>
             <label for="idfcwealth"><input id="idfcwealth" type="checkbox" /> IDFC First Wealth</label>
@@ -681,16 +698,20 @@
             <div id="labelcontainer">
                 <input type="checkbox" id="sbibpcl" name="sbibpcl" />
                 <label for="sbibpcl">SBI BPCL : </label>
-                <label for="sbibpcl"><input type="radio" id="sbibpclothr" name="sbibpclPercent" value="1" checked="true" />
+                <label for="sbibpcl"><input type="radio" id="sbibpclothr" name="sbibpclPercent" value="1"
+                        checked="true" />
                     Other spends</label>
-                <label for="sbibpclgroc"><input type="radio" id="sbibpclgroc" name="sbibpclPercent" value="5" /> Grocery</label>
+                <label for="sbibpclgroc"><input type="radio" id="sbibpclgroc" name="sbibpclPercent" value="5" />
+                    Grocery</label>
             </div>
             <div id="labelcontainer">
                 <input type="checkbox" id="sbibpcloctane" name="sbibpcloctane" />
                 <label for="sbibpcloctane">SBI BPCL Octane : </label>
-                <label for="sbibpcloctane"><input type="radio" id="sbibpcloctaneothr" name="sbibpcloctanePercent" value="1" checked="true" />
+                <label for="sbibpcloctane"><input type="radio" id="sbibpcloctaneothr" name="sbibpcloctanePercent"
+                        value="1" checked="true" />
                     Other spends</label>
-                <label for="sbibpcloctanegas"><input type="radio" id="sbibpcloctanegas" name="sbibpcloctanePercent" value="25" /> Bharat Gas (Website & app only)</label>
+                <label for="sbibpcloctanegas"><input type="radio" id="sbibpcloctanegas" name="sbibpcloctanePercent"
+                        value="25" /> Bharat Gas (Website & app only)</label>
             </div>
             <div id="labelcontainer">
                 <input type="checkbox" id="sbicashback" name="sbicashback" />
@@ -769,7 +790,7 @@
                 hsbc: { name: "HSBC Platinum", spendToEarnRP: 75, rpValue: 0.2 },
                 oneCard: { name: "One Card", spendToEarnRP: 50, rpValue: 0.125 },
                 citibank: { name: "Citibank Indian Oil (FUEL)", spendToEarnRP: 37.5, rpValue: 1 },
-                idfcSelect3: { name: "IDFC First Select - 3x*", spendToEarnRP: 50, rpValue: 0.25 },
+                idfcSelect3: { name: "IDFC First Select - 3x*", spendToEarnRP: 150, rpValue: 0.25 },
                 //idfcSelect6: { name: "IDFC First Select - 6x", spendToEarnRP: 20.833, rpValue: 0.25 },
                 sbi: { name: "SBI SimplyClick", spendToEarnRP: 100, rpValue: 0.25 },
                 sbicashback: { name: "SBI Cashback", spendToEarnRP: 100, rpValue: 1 },
@@ -917,8 +938,16 @@
                     else if (cardId === 'axisMagnus' && document.getElementById('axisMagnusportal').checked) {
                         earnedRP = amount / cards[cardId].spendToEarnRP * 5;
                     }
-                    else if (cardId === 'idfcSelect3' && amount > 20000) {
-                    earnedRP = 20000 / card.spendToEarnRP + (((amount - 20000) / card.spendToEarnRP) * 10);
+                    if (cardId === 'idfcSelect3') {
+                        if (amount > 20000) {
+                            earnedRP = 20000 / card.spendToEarnRP + (((amount - 20000) / card.spendToEarnRP) * 10);
+                        } else if (document.getElementById('idfcSelectInsurance').checked) {
+                            // TODO : Fix the logic 
+                            earnedRP = amount / cards[cardId].spendToEarnRP; // Assuming 1x reward points for Insurance
+                        } else if (document.getElementById('idfcSelectOther').checked) {
+                            // TODO : Fix the logic 
+                            earnedRP = amount / cards[cardId].spendToEarnRP * 3;
+                        }
                     } else if (cardId === 'idfcwealth' && amount > 20000) {
                         earnedRP = 20000 / card.spendToEarnRP + (((amount - 20000) / card.spendToEarnRP) * 10);
                     }
@@ -951,7 +980,7 @@
                     resultHTML += `<tr class="${cardClass}"><td>${cashback.cardName}</td><td>${cashback.rewardPointsValue} RP</td><td>₹${cashback.cashbackValue}</td></tr>`;
                 });
                 resultHTML += '</table>';
-                
+
                 resultHTML += '<p>*10x rewards for IDFC card included</p>';
 
                 // Display the result
