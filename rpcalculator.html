@@ -504,6 +504,48 @@
             transform: scaleX(1);
             transform-origin: left;
         }
+
+        .radio-inputs {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            border-radius: 0.5rem;
+            background-color: #EEE;
+            box-sizing: border-box;
+            box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+            padding: 0.20rem;
+            width: 300px;
+            height: auto;
+            font-size: 12px;
+        }
+
+        .radio-inputs .radio {
+            flex: 1 1 auto;
+            text-align: center;
+        }
+
+        .radio-inputs .radio input {
+            display: none;
+            
+        }
+
+        .radio-inputs .radio .name {
+            display: flex;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5rem;
+            border: none;
+            padding: .5rem 0;
+            color: rgba(51, 65, 85, 1);
+            transition: all .15s ease-in-out;
+            vertical-align: middle;
+        }
+
+        .radio-inputs .radio input:checked+.name {
+            background-color: #a2cdc5;
+            font-weight: 500;
+        }
     </style>
 </head>
 
@@ -592,11 +634,14 @@
             <div id="labelcontainer">
                 <input type="checkbox" id="axisMagnus" name="axisMagnus" />
                 <label for="axisMagnus"> Axis Magnus : </label>
-                <label for="axisMagnusnormal"><input type="radio" id="axisMagnusnormal" name="axisMagnusPercent"
-                        checked="true" /> Normal spends</label>
-                <label for="axisMagnusportal"><input type="radio" id="axisMagnusportal" name="axisMagnusPercent" />
-                    Trave EDGE portal</label>
-                <span class="info-icon" id="amex-info-icon-magnus" onmouseover="showInfoBox('magnus')"
+                <div class="radio-inputs">
+                    <label class="radio" for="axisMagnusnormal"><input type="radio" id="axisMagnusnormal"
+                            name="axisMagnusPercent" checked="true" /> <span class="name">Normal spends</span></label>
+                    <label class="radio" for="axisMagnusportal"><input type="radio" id="axisMagnusportal"
+                            name="axisMagnusPercent" />
+                        <span class="name">Trave EDGE portal</span></label>
+
+                </div><span class="info-icon" id="amex-info-icon-magnus" onmouseover="showInfoBox('magnus')"
                     onmouseout="hideInfoBox('magnus')">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Minimalist_info_Icon.png"
                         alt="Info Icon" width="15" height="15" />
@@ -624,32 +669,44 @@
             <div id="labelcontainer">
                 <input type="checkbox" id="iciciAmazon" name="iciciAmazon" />
                 <label for="iciciAmazon"> ICICI AMAZON :</label>
-                <label for="iciciAmazon1"><input type="radio" id="iciciAmazon1" name="iciciAmazonPercent" value="1"
-                        checked="true" /> 1%</label>
-                <label for="iciciAmazon2"><input type="radio" id="iciciAmazon2" name="iciciAmazonPercent" value="2" />
-                    2%</label>
-                <label for="iciciAmazon3"><input type="radio" id="iciciAmazon3" name="iciciAmazonPercent" value="3" />
-                    3%</label>
-                <label for="iciciAmazon5"><input type="radio" id="iciciAmazon5" name="iciciAmazonPercent" value="5" />
-                    5%</label>
+                <div class="radio-inputs">
+                    <label for="iciciAmazon1" class="radio"><input type="radio" id="iciciAmazon1"
+                            name="iciciAmazonPercent" value="1" />
+                        <span class="name">1%</span></label>
+                    <label for="iciciAmazon2" class="radio"><input type="radio" id="iciciAmazon2"
+                            name="iciciAmazonPercent" value="2" checked="true" />
+                        <span class="name">2%</span></label>
+                    <label for="iciciAmazon3" class="radio"><input type="radio" id="iciciAmazon3"
+                            name="iciciAmazonPercent" value="3" />
+                        <span class="name">3%</span></label>
+                    <label for="iciciAmazon5" class="radio"><input type="radio" id="iciciAmazon5"
+                            name="iciciAmazonPercent" value="5" />
+                        <span class="name">5%</span></label>
+                </div>
             </div>
             <div id="labelcontainer">
                 <input type="checkbox" id="iciciCoralRupay" name="iciciCoralRupay" />
                 <label for="iciciCoralRupay"> ICICI Coral RuPay : </label>
-                <label for="iciciCoralInsurance"><input type="radio" id="iciciCoralInsurance" name="iciciCoralPercent"
-                        value="1" /> Insurance/Utilities</label>
-                <label for="iciciCoralOther"><input type="radio" id="iciciCoralOther" name="iciciCoralPercent" value="2"
-                        checked="true" /> All other spends</label>
+                <div class="radio-inputs">
+                    <label for="iciciCoralInsurance" class="radio"><input type="radio" id="iciciCoralInsurance"
+                            name="iciciCoralPercent" value="1" /> <span class="name">Insurance/Utilities</span></label>
+                    <label for="iciciCoralOther" class="radio"><input type="radio" id="iciciCoralOther"
+                            name="iciciCoralPercent" value="2" checked="true" /> <span class="name">All other
+                            spends</span></label>
+                </div>
             </div>
             <div id="labelcontainer">
                 <input type="checkbox" id="iciciRubyx" name="iciciRubyx" />
                 <label for="iciciRubyx"> ICICI Rubyx / Sapphiro : </label>
-                <label for="iciciRubyxDom"><input type="radio" id="iciciRubyxDom" name="iciciRubyxPercent" value="2"
-                        checked="true" /> Domestic</label>
-                <label for="iciciRubyxInsurance"><input type="radio" id="iciciRubyxInsurance" name="iciciRubyxPercent"
-                        value="1" /> Insurance/Utilities</label>
-                <label for="iciciRubyxIntl"><input type="radio" id="iciciRubyxIntl" name="iciciRubyxPercent"
-                        value="4" /> International</label>
+                <div class="radio-inputs">
+                    <label for="iciciRubyxDom" class="radio"><input type="radio" id="iciciRubyxDom"
+                            name="iciciRubyxPercent" value="2" checked="true" /> <span
+                            class="name">Domestic</span></label>
+                    <label for="iciciRubyxInsurance" class="radio"><input type="radio" id="iciciRubyxInsurance"
+                            name="iciciRubyxPercent" value="1" /><span class="name">Insurance/Utilities</span> </label>
+                    <label for="iciciRubyxIntl" class="radio"><input type="radio" id="iciciRubyxIntl"
+                            name="iciciRubyxPercent" value="4" /><span class="name">International</span> </label>
+                </div>
             </div>
             <label for="iciciCoral"><input id="iciciCoral" type="checkbox" /> ICICI CORAL</label>
 
@@ -657,10 +714,13 @@
             <div id="labelcontainer">
                 <label for="idfcSelect3"><input id="idfcSelect3" type="checkbox" /> IDFC First Select (3x -
                     Offline/Online)</label>
-                <label for="idfcSelectOther"><input type="radio" id="idfcSelectOther" name="idfcSelectPercent" value="3"
-                        checked="true" /> All other spends</label>
-                <label for="idfcSelectInsurance"><input type="radio" id="idfcSelectInsurance" name="idfcSelectPercent"
-                        value="1" /> Insurance/Utilities</label>
+                <div class="radio-inputs">
+                    <label for="idfcSelectOther" class="radio"><input type="radio" id="idfcSelectOther"
+                            name="idfcSelectPercent" value="3" checked="true" /> <span class="name">All other
+                            spends</span></label>
+                    <label for="idfcSelectInsurance" class="radio"><input type="radio" id="idfcSelectInsurance"
+                            name="idfcSelectPercent" value="1" /> <span class="name">Insurance/Utilities</span></label>
+                </div>
                 <span class="info-icon" id="amex-info-icon-idfcsel" onmouseover="showInfoBox('idfcsel')"
                     onmouseout="hideInfoBox('idfcsel')">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Minimalist_info_Icon.png"
@@ -678,19 +738,28 @@
             <h3>INDUSIND Cards</h3>
             <div id="labelcontainer">
                 <label for="indusind"><input id="indusind" type="checkbox" /> Indusind Legend : </label>
-                <input type="radio" id="indusindWeekday" name="indusindWeekdayWeekend" value="weekday" checked>
-                <label for="indusindWeekday">Weekday</label>
-                <input type="radio" id="indusindWeekend" name="indusindWeekdayWeekend" value="weekend">
-                <label for="indusindWeekend">Weekend</label>
+                <div class="radio-inputs">
+
+                    <label for="indusindWeekday" class="radio"><input type="radio" id="indusindWeekday"
+                            name="indusindWeekdayWeekend" value="weekday" checked><span
+                            class="name">Weekday</span></label>
+
+                    <label for="indusindWeekend" class="radio"><input type="radio" id="indusindWeekend"
+                            name="indusindWeekdayWeekend" value="weekend"><span class="name">Weekend</span></label>
+                </div>
             </div>
 
             <h3>RBL Cards</h3>
             <div id="labelcontainer">
                 <input type="checkbox" id="rbl" name="rbl" />
                 <label for="rbl">RBL Shoprite : </label>
-                <label for="rblothr"><input type="radio" id="rblothr" name="rblPercent" value="1" checked="true" />
-                    Other spends</label>
-                <label for="rblgroc"><input type="radio" id="rblgroc" name="rblPercent" value="20" /> Grocery</label>
+                <div class="radio-inputs">
+                    <label for="rblothr" class="radio"><input type="radio" id="rblothr" name="rblPercent" value="1"
+                            checked="true" />
+                        <span class="name">Other spends</span></label>
+                    <label for="rblgroc" class="radio"><input type="radio" id="rblgroc" name="rblPercent" value="20" />
+                        <span class="name">Grocery</span></label>
+                </div>
             </div>
 
             <h3>SBI Cards</h3>
@@ -698,35 +767,53 @@
             <div id="labelcontainer">
                 <input type="checkbox" id="sbibpcl" name="sbibpcl" />
                 <label for="sbibpcl">SBI BPCL : </label>
-                <label for="sbibpcl"><input type="radio" id="sbibpclothr" name="sbibpclPercent" value="1"
-                        checked="true" />
-                    Other spends</label>
-                <label for="sbibpclgroc"><input type="radio" id="sbibpclgroc" name="sbibpclPercent" value="5" />
-                    Grocery</label>
+                <div class="radio-inputs">
+                    <label for="sbibpclothr" class="radio"><input type="radio" id="sbibpclothr" name="sbibpclPercent" value="1" checked="true" />
+                        <span class="name">Other spends</span></label>
+                    <label for="sbibpclgroc" class="radio"><input type="radio" id="sbibpclgroc" name="sbibpclPercent" value="5" />
+                        <span class="name">Grocery</span></label>
+                </div>
             </div>
+            <!-- <div id="labelcontainer">
+                <input type="checkbox" id="sbibpcloctane" name="sbibpcloctane" />
+                <label for="sbibpcloctane">SBI BPCL Octane : </label>
+                <div class="radio-inputs"><label for="sbibpcloctane"><input type="radio" id="sbibpcloctaneothr"
+                            name="sbibpcloctanePercent" value="1" checked="true" />
+                        Other spends</label>
+                    <label for="sbibpcloctanegas"><input type="radio" id="sbibpcloctanegas" name="sbibpcloctanePercent"
+                            value="25" /> Bharat Gas (Website & app only)</label>
+                </div>
+            </div> -->
             <div id="labelcontainer">
                 <input type="checkbox" id="sbibpcloctane" name="sbibpcloctane" />
                 <label for="sbibpcloctane">SBI BPCL Octane : </label>
-                <label for="sbibpcloctane"><input type="radio" id="sbibpcloctaneothr" name="sbibpcloctanePercent"
-                        value="1" checked="true" />
-                    Other spends</label>
-                <label for="sbibpcloctanegas"><input type="radio" id="sbibpcloctanegas" name="sbibpcloctanePercent"
-                        value="25" /> Bharat Gas (Website & app only)</label>
+                <div class="radio-inputs">
+                    <label for="sbibpcloctaneothr" class="radio"><input type="radio" id="sbibpcloctaneothr" name="sbibpcloctanePercent" value="1" checked="true" />
+                        <span class="name">Other spends</span></label>
+                    <label for="sbibpcloctanegas" class="radio"><input type="radio" id="sbibpcloctanegas" name="sbibpcloctanePercent" value="25" />
+                        <span class="name">Bharat Gas (Website & app only)</span></label>
+                </div>
             </div>
             <div id="labelcontainer">
                 <input type="checkbox" id="sbicashback" name="sbicashback" />
                 <label for="sbicashback">SBI Cashback : </label>
-                <label for="sbicashoffline"><input type="radio" id="sbicashoffline" name="sbicashPercent" value="1"
-                        checked="true" /> Offline</label>
-                <label for="sbicashonline"><input type="radio" id="sbicashonline" name="sbicashPercent" value="5" />
-                    Online</label>
+                <div class="radio-inputs">
+                    <label for="sbicashoffline" class="radio"><input type="radio" id="sbicashoffline"
+                            name="sbicashPercent" value="1" checked="true" /><span class="name">Offline</span></label>
+                    <label for="sbicashonline" class="radio"><input type="radio" id="sbicashonline"
+                            name="sbicashPercent" value="5" />
+                        <span class="name">Online</span></label>
+                </div>
             </div>
             <div id="labelcontainer">
                 <input type="checkbox" id="sbi" name="sbi" />
                 <label for="sbi">SBI SimplyClick : </label>
-                <label for="sbioffline"><input type="radio" id="sbioffline" name="sbiPercent" value="1"
-                        checked="true" /> Offline</label>
-                <label for="sbionline"><input type="radio" id="sbionline" name="sbiPercent" value="5" /> Online</label>
+                <div class="radio-inputs">
+                    <label for="sbioffline" class="radio"><input type="radio" id="sbioffline" name="sbiPercent"
+                            value="1" checked="true" /><span class="name">Offline</span> </label>
+                    <label for="sbionline" class="radio"><input type="radio" id="sbionline" name="sbiPercent"
+                            value="5" /><span class="name">Online</span> </label>
+                </div>
             </div>
             <label for="sbisimplysave"><input id="sbisimplysave" type="checkbox" /> SBI SimplySave</label>
             <label for="sbiprime"><input id="sbiprime" type="checkbox" /> SBI Prime</label>
@@ -938,7 +1025,7 @@
                     else if (cardId === 'axisMagnus' && document.getElementById('axisMagnusportal').checked) {
                         earnedRP = amount / cards[cardId].spendToEarnRP * 5;
                     }
-                    if (cardId === 'idfcSelect3') {
+                    else if (cardId === 'idfcSelect3') {
                         if (amount > 20000) {
                             earnedRP = 20000 / card.spendToEarnRP + (((amount - 20000) / card.spendToEarnRP) * 10);
                         } else if (document.getElementById('idfcSelectInsurance').checked) {
