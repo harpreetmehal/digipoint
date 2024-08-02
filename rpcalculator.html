@@ -575,6 +575,7 @@
             <li><b>New card added:</b> SBI Aurum</li>
             <li><b>New card added:</b> SBI BPCL</li>
             <li><b>New card added:</b> SBI BPCL Octane</li>
+            <li><b>New card added:</b> HDFC IOCL, IDFC FIrst Classic </li>
             <!-- Add more updates as needed -->
         </marquee>
     </div>
@@ -661,6 +662,17 @@
             <label for="hdfc"><input id="hdfc" type="checkbox" /> HDFC Regalia / Regalia Gold</label>
             <label for="hdfcinfinia"><input id="hdfcinfinia" type="checkbox" /> HDFC Infinia Metal</label>
             <label for="hdfcneu"><input id="hdfcneu" type="checkbox" /> Tata Neu Infinity HDFC</label>
+            <div id="labelcontainer">
+                <input type="checkbox" id="hdfciocl" name="hdfciocl" />
+                <label for="hdfciocl"> HDFC IOCL (FUEL) : </label>
+                <div class="radio-inputs">
+                    <label for="hdfcioclfuel" class="radio"><input type="radio" id="hdfcioclfuel"
+                            name="hdfcioclPercent" value="5" /> <span class="name">Fuel/Groceries/Bill Payment</span></label>
+                    <label for="hdfcioclOther" class="radio"><input type="radio" id="hdfcioclOther"
+                            name="hdfcioclPercent" value="1" checked="true" /> <span class="name">All other
+                            spends</span></label>
+                </div>
+            </div>
 
             <h3>HSBC Cards</h3>
             <label for="hsbc"><input id="hsbc" type="checkbox" /> HSBC Platinum</label>
@@ -711,6 +723,26 @@
             <label for="iciciCoral"><input id="iciciCoral" type="checkbox" /> ICICI CORAL</label>
 
             <h3>IDFC Cards</h3>
+            <div id="labelcontainer">
+                <label for="idfcclassic"><input id="idfcclassic" type="checkbox" /> IDFC First Classic (3x -
+                    Offline/Online)</label>
+                <div class="radio-inputs">
+                    <label for="idfcclassicOther" class="radio"><input type="radio" id="idfcclassicOther"
+                            name="idfcclassicPercent" value="3" checked="true" /> <span class="name">All other
+                            spends</span></label>
+                    <label for="idfcclassicInsurance" class="radio"><input type="radio" id="idfcclassicInsurance"
+                            name="idfcclassicPercent" value="1" /> <span class="name">Insurance/Utilities</span></label>
+                </div>
+                <span class="info-icon" id="amex-info-icon-idfcclassicbox" onmouseover="showInfoBox('idfcclassicbox')"
+                    onmouseout="hideInfoBox('idfcclassicbox')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Minimalist_info_Icon.png"
+                        alt="Info Icon" width="15" height="15" />
+                </span>
+            </div>
+            <div class="info-box" id="amex-info-box-idfcclassicbox">Categories not included in the 10X Reward Points threshold
+                <br>Rental & Property Management, Utility, Insurance, Government Services, Education and Wallet Load.
+                <br>Reward Points program not applicable on fuel, EMI transactions, & cash withdrawals.
+            </div>
             <div id="labelcontainer">
                 <label for="idfcSelect3"><input id="idfcSelect3" type="checkbox" /> IDFC First Select (3x -
                     Offline/Online)</label>
@@ -878,6 +910,7 @@
                 oneCard: { name: "One Card", spendToEarnRP: 50, rpValue: 0.125 },
                 citibank: { name: "Citibank Indian Oil (FUEL)", spendToEarnRP: 37.5, rpValue: 1 },
                 idfcSelect3: { name: "IDFC First Select - 3x*", spendToEarnRP: 150, rpValue: 0.25 },
+                idfcclassic: { name: "IDFC First Classic - 3x*", spendToEarnRP: 150, rpValue: 0.25 },
                 //idfcSelect6: { name: "IDFC First Select - 6x", spendToEarnRP: 20.833, rpValue: 0.25 },
                 sbi: { name: "SBI SimplyClick", spendToEarnRP: 100, rpValue: 0.25 },
                 sbicashback: { name: "SBI Cashback", spendToEarnRP: 100, rpValue: 1 },
@@ -904,6 +937,7 @@
                 axisMagnus: { name: "Axis Magnus", spendToEarnRP: 16.666, rpValue: 0.2 },
                 sbibpcl: { name: "SBI BPCL", spendToEarnRP: 100, rpValue: 0.25 },
                 sbibpcloctane: { name: "SBI BPCL Octane", spendToEarnRP: 100, rpValue: 0.25 },
+                hdfciocl: { name: "HDFC IOCL", spendToEarnRP: 150, rpValue: 0.96 },
             };
 
             // Get selected cards
@@ -1025,14 +1059,25 @@
                     else if (cardId === 'axisMagnus' && document.getElementById('axisMagnusportal').checked) {
                         earnedRP = amount / cards[cardId].spendToEarnRP * 5;
                     }
+                    else if (cardId === 'hdfciocl' && document.getElementById('hdfcioclfuel').checked) {
+                        const hdfcioclPercent = parseFloat(document.querySelector('input[name="hdfcioclPercent"]:checked').value) / 100;
+                        earnedRP = amount * hdfcioclPercent;
+                    }
                     else if (cardId === 'idfcSelect3') {
                         if (amount > 20000) {
                             earnedRP = 20000 / card.spendToEarnRP + (((amount - 20000) / card.spendToEarnRP) * 10);
                         } else if (document.getElementById('idfcSelectInsurance').checked) {
-                            // TODO : Fix the logic 
                             earnedRP = amount / cards[cardId].spendToEarnRP; // Assuming 1x reward points for Insurance
                         } else if (document.getElementById('idfcSelectOther').checked) {
-                            // TODO : Fix the logic 
+                            earnedRP = amount / cards[cardId].spendToEarnRP * 3;
+                        }
+                    }
+                    else if (cardId === 'idfcclassic') {
+                        if (amount > 20000) {
+                            earnedRP = 20000 / card.spendToEarnRP + (((amount - 20000) / card.spendToEarnRP) * 10);
+                        } else if (document.getElementById('idfcclassicInsurance').checked) {
+                            earnedRP = amount / cards[cardId].spendToEarnRP; // Assuming 1x reward points for Insurance
+                        } else if (document.getElementById('idfcclassicOther').checked) {
                             earnedRP = amount / cards[cardId].spendToEarnRP * 3;
                         }
                     } else if (cardId === 'idfcwealth' && amount > 20000) {
