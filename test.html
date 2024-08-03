@@ -1,0 +1,1193 @@
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NR1YZCQFF4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-NR1YZCQFF4');
+    </script>
+    <meta charset="UTF-8">
+    </meta>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    </meta>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    </meta>
+    <meta name="keywords"
+        content="credit cards,	credit card rewards,	credit card benefits,	credit card comparison,	best credit cards,	redeeming reward points,	maximizing credit card rewards,	loyalty programs,	points and miles,	HDFC Regalia,	American Express Platinum,	Axis Bank Reserve,	HSBC Platinum,	SBI SimplyClick,	Indusind Legend,	RBL Shoprite,	cashback,	APR (Annual Percentage Rate),	spending analysis,	financial planning,	reward points value,	spend-to-earn ratio,	card exclusions,	travel rewards credit cards,	online shopping rewards,	e-commerce cashback,	best credit cards for online shopping,	travel credit cards,	hotel rewards,	travel insurance,	budgeting tools,	money management,	personal finance tips,	cashback credit cards,	travel rewards cards,	business credit cards,	compare credit card rewards,	benefits vs. drawbacks,	features analysis,">
+    <!-- credit cards,	credit card rewards,	credit card benefits,	credit card comparison,	best credit cards,	redeeming reward points,	maximizing credit card rewards,	loyalty programs,	points and miles,	HDFC Regalia,	American Express Platinum,	Axis Bank Reserve,	HSBC Platinum,	SBI SimplyClick,	Indusind Legend,	RBL Shoprite,	cashback,	APR (Annual Percentage Rate),	spending analysis,	financial planning,	reward points value,	spend-to-earn ratio,	card exclusions,	travel rewards credit cards,	online shopping rewards,	e-commerce cashback,	best credit cards for online shopping,	travel credit cards,	hotel rewards,	travel insurance,	budgeting tools,	money management,	personal finance tips,	cashback credit cards,	travel rewards cards,	business credit cards,	compare credit card rewards,	benefits vs. drawbacks,	features analysis, ausvsnz, australia, newzealand, deepika padukone, bitcoin, earn money, chelsea, sundar pichai, google adsense, patanjali-->
+    <meta name="description"
+        content="Unlock the full potential of credit cards with our Reward Points Calculator. Compare, analyze, and maximize rewards, benefits, and cashback. Find the best credit cards for travel, online shopping, and more. Plan your financial journey with our tools and tips for effective money management. Your guide to optimizing credit card usage and loyalty programs.">
+    <title>Reward Points Calculator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            /* Reduced margin */
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border-spacing: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 2px solid #ddd;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        tr {
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+
+        .best-cards {
+            background-color: #ffc107;
+        }
+
+        #instructions {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        #bankHeaders {
+            margin-top: 20px;
+        }
+
+        h3 {
+            color: #007bff;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        #cardForm h2 {
+            text-align: center;
+        }
+
+        #result h2 {
+            text-align: left;
+            color: #007bff;
+            margin-bottom: 12px;
+        }
+
+        #messages {
+            color: #ff0000;
+            /* Red color */
+            font-weight: bold;
+            margin-bottom: 15px;
+            /* Adjust the margin for better visibility */
+        }
+
+        #labelcontainer {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        #labelcontainer label {
+            margin-right: 10px;
+        }
+
+        #centered-image {
+            margin: 0 auto;
+            /* Set left and right margins to 'auto' */
+            display: block;
+            /* Make the image a block element to apply margins */
+        }
+
+        #container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 680px;
+            margin: 20px auto;
+            background-color: #f5f5f5;
+            /* Light grey background */
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            /* Soft shadow */
+            transition: all 0.3s ease;
+            /* Smooth transition */
+            font-family: Arial, sans-serif;
+            /* Change font */
+        }
+
+        #container:hover {
+            transform: translateY(-5px);
+            /* Lift on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            /* Enhanced shadow on hover */
+        }
+
+        #container h3 {
+            margin-bottom: 10px;
+            /* Add some space below the heading */
+            font-size: 1.5em;
+            /* Larger font size for heading */
+            color: #333;
+            /* Dark text color */
+        }
+
+        #container p {
+            color: #666;
+            /* Subdued text color */
+            line-height: 1.4;
+            /* Improved readability */
+        }
+
+        #container ul {
+            padding: 0;
+            /* Remove default padding */
+            list-style-type: none;
+            /* Remove default list styles */
+        }
+
+        #container li {
+            margin-bottom: 5px;
+            /* Add space between list items */
+        }
+
+        #container li::before {
+            color: #007bff;
+            /* Bullet color */
+            font-size: 1.2em;
+            /* Adjust bullet size */
+            margin-right: 8px;
+            /* Add space between bullet and text */
+        }
+
+        #container h2 {
+            color: #007bff;
+        }
+
+        #centered-image {
+            margin: 0 auto;
+            display: block;
+            height: 300px;
+            width: 350px;
+        }
+
+        marquee {
+            height: 260px;
+            scrollamount: 2;
+            behavior: scroll;
+            padding: 20px;
+        }
+
+        .result-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .best-card-container {
+            margin-top: 20px;
+        }
+
+        .best-card {
+            background-color: #928b8bae;
+            padding: 10px;
+            width: 300px;
+            /* Card width */
+            height: 180px;
+            /* Card height */
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Shadow effect */
+            margin-bottom: 20px;
+            /* Spacing between cards */
+            position: relative;
+            /* Positioning */
+            display: flex;
+            /* Flexbox layout */
+            flex-direction: column;
+            /* Layout direction */
+            justify-content: center;
+            /* Center content vertically */
+            background-image: url('https://www.shutterstock.com/image-photo/credit-card-on-png-background-600nw-2259495135.jpg');
+            background-size: cover;
+            /* Adjust as needed */
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .best-card h3 {
+            color: #bbb8b8;
+            margin-bottom: 12px;
+            font-size: 16px;
+            font-family: 'Courier New', Courier, monospace;
+            padding-left: 20px;
+            padding-top: 45px;
+        }
+
+        .best-card p {
+            margin: 0;
+            color: #bbb8b8;
+            font-size: 14px;
+            /* Text font size */
+            font-family: 'Courier New', Courier, monospace;
+            padding-left: 20px;
+        }
+
+        .best-card img {
+            max-width: 40px;
+            /* Maximum image width */
+            margin-left: 10%;
+            /* Auto margin for image */
+            margin-right: auto;
+            /* Auto margin for image */
+            margin-bottom: 5px;
+            /* Spacing below image */
+        }
+
+        .best-card:hover {
+            transform: translateY(-5px);
+            /* Lift on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            /* Enhanced shadow on hover */
+        }
+
+        .card-info__right {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .mastercard {
+            display: flex;
+        }
+
+        .mastercard .circle {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+        }
+
+        .mastercard .circle--red {
+            background: #eb001b;
+        }
+
+        .mastercard .circle--yellow {
+            margin-left: -0.7rem;
+            background: rgba(255, 209, 0, 0.6);
+        }
+
+        .lds-hourglass {
+            display: inline-block;
+            position: relative;
+            width: 70px;
+            height: 70px;
+            padding: 50px;
+        }
+
+        .lds-hourglass:after {
+            content: " ";
+            display: block;
+            border-radius: 50%;
+            width: 0;
+            height: 0;
+            margin: 8px;
+            box-sizing: border-box;
+            border: 32px solid #007bff;
+            border-color: #007bff transparent #007bff transparent;
+            animation: lds-hourglass 1.2s infinite;
+        }
+
+        @keyframes lds-hourglass {
+            0% {
+                transform: rotate(0);
+                animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            }
+
+            50% {
+                transform: rotate(900deg);
+                animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            }
+
+            100% {
+                transform: rotate(1800deg);
+            }
+        }
+
+        .info-box {
+            display: none;
+            position: absolute;
+            background-color: rgba(169, 169, 169, 0.9);
+            /* Grey 70% transparent */
+            padding: 10px;
+            border-radius: 5px;
+            width: auto;
+            text-align: center;
+            z-index: 1;
+            top: auto;
+            right: 335px;
+            text-align: left;
+        }
+
+        .info-icon img {
+            width: 17px;
+            height: 17px;
+            background-color: #fff;
+            padding: inherit;
+        }
+
+        .info-icon:hover+.info-box {
+            display: block;
+        }
+
+        .Contact {
+            color: #f90404;
+            font-weight: 100;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            background: #a2cdc5;
+            padding: 15px 15px;
+            border-radius: 8px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-links li {
+            list-style: none;
+            margin: 0 12px;
+        }
+
+        .nav-links li a {
+            position: relative;
+            color: #333;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 6px 0;
+            text-decoration: none;
+        }
+
+        .nav-links li a:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            width: 0%;
+            background: #2d6f6f;
+            border-radius: 12px;
+            transition: all 0.4s ease;
+        }
+
+        .nav-links li a:hover:before {
+            width: 100%;
+        }
+
+        .nav-links li.center a:before {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .nav-links li.upward a:before {
+            width: 100%;
+            bottom: -5px;
+            opacity: 0;
+        }
+
+        .nav-links li.upward a:hover:before {
+            bottom: 0px;
+            opacity: 1;
+        }
+
+        .nav-links li.forward a:before {
+            width: 100%;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s ease;
+        }
+
+        .nav-links li.forward a:hover:before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .radio-inputs {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            border-radius: 0.5rem;
+            background-color: #EEE;
+            box-sizing: border-box;
+            box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+            padding: 0.20rem;
+            width: 300px;
+            height: auto;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            margin-top: 2px;
+        }
+
+        .radio-inputs .radio {
+            flex: 1 1 auto;
+            text-align: center;
+        }
+
+        .radio-inputs .radio input {
+            display: none;
+
+        }
+
+        .radio-inputs .radio .name {
+            display: flex;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5rem;
+            border: none;
+            padding: .5rem 0;
+            color: rgba(51, 65, 85, 1);
+            transition: all .15s ease-in-out;
+            vertical-align: middle;
+        }
+
+        .radio-inputs .radio input:checked+.name {
+            background-color: #a2cdc5;
+            font-weight: 500;
+        }
+
+        .radio span.name {
+            font-size: 12px;
+            color: #333;
+        }
+
+        .collapsible-header {
+            cursor: pointer;
+            background-color: #f1f1f1;
+            padding: 10px;
+            font-size: 18px;
+            border: 1px solid #ddd;
+            margin-bottom: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .collapsible-header:hover {
+            background-color: #ddd;
+        }
+
+        .collapsible-content {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-top: none;
+            transition: max-height 0.3s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul class="nav-links" style="list-style-type: none;">
+            <li class="center"><a href="https://digiipoint.blogspot.com/p/rent-payment-charges-and-rewards.html">Rent
+                    payment charges</a></li>
+            <li class="center"><a href="#">Credit Cards Info (Coming soon)</a></li>
+            <!-- <li class="forward"><a href="#" >Credit Cards Info (Coming soon)</a></li> -->
+        </ul>
+    </nav>
+    <div id="container">
+        <img id="centered-image"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEihqdKoNpghZqbd98t9L2U6S5xjgGYNzV4r7-o441IugraiwyyjR2D1_dV75mN5Q587x1UpBJTEIO_bTFW8Dhuu0Odq-ec9rGJxsHYfyAqPoqeaQFHOLtcLtRoSGUNUfKk5JyJ0__KVi4PTKiCfxd5dXz1crAeXBkk3XrWezqrmwG_XM4jlwtSE9_FKSbg/s1600/_a04f19da-108c-4b10-9893-d8d2217af491.jpeg"
+            alt="Description of the image" height="300" width="350">
+
+        <!-- Recent updates marquee -->
+        <marquee direction="up" height="300" scrollamount="2" behavior="scroll">
+            <h2>Recent updates</h2>
+            <li><b>New card feature:</b> Added weekday & weekend options for INDUSIND Legend</li>
+            <li><b>New card added:</b> ICICI Coral RuPay credit card</li>
+            <li><b>New card added:</b> Standard Chartered Platinum</li>
+            <li><b>New card added:</b> SBI Prime</li>
+            <li><b>New card feature:</b> Added calculation for 10x rewards for IDFC cards when amount exceeds 20000INR
+            </li>
+            <li><b>New card added:</b> SBI Aurum</li>
+            <li><b>New card added:</b> SBI BPCL</li>
+            <li><b>New card added:</b> SBI BPCL Octane</li>
+            <li><b>New card added:</b> HDFC IOCL, IDFC FIrst Classic </li>
+            <!-- Add more updates as needed -->
+        </marquee>
+    </div>
+    <div id="instructions">
+        <h2>How the Calculator Works</h2>
+        <p>Discover the simplicity of our Reward Points Calculator. Follow these steps to maximize your credit card
+            benefits:</p>
+        <ol>
+            <li>Check the cards you have.</li>
+            <li>Enter the amount you plan to spend (INR).</li>
+            <li>Click 'Select All' to select all cards or manually select the desired cards (Atleast 2)</li>
+            <li>Click 'Calculate' to see the results.</li>
+            <li>De-select the card you want to exclude and Click 'Calculate' again to see the results.</li>
+        </ol>
+        <h3 class="Contact">Want to get your cards added? Please fill out <a
+                href="https://digiipoint.blogspot.com/p/contact-us.html">Contact us</a> form now.</h3>
+    </div>
+    <form id="cardForm">
+        <h2>Select Cards</h2>
+        <div id="bankHeaders">
+            <h3 id="AmexHeader" class="collapsible-header">American Express Cards</h3>
+            <div id="AmexContainer" class="collapsible-content">
+                <!-- <label for="amexplat"><input id="amexplat" type="checkbox" /> American Express Platinum</label> -->
+                <label for="amexplat">
+                    <input id="amexplat" type="checkbox" /> American Express Platinum
+                    <span class="info-icon" id="amex-info-icon-plat" onmouseover="showInfoBox('plat')"
+                        onmouseout="hideInfoBox('plat')">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Minimalist_info_Icon.png"
+                            alt="Info Icon" width="15" height="15" />
+                    </span>
+                </label>
+                <div class="info-box" id="amex-info-box-plat">1RP for every INR40
+                    <br> 2X - FUEL
+                    <br> 3X - All international transactions
+                    <br>10X on Bvlgari, Kapoor Watch & Co. etc
+                    <br>20X on Darveys &amp; RAS Luxury skincare.
+                </div>
+                <label for="amexplatreserve">
+                    <input id="amexplatreserve" type="checkbox" /> American Express Platinum Reserve
+                    <span class="info-icon" id="amex-info-icon-reserve" onmouseover="showInfoBox('reserve')"
+                        onmouseout="hideInfoBox('reserve')">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Minimalist_info_Icon.png"
+                            alt="Info Icon" width="15" height="15" />
+                    </span>
+                </label>
+                <div class="info-box" id="amex-info-box-reserve">1RP for every INR50 except for spend on
+                    <br>Fuel, Insurance, Utilities, Cash Transactions
+                    <br> and EMI conversion at Point of Sale
+                </div>
+            </div>
+
+            <h3 id="AxisHeader" class="collapsible-header">Axis Cards</h3>
+            <div id="AxisContainer" class="collapsible-content">
+                <label for="axisreserve"><input id="axisreserve" type="checkbox" /> Axis Bank Reserve</label>
+                <label for="axisNeo"><input id="axisNeo" type="checkbox" /> Axis Neo</label>
+                <label for="axisMyZone"><input id="axisMyZone" type="checkbox" /> Axis MyZone</label>
+                <label for="ioclAxis"><input id="ioclAxis" type="checkbox" /> Axis IOCL [FUEL]</label>
+                <label for="axisRewards"><input id="axisRewards" type="checkbox" /> Axis Rewards</label>
+                <label for="axisPrivilege"><input id="axisPrivilege" type="checkbox" /> Axis Privilege</label>
+                <div id="labelcontainer">
+                    <input type="checkbox" id="axisMagnus" name="axisMagnus" />
+                    <label for="axisMagnus"> Axis Magnus : </label>
+                    <div class="radio-inputs">
+                        <label class="radio" for="axisMagnusnormal"><input type="radio" id="axisMagnusnormal"
+                                name="axisMagnusPercent" checked="true" /> <span class="name">Normal
+                                spends</span></label>
+                        <label class="radio" for="axisMagnusportal"><input type="radio" id="axisMagnusportal"
+                                name="axisMagnusPercent" />
+                            <span class="name">Trave EDGE portal</span></label>
+
+                    </div><span class="info-icon" id="amex-info-icon-magnus" onmouseover="showInfoBox('magnus')"
+                        onmouseout="hideInfoBox('magnus')">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Minimalist_info_Icon.png"
+                            alt="Info Icon" width="15" height="15" />
+                    </span>
+                </div>
+                <div class="info-box" id="amex-info-box-magnus">12 points per Rs. 200 spent (up to Rs. 1.5 Lakh)
+                    <br>35 points per Rs. 200 spent (above Rs. 1.5 Lakh)
+                    <br>60 points per Rs. 200 spent on TravelEDGE (up to Rs. 2 Lakh)
+                    <br>35 points per Rs. 200 spent on TravelEDGE (above Rs. 2 Lakh)
+                </div>
+            </div>
+
+            <h3 id="CitiHeader" class="collapsible-header">Citibank Cards</h3>
+            <div id="CitiContainer" class="collapsible-content">
+                <label for="citibank"><input id="citibank" type="checkbox" /> Citibank Indian Oil (FUEL)</label>
+            </div>
+            <h3 id="HDFCHeader" class="collapsible-header">HDFC</h3>
+            <div id="HDFCContainer" class="collapsible-content">
+                <label for="hdfcdcb"><input id="hdfcdcb" type="checkbox" /> Diners Club Black Metal</label>
+                <label for="hdfc"><input id="hdfc" type="checkbox" /> HDFC Regalia / Regalia Gold</label>
+                <label for="hdfcinfinia"><input id="hdfcinfinia" type="checkbox" /> HDFC Infinia Metal</label>
+                <label for="hdfcneu"><input id="hdfcneu" type="checkbox" /> Tata Neu Infinity HDFC</label>
+                <div id="labelcontainer">
+                    <input type="checkbox" id="hdfciocl" name="hdfciocl" />
+                    <label for="hdfciocl"> HDFC IOCL (FUEL) : </label>
+                    <div class="radio-inputs">
+                        <label for="hdfcioclfuel" class="radio"><input type="radio" id="hdfcioclfuel"
+                                name="hdfcioclPercent" value="5" /> <span class="name">Fuel/Groceries/Bill
+                                Payment</span></label>
+                        <label for="hdfcioclOther" class="radio"><input type="radio" id="hdfcioclOther"
+                                name="hdfcioclPercent" value="1" checked="true" /> <span class="name">All other
+                                spends</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <h3 id="HSBCHeader" class="collapsible-header">HSBC Cards</h3>
+            <div id="HSBCContainer" class="collapsible-content">
+                <label for="hsbc"><input id="hsbc" type="checkbox" /> HSBC Platinum</label>
+            </div>
+
+            <h3 id="ICICIHeader" class="collapsible-header">ICICI Cards</h3>
+            <div id="ICICIContainer" class="collapsible-content">
+                <div id="labelcontainer">
+                    <input type="checkbox" id="iciciAmazon" name="iciciAmazon" />
+                    <label for="iciciAmazon"> ICICI AMAZON :</label>
+                    <div class="radio-inputs">
+                        <label for="iciciAmazon1" class="radio"><input type="radio" id="iciciAmazon1"
+                                name="iciciAmazonPercent" value="1" />
+                            <span class="name">1%</span></label>
+                        <label for="iciciAmazon2" class="radio"><input type="radio" id="iciciAmazon2"
+                                name="iciciAmazonPercent" value="2" checked="true" />
+                            <span class="name">2%</span></label>
+                        <label for="iciciAmazon3" class="radio"><input type="radio" id="iciciAmazon3"
+                                name="iciciAmazonPercent" value="3" />
+                            <span class="name">3%</span></label>
+                        <label for="iciciAmazon5" class="radio"><input type="radio" id="iciciAmazon5"
+                                name="iciciAmazonPercent" value="5" />
+                            <span class="name">5%</span></label>
+                    </div>
+                </div>
+                <div id="labelcontainer">
+                    <input type="checkbox" id="iciciCoralRupay" name="iciciCoralRupay" />
+                    <label for="iciciCoralRupay"> ICICI Coral RuPay : </label>
+                    <div class="radio-inputs">
+                        <label for="iciciCoralInsurance" class="radio"><input type="radio" id="iciciCoralInsurance"
+                                name="iciciCoralPercent" value="1" /> <span
+                                class="name">Insurance/Utilities</span></label>
+                        <label for="iciciCoralOther" class="radio"><input type="radio" id="iciciCoralOther"
+                                name="iciciCoralPercent" value="2" checked="true" /> <span class="name">All other
+                                spends</span></label>
+                    </div>
+                </div>
+                <div id="labelcontainer">
+                    <input type="checkbox" id="iciciRubyx" name="iciciRubyx" />
+                    <label for="iciciRubyx"> ICICI Rubyx / Sapphiro : </label>
+                    <div class="radio-inputs">
+                        <label for="iciciRubyxDom" class="radio"><input type="radio" id="iciciRubyxDom"
+                                name="iciciRubyxPercent" value="2" checked="true" /> <span
+                                class="name">Domestic</span></label>
+                        <label for="iciciRubyxInsurance" class="radio"><input type="radio" id="iciciRubyxInsurance"
+                                name="iciciRubyxPercent" value="1" /><span class="name">Insurance/Utilities</span>
+                        </label>
+                        <label for="iciciRubyxIntl" class="radio"><input type="radio" id="iciciRubyxIntl"
+                                name="iciciRubyxPercent" value="4" /><span class="name">International</span> </label>
+                    </div>
+                </div>
+                <label for="iciciCoral"><input id="iciciCoral" type="checkbox" /> ICICI CORAL</label>
+            </div>
+
+            <h3 id="IDFCHeader" class="collapsible-header">IDFC Cards</h3>
+            <div id="IDFCContainer" class="collapsible-content">
+
+                <div id="labelcontainer">
+                    <label for="idfcclassic"><input id="idfcclassic" type="checkbox" /> IDFC First Classic (3x -
+                        Offline/Online)</label>
+                    <div class="radio-inputs">
+                        <label for="idfcclassicOther" class="radio"><input type="radio" id="idfcclassicOther"
+                                name="idfcclassicPercent" value="3" checked="true" /> <span class="name">All other
+                                spends</span></label>
+                        <label for="idfcclassicInsurance" class="radio"><input type="radio" id="idfcclassicInsurance"
+                                name="idfcclassicPercent" value="1" /> <span
+                                class="name">Insurance/Utilities</span></label>
+                    </div>
+                    <span class="info-icon" id="amex-info-icon-idfcclassicbox"
+                        onmouseover="showInfoBox('idfcclassicbox')" onmouseout="hideInfoBox('idfcclassicbox')">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Minimalist_info_Icon.png"
+                            alt="Info Icon" width="15" height="15" />
+                    </span>
+                </div>
+                <div class="info-box" id="amex-info-box-idfcclassicbox">Categories not included in the 10X Reward Points
+                    threshold
+                    <br>Rental & Property Management, Utility, Insurance, Government Services, Education and Wallet
+                    Load.
+                    <br>Reward Points program not applicable on fuel, EMI transactions, & cash withdrawals.
+                </div>
+                <div id="labelcontainer">
+                    <label for="idfcSelect3"><input id="idfcSelect3" type="checkbox" /> IDFC First Select (3x -
+                        Offline/Online)</label>
+                    <div class="radio-inputs">
+                        <label for="idfcSelectOther" class="radio"><input type="radio" id="idfcSelectOther"
+                                name="idfcSelectPercent" value="3" checked="true" /> <span class="name">All other
+                                spends</span></label>
+                        <label for="idfcSelectInsurance" class="radio"><input type="radio" id="idfcSelectInsurance"
+                                name="idfcSelectPercent" value="1" /> <span
+                                class="name">Insurance/Utilities</span></label>
+                    </div>
+                    <span class="info-icon" id="amex-info-icon-idfcsel" onmouseover="showInfoBox('idfcsel')"
+                        onmouseout="hideInfoBox('idfcsel')">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Minimalist_info_Icon.png"
+                            alt="Info Icon" width="15" height="15" />
+                    </span>
+                </div>
+                <div class="info-box" id="amex-info-box-idfcsel">Categories not included in the 10X Reward Points
+                    threshold
+                    <br>Rental & Property Management, Utility, Insurance, Government Services, Education and Wallet
+                    Load.
+                    <br>Reward Points program not applicable on fuel, EMI transactions, & cash withdrawals.
+                </div>
+                <!-- <label for="idfcSelect6"><input id="idfcSelect6" type="checkbox" /> IDFC First Select (6x - Online)</label> -->
+                <label for="idfcvistara"><input id="idfcvistara" type="checkbox" /> Club Vistara IDFC First</label>
+                <label for="idfcwealth"><input id="idfcwealth" type="checkbox" /> IDFC First Wealth</label>
+            </div>
+
+            <h3 id="IndusindHeader" class="collapsible-header">INDUSIND Cards</h3>
+            <div id="IndusindContainer" class="collapsible-content">
+            <div id="labelcontainer">
+                <label for="indusind"><input id="indusind" type="checkbox" /> Indusind Legend : </label>
+                <div class="radio-inputs">
+
+                    <label for="indusindWeekday" class="radio"><input type="radio" id="indusindWeekday"
+                            name="indusindWeekdayWeekend" value="weekday" checked><span
+                            class="name">Weekday</span></label>
+
+                    <label for="indusindWeekend" class="radio"><input type="radio" id="indusindWeekend"
+                            name="indusindWeekdayWeekend" value="weekend"><span class="name">Weekend</span></label>
+                </div>
+            </div>
+        </div>
+            <h3 id="RBLHeader" class="collapsible-header">RBL Cards</h3>
+            <div id="RBLContainer" class="collapsible-content">
+            <div id="labelcontainer">
+                <input type="checkbox" id="rbl" name="rbl" />
+                <label for="rbl">RBL Shoprite : </label>
+                <div class="radio-inputs">
+                    <label for="rblothr" class="radio"><input type="radio" id="rblothr" name="rblPercent" value="1"
+                            checked="true" />
+                        <span class="name">Other spends</span></label>
+                    <label for="rblgroc" class="radio"><input type="radio" id="rblgroc" name="rblPercent" value="20" />
+                        <span class="name">Grocery</span></label>
+                </div>
+            </div>
+        </div>
+            <h3 id="SBIHeader" class="collapsible-header">SBI Cards</h3>
+            <div id="SBIContainer" class="collapsible-content">
+            <label for="sbiaurum"><input id="sbiaurum" type="checkbox" /> SBI Aurum</label>
+            <div id="labelcontainer">
+                <input type="checkbox" id="sbibpcl" name="sbibpcl" />
+                <label for="sbibpcl">SBI BPCL : </label>
+                <div class="radio-inputs">
+                    <label for="sbibpclothr" class="radio"><input type="radio" id="sbibpclothr" name="sbibpclPercent"
+                            value="1" checked="true" />
+                        <span class="name">Other spends</span></label>
+                    <label for="sbibpclgroc" class="radio"><input type="radio" id="sbibpclgroc" name="sbibpclPercent"
+                            value="5" />
+                        <span class="name">Grocery</span></label>
+                </div>
+            </div>
+            <div id="labelcontainer">
+                <input type="checkbox" id="sbibpcloctane" name="sbibpcloctane" />
+                <label for="sbibpcloctane">SBI BPCL Octane : </label>
+                <div class="radio-inputs">
+                    <label for="sbibpcloctaneothr" class="radio"><input type="radio" id="sbibpcloctaneothr"
+                            name="sbibpcloctanePercent" value="1" checked="true" />
+                        <span class="name">Other spends</span></label>
+                    <label for="sbibpcloctanegas" class="radio"><input type="radio" id="sbibpcloctanegas"
+                            name="sbibpcloctanePercent" value="25" />
+                        <span class="name">Bharat Gas (Website & app only)</span></label>
+                </div>
+            </div>
+            <div id="labelcontainer">
+                <input type="checkbox" id="sbicashback" name="sbicashback" />
+                <label for="sbicashback">SBI Cashback : </label>
+                <div class="radio-inputs">
+                    <label for="sbicashoffline" class="radio"><input type="radio" id="sbicashoffline"
+                            name="sbicashPercent" value="1" checked="true" /><span class="name">Offline</span></label>
+                    <label for="sbicashonline" class="radio"><input type="radio" id="sbicashonline"
+                            name="sbicashPercent" value="5" />
+                        <span class="name">Online</span></label>
+                </div>
+            </div>
+            <div id="labelcontainer">
+                <input type="checkbox" id="sbi" name="sbi" />
+                <label for="sbi">SBI SimplyClick : </label>
+                <div class="radio-inputs">
+                    <label for="sbioffline" class="radio"><input type="radio" id="sbioffline" name="sbiPercent"
+                            value="1" checked="true" /><span class="name">Offline</span> </label>
+                    <label for="sbionline" class="radio"><input type="radio" id="sbionline" name="sbiPercent"
+                            value="5" /><span class="name">Online</span> </label>
+                </div>
+            </div>
+            <label for="sbisimplysave"><input id="sbisimplysave" type="checkbox" /> SBI SimplySave</label>
+            <label for="sbiprime"><input id="sbiprime" type="checkbox" /> SBI Prime</label>
+        </div>
+            <h3 id="SCHeader" class="collapsible-header">Standard Chartered Cards</h3>
+            <div id="SCContainer" class="collapsible-content">
+            <label for="stdchartered"><input id="stdchartered" type="checkbox" /> Standard Chartered Platinum Rewards
+                [Dining/Fuel]</label>
+            </div>
+            <h3 id="OtherHeader" class="collapsible-header">Other Cards</h3>
+            <div id="OtherContainer" class="collapsible-content">
+            <label for="oneCard"><input id="oneCard" type="checkbox" />One Card</label>
+            <label for="scapia"><input id="scapia" type="checkbox" /> Scapia</label>
+        </div>
+    </div>
+        &nbsp;
+
+        <label for="amount">Amount to Spend (INR):</label>
+        <input id="amount" placeholder="Enter amount" type="number" />
+
+        <button onclick="selectAll()" type="button">Select All</button>
+        <button onclick="calculateCashback()" type="button">Calculate</button>
+        <button onclick="resetForm()" type="button">Reset</button>
+        <div id="messages"></div>
+    </form>
+
+    &nbsp;
+    <div id="result"></div>
+
+    <script>
+        document.querySelectorAll(".collapsible-header").forEach(header => {
+            header.addEventListener("click", function () {
+                const contentId = this.id.replace("Header", "Container");
+                const content = document.getElementById(contentId);
+
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        });
+        function showInfoBox(card) {
+            document.getElementById('amex-info-box-' + card).style.display = 'block';
+        }
+
+        function hideInfoBox(card) {
+            document.getElementById('amex-info-box-' + card).style.display = 'none';
+        }
+        function resetForm() {
+            // Reset the form
+            document.getElementById('cardForm').reset();
+            // Clear the result and messages
+            document.getElementById('result').innerHTML = '';
+            document.getElementById('messages').innerHTML = '';
+        }
+        function selectAll() {
+            // Select all checkboxes
+            document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+                checkbox.checked = true;
+            });
+        }
+
+        function calculateCashback() {
+            // Reset previous messages
+            document.getElementById('result').innerHTML = '';
+            document.getElementById('messages').innerHTML = '';
+
+            // Card details
+            const cards = {
+                hdfc: { name: "HDFC Regalia / Regalia Gold", spendToEarnRP: 37.5, rpValue: 0.5 },
+                iciciAmazon: { name: "ICICI AMAZON", spendToEarnRP: 100, rpValue: 1 },
+                iciciCoral: { name: "ICICI CORAL", spendToEarnRP: 50, rpValue: 0.25 },
+                iciciCoralRupay: { name: "ICICI Coral Rupay", spendToEarnRP: 100, rpValue: 0.25 },
+                iciciRubyx: { name: "ICICI Rubyx / Sapphiro", spendToEarnRP: 50, rpValue: 0.25 },
+                hsbc: { name: "HSBC Platinum", spendToEarnRP: 75, rpValue: 0.2 },
+                oneCard: { name: "One Card", spendToEarnRP: 50, rpValue: 0.125 },
+                citibank: { name: "Citibank Indian Oil (FUEL)", spendToEarnRP: 37.5, rpValue: 1 },
+                idfcSelect3: { name: "IDFC First Select - 3x*", spendToEarnRP: 150, rpValue: 0.25 },
+                idfcclassic: { name: "IDFC First Classic - 3x*", spendToEarnRP: 150, rpValue: 0.25 },
+                //idfcSelect6: { name: "IDFC First Select - 6x", spendToEarnRP: 20.833, rpValue: 0.25 },
+                sbi: { name: "SBI SimplyClick", spendToEarnRP: 100, rpValue: 0.25 },
+                sbicashback: { name: "SBI Cashback", spendToEarnRP: 100, rpValue: 1 },
+                sbiprime: { name: "SBI Prime [Dining/Groceries/Movies]", spendToEarnRP: 10, rpValue: 0.25 },
+                indusind: { name: "Indusind Legend [2x on weekends]", spendToEarnRP: 100, rpValue: 0.75 },
+                rbl: { name: "RBL Shoprite", spendToEarnRP: 100, rpValue: 0.25 },
+                scapia: { name: "Scapia Forex Card", spendToEarnRP: 10, rpValue: 0.2 },
+                idfcvistara: { name: "Club Vistara IDFC First", spendToEarnRP: 200, rpValue: 1 },
+                axisreserve: { name: "Axis Bank Reserve", spendToEarnRP: 13.33, rpValue: 0.2 },
+                hdfcneu: { name: "Tata Neu Infinity HDFC", spendToEarnRP: 66.66, rpValue: 1 },
+                hdfcinfinia: { name: "HDFC Infinia Metal", spendToEarnRP: 37.5, rpValue: 1 },
+                hdfcdcb: { name: "HDFC Diners Club Black Metal", spendToEarnRP: 30, rpValue: 1 },
+                idfcwealth: { name: "IDFC First Wealth*", spendToEarnRP: 50, rpValue: 0.25 },
+                amexplat: { name: "American Express Platinum [2x - Fuel]", spendToEarnRP: 40, rpValue: 1 },
+                amexplatreserve: { name: "American Express Platinum Reserve", spendToEarnRP: 50, rpValue: 1 },
+                sbisimplysave: { name: "SBI Simply Save", spendToEarnRP: 150, rpValue: 0.25 },
+                sbiaurum: { name: "SBI Aurum", spendToEarnRP: 25, rpValue: 0.25 },
+                stdchartered: { name: "Standard Chartered Platinum Rewards [Dining/Fuel]", spendToEarnRP: 30, rpValue: 0.25 },
+                axisNeo: { name: "Axis Neo", spendToEarnRP: 50, rpValue: 0.2 },
+                axisMyZone: { name: "Axis MyZone", spendToEarnRP: 100, rpValue: 0.2 },
+                ioclAxis: { name: " Axis IOCL [FUEL]", spendToEarnRP: 100, rpValue: 0.2 },
+                axisRewards: { name: "Axis Rewards", spendToEarnRP: 62.5, rpValue: 0.2 },
+                axisPrivilege: { name: "Axis Privilege", spendToEarnRP: 20, rpValue: 0.2 },
+                axisMagnus: { name: "Axis Magnus", spendToEarnRP: 16.666, rpValue: 0.2 },
+                sbibpcl: { name: "SBI BPCL", spendToEarnRP: 100, rpValue: 0.25 },
+                sbibpcloctane: { name: "SBI BPCL Octane", spendToEarnRP: 100, rpValue: 0.25 },
+                hdfciocl: { name: "HDFC IOCL", spendToEarnRP: 150, rpValue: 0.96 },
+            };
+
+            // Get selected cards
+            const selectedCards = [];
+            document.querySelectorAll('input[type="checkbox"]:checked').forEach((checkbox) => {
+                selectedCards.push(checkbox.id);
+            });
+
+            // Get amount to spend
+            const amount = parseFloat(document.getElementById('amount').value);
+
+            // Validate inputs
+            if (isNaN(amount) || amount <= 0) {
+                document.getElementById('messages').innerHTML = '<p>Please enter a valid amount.</p>';
+                return;
+            }
+
+            if (selectedCards.length < 2) {
+                document.getElementById('messages').innerHTML = '<p>Please select at least two cards.</p>';
+                return;
+            }
+
+            // Show loading spinner
+            document.getElementById('result').innerHTML = '<div class="lds-hourglass"></div>';
+
+            setTimeout(() => {
+                // Calculate cashback and reward points for each selected card
+                let cashbacks = [];
+                let rewardPoints = [];
+                selectedCards.forEach((cardId) => {
+                    const card = cards[cardId];
+                    let earnedRP;
+
+                    if (cardId === 'iciciAmazon' && document.getElementById('iciciAmazon1').checked) {
+                        const iciciAmazonPercent = parseFloat(document.querySelector('input[name="iciciAmazonPercent"]:checked').value) / 100;
+                        earnedRP = amount * iciciAmazonPercent;
+                    }
+                    else if (cardId === 'iciciAmazon' && document.getElementById('iciciAmazon2').checked) {
+                        const iciciAmazonPercent = parseFloat(document.querySelector('input[name="iciciAmazonPercent"]:checked').value) / 100;
+                        earnedRP = amount * iciciAmazonPercent;
+                    }
+                    else if (cardId === 'iciciAmazon' && document.getElementById('iciciAmazon3').checked) {
+                        const iciciAmazonPercent = parseFloat(document.querySelector('input[name="iciciAmazonPercent"]:checked').value) / 100;
+                        earnedRP = amount * iciciAmazonPercent;
+                    }
+                    else if (cardId === 'iciciAmazon' && document.getElementById('iciciAmazon5').checked) {
+                        const iciciAmazonPercent = parseFloat(document.querySelector('input[name="iciciAmazonPercent"]:checked').value) / 100;
+                        earnedRP = amount * iciciAmazonPercent;
+                    }
+                    else if (cardId === 'rbl' && document.getElementById('rblothr').checked) {
+                        const rblPercent = parseFloat(document.querySelector('input[name="rblPercent"]:checked').value) / 100;
+                        earnedRP = amount * rblPercent;
+                    }
+                    else if (cardId === 'rbl' && document.getElementById('rblgroc').checked) {
+                        const rblPercent = parseFloat(document.querySelector('input[name="rblPercent"]:checked').value) / 100;
+                        earnedRP = amount * rblPercent;
+                    }
+                    else if (cardId === 'sbi' && document.getElementById('sbioffline').checked) {
+                        const sbiPercent = parseFloat(document.querySelector('input[name="sbiPercent"]:checked').value) / 100;
+                        earnedRP = amount * sbiPercent;
+                    }
+                    else if (cardId === 'sbi' && document.getElementById('sbionline').checked) {
+                        const sbiPercent = parseFloat(document.querySelector('input[name="sbiPercent"]:checked').value) / 100;
+                        earnedRP = amount * sbiPercent;
+                    }
+                    else if (cardId === 'sbicashback' && document.getElementById('sbicashoffline').checked) {
+                        const sbicashPercent = parseFloat(document.querySelector('input[name="sbicashPercent"]:checked').value) / 100;
+                        earnedRP = amount * sbicashPercent;
+                    }
+                    else if (cardId === 'sbicashback' && document.getElementById('sbicashonline').checked) {
+                        const sbicashPercent = parseFloat(document.querySelector('input[name="sbicashPercent"]:checked').value) / 100;
+                        earnedRP = amount * sbicashPercent;
+                    }
+                    else if (cardId === 'sbibpcl' && document.getElementById('sbibpclothr').checked) {
+                        const sbibpclPercent = parseFloat(document.querySelector('input[name="sbibpclPercent"]:checked').value) / 100;
+                        earnedRP = amount * sbibpclPercent;
+                    }
+                    else if (cardId === 'sbibpcl' && document.getElementById('sbibpclgroc').checked) {
+                        const sbibpclPercent = parseFloat(document.querySelector('input[name="sbibpclPercent"]:checked').value) / 100;
+                        earnedRP = amount * sbibpclPercent;
+                    }
+                    else if (cardId === 'sbibpcloctane' && document.getElementById('sbibpcloctaneothr').checked) {
+                        const sbibpcloctanePercent = parseFloat(document.querySelector('input[name="sbibpcloctanePercent"]:checked').value) / 100;
+                        earnedRP = amount * sbibpcloctanePercent;
+                    }
+                    else if (cardId === 'sbibpcloctane' && document.getElementById('sbibpcloctanegas').checked) {
+                        const sbibpcloctanePercent = parseFloat(document.querySelector('input[name="sbibpcloctanePercent"]:checked').value) / 100;
+                        earnedRP = amount * sbibpcloctanePercent;
+                    }
+                    else if (cardId === 'iciciCoralRupay' && document.getElementById('iciciCoralInsurance').checked) {
+                        const iciciCoralPercent = parseFloat(document.querySelector('input[name="iciciCoralPercent"]:checked').value) / 100;
+                        earnedRP = amount * iciciCoralPercent; // Assuming 4x reward points for Insurance
+                    }
+                    else if (cardId === 'iciciCoralRupay' && document.getElementById('iciciCoralOther').checked) {
+                        const iciciCoralPercent = parseFloat(document.querySelector('input[name="iciciCoralPercent"]:checked').value) / 100;
+                        earnedRP = amount * iciciCoralPercent;
+                    }
+                    else if (cardId === 'iciciRubyx' && document.getElementById('iciciRubyxInsurance').checked) {
+                        const iciciRubyxPercent = parseFloat(document.querySelector('input[name="iciciRubyxPercent"]:checked').value) / 100;
+                        earnedRP = amount * iciciRubyxPercent;
+                    }
+                    else if (cardId === 'iciciRubyx' && document.getElementById('iciciRubyxDom').checked) {
+                        const iciciRubyxPercent = parseFloat(document.querySelector('input[name="iciciRubyxPercent"]:checked').value) / 100;
+                        earnedRP = amount * iciciRubyxPercent;
+                    }
+                    else if (cardId === 'iciciRubyx' && document.getElementById('iciciRubyxIntl').checked) {
+                        const iciciRubyxPercent = parseFloat(document.querySelector('input[name="iciciRubyxPercent"]:checked').value) / 100;
+                        earnedRP = amount * iciciRubyxPercent;
+                    }
+                    else if (cardId === 'indusind' && document.getElementById('indusindWeekday').checked) {
+                        earnedRP = amount / cards[cardId].spendToEarnRP;
+                    }
+                    else if (cardId === 'indusind' && document.getElementById('indusindWeekend').checked) {
+                        earnedRP = amount / cards[cardId].spendToEarnRP * 2;
+                    }
+                    else if (cardId === 'axisMagnus' && document.getElementById('axisMagnusnormal').checked) {
+                        earnedRP = amount / cards[cardId].spendToEarnRP;
+                    }
+                    else if (cardId === 'axisMagnus' && document.getElementById('axisMagnusportal').checked) {
+                        earnedRP = amount / cards[cardId].spendToEarnRP * 5;
+                    }
+                    else if (cardId === 'hdfciocl' && document.getElementById('hdfcioclfuel').checked) {
+                        const hdfcioclPercent = parseFloat(document.querySelector('input[name="hdfcioclPercent"]:checked').value) / 100;
+                        earnedRP = amount * hdfcioclPercent;
+                    }
+                    else if (cardId === 'idfcSelect3') {
+                        if (amount > 20000) {
+                            earnedRP = 20000 / card.spendToEarnRP + (((amount - 20000) / card.spendToEarnRP) * 10);
+                        } else if (document.getElementById('idfcSelectInsurance').checked) {
+                            earnedRP = amount / cards[cardId].spendToEarnRP; // Assuming 1x reward points for Insurance
+                        } else if (document.getElementById('idfcSelectOther').checked) {
+                            earnedRP = amount / cards[cardId].spendToEarnRP * 3;
+                        }
+                    }
+                    else if (cardId === 'idfcclassic') {
+                        if (amount > 20000) {
+                            earnedRP = 20000 / card.spendToEarnRP + (((amount - 20000) / card.spendToEarnRP) * 10);
+                        } else if (document.getElementById('idfcclassicInsurance').checked) {
+                            earnedRP = amount / cards[cardId].spendToEarnRP; // Assuming 1x reward points for Insurance
+                        } else if (document.getElementById('idfcclassicOther').checked) {
+                            earnedRP = amount / cards[cardId].spendToEarnRP * 3;
+                        }
+                    } else if (cardId === 'idfcwealth' && amount > 20000) {
+                        earnedRP = 20000 / card.spendToEarnRP + (((amount - 20000) / card.spendToEarnRP) * 10);
+                    }
+                    else {
+                        earnedRP = amount / card.spendToEarnRP;
+                    }
+                    const rpValue = earnedRP * card.rpValue;
+                    const cashback = rpValue.toFixed(2);
+                    cashbacks.push({ cardName: card.name, cashbackValue: cashback, rewardPointsValue: earnedRP.toFixed(2) });
+                });
+
+                // Sort cashbacks in descending order
+                cashbacks.sort((a, b) => b.cashbackValue - a.cashbackValue);
+
+                // Display the best two cards in a separate container
+                let resultHTML = '<div class="best-card-container">';
+                resultHTML += '<h2>Best Card : </h2>';
+                resultHTML += '<div class="best-card"><div class="card-info__right"><div class="mastercard"><div class="circle circle--red"></div><div class="circle circle--yellow"></div></div></div><h3>' + cashbacks[0].cardName + '</h3><p>Cashback Value: ₹' + cashbacks[0].cashbackValue + '</p></div>';
+                resultHTML += '<h2>2nd Best Card : </h2>';
+                resultHTML += '<div class="best-card"><div class="card-info__right"><div class="mastercard"><div class="circle circle--red"></div><div class="circle circle--yellow"></div></div></div><h3>' + cashbacks[1].cardName + '</h3><p>Cashback Value: ₹' + cashbacks[1].cashbackValue + '</p></div>';
+                resultHTML += '</div>';
+
+                // Display the results
+                resultHTML += '<h2>Selected Cards :</h2>';
+                resultHTML += '<table>';
+                resultHTML += '<tr><th>Card Name</th><th>Reward Points</th><th>Cashback Value</th></tr>';
+                cashbacks.forEach((cashback, index) => {
+                    const isBestCard = index < 2; // Marking the best two cards
+                    const cardClass = isBestCard ? 'best-cards' : '';
+                    resultHTML += `<tr class="${cardClass}"><td>${cashback.cardName}</td><td>${cashback.rewardPointsValue} RP</td><td>₹${cashback.cashbackValue}</td></tr>`;
+                });
+                resultHTML += '</table>';
+
+                resultHTML += '<p>*10x rewards for IDFC card included</p>';
+
+                // Display the result
+                document.getElementById('result').innerHTML = resultHTML;
+                document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 2000); // Simulating a 1-second delay (you can adjust this)
+        }
+    </script>
+</body>
+
+</html>
