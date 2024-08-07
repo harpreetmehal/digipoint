@@ -181,13 +181,6 @@
             margin-right: 10px;
         }
 
-        #centered-image {
-            margin: 0 auto;
-            /* Set left and right margins to 'auto' */
-            display: block;
-            /* Make the image a block element to apply margins */
-        }
-
         #container {
             display: flex;
             justify-content: space-between;
@@ -204,6 +197,8 @@
             /* Smooth transition */
             font-family: Arial, sans-serif;
             /* Change font */
+            flex-direction: row;
+            /* Default to row on larger screens */
         }
 
         #container:hover {
@@ -254,18 +249,34 @@
             color: #007bff;
         }
 
+        /* Mobile Styles */
+        @media screen and (max-width: 768px) {
+            #container {
+                flex-direction: column;
+                /* Stack elements vertically on smaller screens */
+                text-align: center;
+                /* Center text in marquee */
+            }
+
+            marquee {
+                margin-left: 0;
+                margin-top: 20px;
+                /* Add space between image and marquee */
+            }
+        }
+
         #centered-image {
-            margin: 0 auto;
-            display: block;
-            height: 300px;
-            width: 350px;
+            max-width: 100%;
+            /* Ensure image scales down on smaller screens */
+            height: auto;
+            /* Maintain aspect ratio */
         }
 
         marquee {
             height: 260px;
-            scrollamount: 2;
             behavior: scroll;
             padding: 20px;
+            flex: 1;
         }
 
         .result-container {
@@ -551,6 +562,7 @@
             background-color: #a2cdc5;
             font-weight: 500;
         }
+
         .radio span.name {
             font-size: 12px;
             color: #333;
@@ -675,8 +687,8 @@
                 <input type="checkbox" id="hdfciocl" name="hdfciocl" />
                 <label for="hdfciocl"> HDFC IOCL (FUEL) : </label>
                 <div class="radio-inputs">
-                    <label for="hdfcioclfuel" class="radio"><input type="radio" id="hdfcioclfuel"
-                            name="hdfcioclPercent" value="5" /> <span class="name">Fuel/Groceries/Bill Payment</span></label>
+                    <label for="hdfcioclfuel" class="radio"><input type="radio" id="hdfcioclfuel" name="hdfcioclPercent"
+                            value="5" /> <span class="name">Fuel/Groceries/Bill Payment</span></label>
                     <label for="hdfcioclOther" class="radio"><input type="radio" id="hdfcioclOther"
                             name="hdfcioclPercent" value="1" checked="true" /> <span class="name">All other
                             spends</span></label>
@@ -809,29 +821,23 @@
                 <input type="checkbox" id="sbibpcl" name="sbibpcl" />
                 <label for="sbibpcl">SBI BPCL : </label>
                 <div class="radio-inputs">
-                    <label for="sbibpclothr" class="radio"><input type="radio" id="sbibpclothr" name="sbibpclPercent" value="1" checked="true" />
+                    <label for="sbibpclothr" class="radio"><input type="radio" id="sbibpclothr" name="sbibpclPercent"
+                            value="1" checked="true" />
                         <span class="name">Other spends</span></label>
-                    <label for="sbibpclgroc" class="radio"><input type="radio" id="sbibpclgroc" name="sbibpclPercent" value="5" />
+                    <label for="sbibpclgroc" class="radio"><input type="radio" id="sbibpclgroc" name="sbibpclPercent"
+                            value="5" />
                         <span class="name">Grocery</span></label>
                 </div>
             </div>
-            <!-- <div id="labelcontainer">
-                <input type="checkbox" id="sbibpcloctane" name="sbibpcloctane" />
-                <label for="sbibpcloctane">SBI BPCL Octane : </label>
-                <div class="radio-inputs"><label for="sbibpcloctane"><input type="radio" id="sbibpcloctaneothr"
-                            name="sbibpcloctanePercent" value="1" checked="true" />
-                        Other spends</label>
-                    <label for="sbibpcloctanegas"><input type="radio" id="sbibpcloctanegas" name="sbibpcloctanePercent"
-                            value="25" /> Bharat Gas (Website & app only)</label>
-                </div>
-            </div> -->
             <div id="labelcontainer">
                 <input type="checkbox" id="sbibpcloctane" name="sbibpcloctane" />
                 <label for="sbibpcloctane">SBI BPCL Octane : </label>
                 <div class="radio-inputs">
-                    <label for="sbibpcloctaneothr" class="radio"><input type="radio" id="sbibpcloctaneothr" name="sbibpcloctanePercent" value="1" checked="true" />
+                    <label for="sbibpcloctaneothr" class="radio"><input type="radio" id="sbibpcloctaneothr"
+                            name="sbibpcloctanePercent" value="1" checked="true" />
                         <span class="name">Other spends</span></label>
-                    <label for="sbibpcloctanegas" class="radio"><input type="radio" id="sbibpcloctanegas" name="sbibpcloctanePercent" value="25" />
+                    <label for="sbibpcloctanegas" class="radio"><input type="radio" id="sbibpcloctanegas"
+                            name="sbibpcloctanePercent" value="25" />
                         <span class="name">Bharat Gas (Website & app only)</span></label>
                 </div>
             </div>
