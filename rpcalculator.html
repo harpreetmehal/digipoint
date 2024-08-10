@@ -587,7 +587,6 @@
         <!-- Recent updates marquee -->
         <marquee direction="up" height="300" scrollamount="2" behavior="scroll">
             <h2>Recent updates</h2>
-            <li><b>New card feature:</b> Added weekday & weekend options for INDUSIND Legend</li>
             <li><b>New card added:</b> ICICI Coral RuPay credit card</li>
             <li><b>New card added:</b> Standard Chartered Platinum</li>
             <li><b>New card added:</b> SBI Prime</li>
@@ -597,6 +596,7 @@
             <li><b>New card added:</b> SBI BPCL</li>
             <li><b>New card added:</b> SBI BPCL Octane</li>
             <li><b>New card added:</b> HDFC IOCL, IDFC FIrst Classic </li>
+            <li><b>New card added:</b> HDFC Business MoneyBack, Axis Horizon </li>
             <!-- Add more updates as needed -->
         </marquee>
     </div>
@@ -654,6 +654,26 @@
             <label for="axisRewards"><input id="axisRewards" type="checkbox" /> Axis Rewards</label>
             <label for="axisPrivilege"><input id="axisPrivilege" type="checkbox" /> Axis Privilege</label>
             <div id="labelcontainer">
+                <input type="checkbox" id="axisHorizon" name="axisHorizon" />
+                <label for="axisHorizon"> Axis Horizon : </label>
+                <div class="radio-inputs">
+                    <label class="radio" for="axisHorizonnormal"><input type="radio" id="axisHorizonnormal"
+                            name="axisHorizonPercent" checked="true" /> <span class="name">Normal spends</span></label>
+                    <label class="radio" for="axisHorizonportal"><input type="radio" id="axisHorizonportal"
+                            name="axisHorizonPercent" />
+                        <span class="name">Trave EDGE portal</span></label>
+
+                </div><span class="info-icon" id="amex-info-icon-horizon" onmouseover="showInfoBox('horizon')"
+                    onmouseout="hideInfoBox('horizon')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Minimalist_info_Icon.png"
+                        alt="Info Icon" width="15" height="15" />
+                </span>
+            </div>
+            <div class="info-box" id="amex-info-box-horizon">5 EDGE miles on every INR100 spent on Axis Travel portal
+                <br>and direct airline website.
+                <br>2 EDGE miles per INR100 on all other spends.
+            </div>
+            <div id="labelcontainer">
                 <input type="checkbox" id="axisMagnus" name="axisMagnus" />
                 <label for="axisMagnus"> Axis Magnus : </label>
                 <div class="radio-inputs">
@@ -679,6 +699,17 @@
             <label for="citibank"><input id="citibank" type="checkbox" /> Citibank Indian Oil (FUEL)</label>
 
             <h3>HDFC Cards</h3>
+            <div id="labelcontainer">
+                <input type="checkbox" id="hdfcmoneyback" name="hdfcmoneyback" />
+                <label for="hdfcmoneyback"> HDFC Business MoneyBack : </label>
+                <div class="radio-inputs">
+                    <label for="hdfcmoneybackonline" class="radio"><input type="radio" id="hdfcmoneybackonline" name="hdfcmoneybackPercent"
+                            value="3" /> <span class="name">Online</span></label>
+                    <label for="hdfcmoneybackOther" class="radio"><input type="radio" id="hdfcmoneybackOther"
+                            name="hdfcmoneybackPercent" value="1" checked="true" /> <span class="name">All other
+                            spends</span></label>
+                </div>
+            </div>
             <label for="hdfcdcb"><input id="hdfcdcb" type="checkbox" /> Diners Club Black Metal</label>
             <label for="hdfc"><input id="hdfc" type="checkbox" /> HDFC Regalia / Regalia Gold</label>
             <label for="hdfcinfinia"><input id="hdfcinfinia" type="checkbox" /> HDFC Infinia Metal</label>
@@ -953,6 +984,8 @@
                 sbibpcl: { name: "SBI BPCL", spendToEarnRP: 100, rpValue: 0.25 },
                 sbibpcloctane: { name: "SBI BPCL Octane", spendToEarnRP: 100, rpValue: 0.25 },
                 hdfciocl: { name: "HDFC IOCL", spendToEarnRP: 150, rpValue: 0.96 },
+                axisHorizon: { name: "Axis Horizon", spendToEarnRP: 50, rpValue: 0.2 },
+                hdfcmoneyback: { name: "HDFC Business MoneyBack", spendToEarnRP: 75, rpValue: 0.25 },
             };
 
             // Get selected cards
@@ -1074,9 +1107,18 @@
                     else if (cardId === 'axisMagnus' && document.getElementById('axisMagnusportal').checked) {
                         earnedRP = amount / cards[cardId].spendToEarnRP * 5;
                     }
+                    else if (cardId === 'axisHorizon' && document.getElementById('axisHorizonnormal').checked) {
+                        earnedRP = amount / cards[cardId].spendToEarnRP;
+                    }
+                    else if (cardId === 'axisHorizon' && document.getElementById('axisHorizonportal').checked) {
+                        earnedRP = amount / cards[cardId].spendToEarnRP * 2.5;
+                    }
                     else if (cardId === 'hdfciocl' && document.getElementById('hdfcioclfuel').checked) {
                         const hdfcioclPercent = parseFloat(document.querySelector('input[name="hdfcioclPercent"]:checked').value) / 100;
                         earnedRP = amount * hdfcioclPercent;
+                    }
+                    else if (cardId === 'hdfcmoneyback' && document.getElementById('hdfcmoneybackonline').checked) {
+                        earnedRP = amount / cards[cardId].spendToEarnRP * 2;
                     }
                     else if (cardId === 'idfcSelect3') {
                         if (amount > 20000) {
