@@ -651,6 +651,18 @@
             <label for="axisNeo"><input id="axisNeo" type="checkbox" /> Axis Neo</label>
             <label for="axisMyZone"><input id="axisMyZone" type="checkbox" /> Axis MyZone</label>
             <label for="ioclAxis"><input id="ioclAxis" type="checkbox" /> Axis IOCL [FUEL]</label>
+            <div id="labelcontainer">
+                <input type="checkbox" id="axisioclprem" name="axisioclprem" />
+                <label for="axisioclprem"> Axis IndianOil Premium [formerly CITI] : </label>
+                <div class="radio-inputs">
+                    <label for="axisioclpremfuel" class="radio"><input type="radio" id="axisioclpremfuel" name="axisioclpremPercent"
+                            value="6" checked="true"/> <span class="name">Fuel</span></label>
+                    <label for="axisioclpremgrocery" class="radio"><input type="radio" id="axisioclpremgrocery" name="axisioclpremPercent"
+                                value="6" /> <span class="name">Grocery</span></label>
+                    <label for="axisioclpremOther" class="radio"><input type="radio" id="axisioclpremOther"
+                            name="axisioclpremPercent" value="1" /> <span class="name">All other spends</span></label>
+                </div>
+            </div>
             <label for="axisRewards"><input id="axisRewards" type="checkbox" /> Axis Rewards</label>
             <label for="axisPrivilege"><input id="axisPrivilege" type="checkbox" /> Axis Privilege</label>
             <div id="labelcontainer">
@@ -696,7 +708,7 @@
             </div>
 
             <h3>Citibank Cards</h3>
-            <label for="citibank"><input id="citibank" type="checkbox" /> Citibank Indian Oil (FUEL)</label>
+            <label for="citibank"><input id="citibank" type="checkbox" disabled="true"/> Citibank Indian Oil (FUEL) > Converted to Axis IndianOil Premium</label>
 
             <h3>HDFC Cards</h3>
             <div id="labelcontainer">
@@ -954,7 +966,7 @@
                 iciciRubyx: { name: "ICICI Rubyx / Sapphiro", spendToEarnRP: 50, rpValue: 0.25 },
                 hsbc: { name: "HSBC Platinum", spendToEarnRP: 75, rpValue: 0.2 },
                 oneCard: { name: "One Card", spendToEarnRP: 50, rpValue: 0.125 },
-                citibank: { name: "Citibank Indian Oil (FUEL)", spendToEarnRP: 37.5, rpValue: 1 },
+                // citibank: { name: "Citibank Indian Oil (FUEL)", spendToEarnRP: 37.5, rpValue: 1 },
                 idfcSelect3: { name: "IDFC First Select - 3x*", spendToEarnRP: 150, rpValue: 0.25 },
                 idfcclassic: { name: "IDFC First Classic - 3x*", spendToEarnRP: 150, rpValue: 0.25 },
                 //idfcSelect6: { name: "IDFC First Select - 6x", spendToEarnRP: 20.833, rpValue: 0.25 },
@@ -986,6 +998,7 @@
                 hdfciocl: { name: "HDFC IOCL", spendToEarnRP: 150, rpValue: 0.96 },
                 axisHorizon: { name: "Axis Horizon", spendToEarnRP: 50, rpValue: 0.2 },
                 hdfcmoneyback: { name: "HDFC Business MoneyBack", spendToEarnRP: 75, rpValue: 0.25 },
+                axisioclprem: { name: "Axis IndianOil Premium [formerly CITI]", spendToEarnRP: 150, rpValue: 1 },
             };
 
             // Get selected cards
@@ -1118,6 +1131,12 @@
                         earnedRP = amount * hdfcioclPercent;
                     }
                     else if (cardId === 'hdfcmoneyback' && document.getElementById('hdfcmoneybackonline').checked) {
+                        earnedRP = amount / cards[cardId].spendToEarnRP * 2;
+                    }
+                    else if (cardId === 'axisioclprem' && document.getElementById('axisioclpremfuel').checked) {
+                        earnedRP = amount / cards[cardId].spendToEarnRP * 6;
+                    }
+                    else if (cardId === 'axisioclprem' && document.getElementById('axisioclpremgrocery').checked) {
                         earnedRP = amount / cards[cardId].spendToEarnRP * 2;
                     }
                     else if (cardId === 'idfcSelect3') {
