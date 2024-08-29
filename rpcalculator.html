@@ -655,10 +655,11 @@
                 <input type="checkbox" id="axisioclprem" name="axisioclprem" />
                 <label for="axisioclprem"> Axis IndianOil Premium [formerly CITI] : </label>
                 <div class="radio-inputs">
-                    <label for="axisioclpremfuel" class="radio"><input type="radio" id="axisioclpremfuel" name="axisioclpremPercent"
-                            value="6" checked="true"/> <span class="name">Fuel</span></label>
-                    <label for="axisioclpremgrocery" class="radio"><input type="radio" id="axisioclpremgrocery" name="axisioclpremPercent"
-                                value="6" /> <span class="name">Grocery</span></label>
+                    <label for="axisioclpremfuel" class="radio"><input type="radio" id="axisioclpremfuel"
+                            name="axisioclpremPercent" value="6" checked="true" /> <span
+                            class="name">Fuel</span></label>
+                    <label for="axisioclpremgrocery" class="radio"><input type="radio" id="axisioclpremgrocery"
+                            name="axisioclpremPercent" value="6" /> <span class="name">Grocery</span></label>
                     <label for="axisioclpremOther" class="radio"><input type="radio" id="axisioclpremOther"
                             name="axisioclpremPercent" value="1" /> <span class="name">All other spends</span></label>
                 </div>
@@ -711,8 +712,8 @@
                 <input type="checkbox" id="hdfcmoneyback" name="hdfcmoneyback" />
                 <label for="hdfcmoneyback"> HDFC Business MoneyBack : </label>
                 <div class="radio-inputs">
-                    <label for="hdfcmoneybackonline" class="radio"><input type="radio" id="hdfcmoneybackonline" name="hdfcmoneybackPercent"
-                            value="3" /> <span class="name">Online</span></label>
+                    <label for="hdfcmoneybackonline" class="radio"><input type="radio" id="hdfcmoneybackonline"
+                            name="hdfcmoneybackPercent" value="3" /> <span class="name">Online</span></label>
                     <label for="hdfcmoneybackOther" class="radio"><input type="radio" id="hdfcmoneybackOther"
                             name="hdfcmoneybackPercent" value="1" checked="true" /> <span class="name">All other
                             spends</span></label>
@@ -799,7 +800,8 @@
                         alt="Info Icon" width="15" height="15" />
                 </span>
             </div>
-            <div class="info-box" id="amex-info-box-idfcclassicbox">Categories not included in the 10X Reward Points threshold
+            <div class="info-box" id="amex-info-box-idfcclassicbox">Categories not included in the 10X Reward Points
+                threshold
                 <br>Rental & Property Management, Utility, Insurance, Government Services, Education and Wallet Load.
                 <br>Reward Points program not applicable on fuel, EMI transactions, & cash withdrawals.
             </div>
@@ -829,7 +831,7 @@
 
             <h3>INDUSIND Cards</h3>
             <div id="labelcontainer">
-                <label for="indusind"><input id="indusind" type="checkbox" /> Indusind Legend : </label>
+                <label for="indusindlegend"><input id="indusindlegend" type="checkbox" /> Indusind Legend : </label>
                 <div class="radio-inputs">
 
                     <label for="indusindWeekday" class="radio"><input type="radio" id="indusindWeekday"
@@ -838,8 +840,30 @@
 
                     <label for="indusindWeekend" class="radio"><input type="radio" id="indusindWeekend"
                             name="indusindWeekdayWeekend" value="weekend"><span class="name">Weekend</span></label>
+                    <label for="indusindlegendutils" class="radio"><input type="radio" id="indusindlegendutils"
+                            name="indusindWeekdayWeekend" value="utils"><span class="name">Utility/Insurance/Education/Real Estate</span></label>
                 </div>
             </div>
+            <div id="labelcontainer">
+                <label for="indusindpinnacle"><input id="indusindpinnacle" type="checkbox" /> Indusind Pinnacle :
+                </label>
+                <div class="radio-inputs">
+
+                    <label for="indusindecom" class="radio"><input type="radio" id="indusindecom"
+                            name="indusindpinnacleoptions" value="ecom" checked><span
+                            class="name">E-commerce</span></label>
+                    <label for="indusindecomtna" class="radio"><input type="radio" id="indusindecomtna"
+                            name="indusindpinnacleoptions" value="ecomtna"><span class="name">E-commerce Travel &
+                            Airline</span></label>
+                    <label for="indusindutil" class="radio"><input type="radio" id="indusindutil"
+                            name="indusindpinnacleoptions" value="utils"><span
+                            class="name">Utility/Insurance/Education/Real Estate</span></label>
+                    <label for="indusindothers" class="radio"><input type="radio" id="indusindothers"
+                            name="indusindpinnacleoptions" value="others"><span class="name">All other
+                            spends</span></label>
+                </div>
+            </div>
+
 
             <h3>RBL Cards</h3>
             <div id="labelcontainer">
@@ -969,7 +993,7 @@
                 sbi: { name: "SBI SimplyClick", spendToEarnRP: 100, rpValue: 0.25 },
                 sbicashback: { name: "SBI Cashback", spendToEarnRP: 100, rpValue: 1 },
                 sbiprime: { name: "SBI Prime [Dining/Groceries/Movies]", spendToEarnRP: 10, rpValue: 0.25 },
-                indusind: { name: "Indusind Legend [2x on weekends]", spendToEarnRP: 100, rpValue: 0.75 },
+                indusindlegend: { name: "Indusind Legend [2x on weekends]", spendToEarnRP: 100, rpValue: 0.75 },
                 rbl: { name: "RBL Shoprite", spendToEarnRP: 100, rpValue: 0.25 },
                 scapia: { name: "Scapia Forex Card", spendToEarnRP: 10, rpValue: 0.2 },
                 idfcvistara: { name: "Club Vistara IDFC First", spendToEarnRP: 200, rpValue: 1 },
@@ -995,6 +1019,7 @@
                 axisHorizon: { name: "Axis Horizon", spendToEarnRP: 50, rpValue: 0.2 },
                 hdfcmoneyback: { name: "HDFC Business MoneyBack", spendToEarnRP: 75, rpValue: 0.25 },
                 axisioclprem: { name: "Axis IndianOil Premium [formerly CITI]", spendToEarnRP: 150, rpValue: 1 },
+                indusindpinnacle : {name: "Indusind Pinnacle", spendToEarnRP: 100, rpValue: 0.75},
             };
 
             // Get selected cards
@@ -1104,11 +1129,26 @@
                         const iciciRubyxPercent = parseFloat(document.querySelector('input[name="iciciRubyxPercent"]:checked').value) / 100;
                         earnedRP = amount * iciciRubyxPercent;
                     }
-                    else if (cardId === 'indusind' && document.getElementById('indusindWeekday').checked) {
+                    else if (cardId === 'indusindlegend' && document.getElementById('indusindWeekday').checked) {
                         earnedRP = amount / cards[cardId].spendToEarnRP;
                     }
-                    else if (cardId === 'indusind' && document.getElementById('indusindWeekend').checked) {
+                    else if (cardId === 'indusindlegend' && document.getElementById('indusindWeekend').checked) {
                         earnedRP = amount / cards[cardId].spendToEarnRP * 2;
+                    }
+                    else if (cardId === 'indusindlegend' && document.getElementById('indusindlegendutils').checked) {
+                        earnedRP = amount / cards[cardId].spendToEarnRP * 0.7;
+                    }
+                    else if (cardId === 'indusindpinnacle' && document.getElementById('indusindecom').checked) {
+                        earnedRP = amount / cards[cardId].spendToEarnRP * 2.5 ;
+                    }
+                    else if (cardId === 'indusindpinnacle' && document.getElementById('indusindecomtna').checked) {
+                        earnedRP = amount / cards[cardId].spendToEarnRP * 1.5 ;
+                    }
+                    else if (cardId === 'indusindpinnacle' && document.getElementById('indusindutil').checked) {
+                        earnedRP = amount / cards[cardId].spendToEarnRP * 0.7;
+                    }
+                    else if (cardId === 'indusindpinnacle' && document.getElementById('indusindothers').checked) {
+                        earnedRP = amount / cards[cardId].spendToEarnRP;
                     }
                     else if (cardId === 'axisMagnus' && document.getElementById('axisMagnusnormal').checked) {
                         earnedRP = amount / cards[cardId].spendToEarnRP;
