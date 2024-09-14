@@ -1224,10 +1224,20 @@
                         earnedRP = amount / cards[cardId].spendToEarnRP * 2;
                     }
                     else if (cardId === 'axisAtlas' && document.getElementById('axisAtlasnormal').checked) {
-                        earnedRP = amount / cards[cardId].spendToEarnRP;
+                        // Normal transaction: 2 points for every Rs.100
+                        earnedRP = (amount / 100) * 2;
                     }
                     else if (cardId === 'axisAtlas' && document.getElementById('axisAtlasportal').checked) {
-                        earnedRP = amount / cards[cardId].spendToEarnRP * 2.5;
+                        if (amount <= 200000) {
+                            // 5 EDGE miles for every Rs.100 till Rs.2,00,000
+                            earnedRP = (amount / 100) * 5;
+                        } else {
+                            // First Rs.2,00,000 earns 5 EDGE miles per Rs.100
+                            let baseMiles = (200000 / 100) * 5;
+                            // Amount above Rs.2,00,000 earns 2 EDGE miles per Rs.100
+                            let extraMiles = ((amount - 200000) / 100) * 2;
+                            earnedRP = baseMiles + extraMiles; // Total EDGE miles
+                        }
                     }
                     else if (cardId === 'hdfciocl' && document.getElementById('hdfcioclfuel').checked) {
                         const hdfcioclPercent = parseFloat(document.querySelector('input[name="hdfcioclPercent"]:checked').value) / 100;
