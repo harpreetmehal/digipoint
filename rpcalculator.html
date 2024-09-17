@@ -582,7 +582,6 @@
         <!-- Recent updates marquee -->
         <marquee direction="up" height="300" scrollamount="2" behavior="scroll">
             <h2>Recent updates</h2>
-            <li><b>New card added:</b> ICICI Coral RuPay credit card</li>
             <li><b>New card added:</b> Standard Chartered Platinum</li>
             <li><b>New card added:</b> SBI Prime</li>
             <li><b>New card feature:</b> Added calculation for 10x rewards for IDFC cards when amount exceeds 20000INR
@@ -594,6 +593,7 @@
             <li><b>New card added:</b> HDFC Business MoneyBack, Axis Horizon </li>
             <li><b>New card added:</b> Axis Select, Axis Atlas, SBI Elite</li>
             <li><b>New card added:</b> HDFC Pixel, Indusind EazyDiner, Amex Platinum Travel</li>
+            <li><b>New card added:</b> IDFC Millenia and Kotak 811 Dream Different</li>
             <!-- Add more updates as needed -->
         </marquee>
     </div>
@@ -882,6 +882,7 @@
             <label for="iciciCoral"><input id="iciciCoral" type="checkbox" /> ICICI CORAL</label>
 
             <h3>IDFC Cards</h3>
+            <!-- IDFC First Classic -->
             <div id="labelcontainer">
                 <label for="idfcclassic"><input id="idfcclassic" type="checkbox" /> IDFC First Classic (3x -
                     Offline/Online)</label>
@@ -903,6 +904,29 @@
                 <br>Rental & Property Management, Utility, Insurance, Government Services, Education and Wallet Load.
                 <br>Reward Points program not applicable on fuel, EMI transactions, & cash withdrawals.
             </div>
+            <!-- IDFC First Millenia -->
+            <div id="labelcontainer">
+                <label for="idfcmillenia"><input id="idfcmillenia" type="checkbox" /> IDFC First Millenia (3x -
+                    Offline/Online)</label>
+                <div class="radio-inputs">
+                    <label for="idfcmilleniaOther" class="radio"><input type="radio" id="idfcmilleniaOther"
+                            name="idfcmilleniaPercent" value="3" checked="true" /> <span class="name">All other
+                            spends</span></label>
+                    <label for="idfcmilleniaInsurance" class="radio"><input type="radio" id="idfcmilleniaInsurance"
+                            name="idfcmilleniaPercent" value="1" /> <span class="name">Insurance/Utilities</span></label>
+                </div>
+                <span class="info-icon" id="amex-info-icon-idfcmilleniabox" onmouseover="showInfoBox('idfcmilleniabox')"
+                    onmouseout="hideInfoBox('idfcmilleniabox')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Minimalist_info_Icon.png"
+                        alt="Info Icon" width="15" height="15" />
+                </span>
+            </div>
+            <div class="info-box" id="amex-info-box-idfcmilleniabox">Categories not included in the 10X Reward Points
+                threshold
+                <br>Rental & Property Management, Utility, Insurance, Government Services, Education and Wallet Load.
+                <br>Reward Points program not applicable on fuel, EMI transactions, & cash withdrawals.
+            </div>
+            <!-- IDFC First Select -->
             <div id="labelcontainer">
                 <label for="idfcSelect3"><input id="idfcSelect3" type="checkbox" /> IDFC First Select (3x -
                     Offline/Online)</label>
@@ -973,7 +997,18 @@
                 </div>
             </div>
 
-
+            <h3>KOTAK Cards</h3>
+            <div id="labelcontainer">
+                <input type="checkbox" id="kotak811dd" name="kotak811dd" />
+                <label for="kotak811dd"> Kotak 811 Dream Different : </label>
+                <div class="radio-inputs">
+                    <label for="kotak811ddonline" class="radio"><input type="radio" id="kotak811ddonline"
+                            name="kotak811ddPercent" value="2" /> <span class="name">Online</span></label>
+                    <label for="kotak811ddOther" class="radio"><input type="radio" id="kotak811ddOther"
+                            name="kotak811ddPercent" value="1" checked="true" /> <span class="name">All other
+                            spends</span></label>
+                </div>
+            </div>
             <h3>RBL Cards</h3>
             <div id="labelcontainer">
                 <input type="checkbox" id="rbl" name="rbl" />
@@ -1106,8 +1141,9 @@
                 hsbc: { name: "HSBC Platinum", spendToEarnRP: 75, rpValue: 0.2 },
                 oneCard: { name: "One Card", spendToEarnRP: 50, rpValue: 0.125 },
                 // citibank: { name: "Citibank Indian Oil (FUEL)", spendToEarnRP: 37.5, rpValue: 1 },
-                idfcSelect3: { name: "IDFC First Select - 3x*", spendToEarnRP: 150, rpValue: 0.25 },
-                idfcclassic: { name: "IDFC First Classic - 3x*", spendToEarnRP: 150, rpValue: 0.25 },
+                idfcSelect3: { name: "IDFC First Select*", spendToEarnRP: 150, rpValue: 0.25 },
+                idfcclassic: { name: "IDFC First Classic*", spendToEarnRP: 150, rpValue: 0.25 },
+                idfcmillenia: { name: "IDFC First Millenia*", spendToEarnRP: 150, rpValue: 0.25 },
                 //idfcSelect6: { name: "IDFC First Select - 6x", spendToEarnRP: 20.833, rpValue: 0.25 },
                 sbi: { name: "SBI SimplyClick", spendToEarnRP: 100, rpValue: 0.25 },
                 sbicashback: { name: "SBI Cashback", spendToEarnRP: 100, rpValue: 1 },
@@ -1145,6 +1181,7 @@
                 indusindezdiner : { name: "Indusind EazyDiner", spendToEarnRP: 100, rpValue: 0.2 },
                 hdfcpixel: { name: "HDFC Pixel", spendToEarnRP: 100, rpValue: 1 },
                 amexplattravel: { name: "American Express Platinum Travel", spendToEarnRP: 50, rpValue: 1 },
+                kotak811dd: { name: "Kotak 811 Dream Different", spendToEarnRP: 100, rpValue: 0.25 },
             };
 
             // Get selected cards
@@ -1330,6 +1367,9 @@
                     else if (cardId === 'hdfcmoneyback' && document.getElementById('hdfcmoneybackonline').checked) {
                         earnedRP = amount / cards[cardId].spendToEarnRP * 2;
                     }
+                    else if (cardId === 'kotak811dd' && document.getElementById('kotak811ddonline').checked) {
+                        earnedRP = amount / cards[cardId].spendToEarnRP * 2;
+                    }
                     else if (cardId === 'axisioclprem' && document.getElementById('axisioclpremfuel').checked) {
                         earnedRP = amount / cards[cardId].spendToEarnRP * 6;
                     }
@@ -1342,6 +1382,15 @@
                         } else if (document.getElementById('idfcSelectInsurance').checked) {
                             earnedRP = amount / cards[cardId].spendToEarnRP; // Assuming 1x reward points for Insurance
                         } else if (document.getElementById('idfcSelectOther').checked) {
+                            earnedRP = amount / cards[cardId].spendToEarnRP * 3;
+                        }
+                    }
+                    else if (cardId === 'idfcmillenia') {
+                        if (amount > 20000) {
+                            earnedRP = 20000 / card.spendToEarnRP + (((amount - 20000) / card.spendToEarnRP) * 10);
+                        } else if (document.getElementById('idfcmilleniaInsurance').checked) {
+                            earnedRP = amount / cards[cardId].spendToEarnRP; // Assuming 1x reward points for Insurance
+                        } else if (document.getElementById('idfcmilleniaOther').checked) {
                             earnedRP = amount / cards[cardId].spendToEarnRP * 3;
                         }
                     }
