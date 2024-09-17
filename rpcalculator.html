@@ -592,7 +592,8 @@
             <li><b>New card added:</b> SBI BPCL Octane</li>
             <li><b>New card added:</b> HDFC IOCL, IDFC FIrst Classic </li>
             <li><b>New card added:</b> HDFC Business MoneyBack, Axis Horizon </li>
-            <li><b>New card added:</b> Axis Select, Axis Atlas, SBI Elite </li>
+            <li><b>New card added:</b> Axis Select, Axis Atlas, SBI Elite</li>
+            <li><b>New card added:</b> HDFC Pixel, Indusind EazyDiner, Amex Platinum Travel</li>
             <!-- Add more updates as needed -->
         </marquee>
     </div>
@@ -614,7 +615,7 @@
         <h2>Select Cards</h2>
         <div id="bankHeaders">
             <h3>American Express Cards</h3>
-            <!-- <label for="amexplat"><input id="amexplat" type="checkbox" /> American Express Platinum</label> -->
+            <!-- American Express Platinum -->
             <label for="amexplat">
                 <input id="amexplat" type="checkbox" /> American Express Platinum
                 <span class="info-icon" id="amex-info-icon-plat" onmouseover="showInfoBox('plat')"
@@ -629,6 +630,7 @@
                 <br>10X on Bvlgari, Kapoor Watch & Co. etc
                 <br>20X on Darveys &amp; RAS Luxury skincare.
             </div>
+            <!-- American Express Platinum Reserve-->
             <label for="amexplatreserve">
                 <input id="amexplatreserve" type="checkbox" /> American Express Platinum Reserve
                 <span class="info-icon" id="amex-info-icon-reserve" onmouseover="showInfoBox('reserve')"
@@ -641,8 +643,31 @@
                 <br>Fuel, Insurance, Utilities, Cash Transactions
                 <br> and EMI conversion at Point of Sale
             </div>
+            <!-- American Express Platinum Travel Card-->
+            <div id="labelcontainer">
+                <input type="checkbox" id="amexplattravel" name="amexplattravel" />
+                <label for="amexplattravel"> American Express Platinum Travel : </label>
+                <div class="radio-inputs">
+                    <label class="radio" for="amexplattravelnormal"><input type="radio" id="amexplattravelnormal"
+                            name="amexplattravelPercent" checked="true" /> <span class="name">Normal spends</span></label>
+                    <label class="radio" for="amexplattravelfuel"><input type="radio" id="amexplattravelfuel"
+                            name="amexplattravelPercent" />
+                        <span class="name">Fuel / Insurance / Utilities</span></label>
+                </div>
+                <span class="info-icon" id="amex-info-icon-travel" onmouseover="showInfoBox('travel')"
+                    onmouseout="hideInfoBox('travel')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Minimalist_info_Icon.png"
+                        alt="Info Icon" width="15" height="15" />
+                </span>
+            </div>
+            <div class="info-box" id="amex-info-box-travel">1RP for every INR50 spent EXCEPT
+                <br>Fuel, Insurance, Utilities, Cash Transactions
+                <br> and EMI conversion at Point of Sale
+            </div> 
+            
 
             <h3>Axis Cards</h3>
+            <!-- Axis Atlas -->
             <div id="labelcontainer">
                 <input type="checkbox" id="axisAtlas" name="axisAtlas" />
                 <label for="axisAtlas"> Axis Atlas : </label>
@@ -662,8 +687,10 @@
                 <br>2 EDGE miles for every Rs.100 above Rs.2,00,000 per month
                 <br>2 EDGE miles on other spends
             </div>
+            <!-- Axis Reserve -->
             <label for="axisreserve"><input id="axisreserve" type="checkbox" /> Axis Bank Reserve</label>
-            <div id="labelcontainer">
+            <!-- Axis Horizon -->
+             <div id="labelcontainer">
                 <input type="checkbox" id="axisHorizon" name="axisHorizon" />
                 <label for="axisHorizon"> Axis Horizon : </label>
                 <div class="radio-inputs">
@@ -683,6 +710,7 @@
                 <br>and direct airline website.
                 <br>2 EDGE miles per INR100 on all other spends.
             </div>
+            <!-- Axis IOCL CITI -->
             <div id="labelcontainer">
                 <input type="checkbox" id="axisioclprem" name="axisioclprem" />
                 <label for="axisioclprem"> Axis IndianOil Premium [formerly CITI] : </label>
@@ -696,7 +724,9 @@
                             name="axisioclpremPercent" value="1" /> <span class="name">All other spends</span></label>
                 </div>
             </div>
+            <!-- Axis IOCL -->
             <label for="ioclAxis"><input id="ioclAxis" type="checkbox" /> Axis IOCL [FUEL]</label>
+            <!-- Axis Magnus -->
             <div id="labelcontainer">
                 <input type="checkbox" id="axisMagnus" name="axisMagnus" />
                 <label for="axisMagnus"> Axis Magnus : </label>
@@ -718,11 +748,16 @@
                 <br>60 points per Rs. 200 spent on TravelEDGE (up to Rs. 2 Lakh)
                 <br>35 points per Rs. 200 spent on TravelEDGE (above Rs. 2 Lakh)
             </div>
+            <!-- Axis Myzone -->
             <label for="axisMyZone"><input id="axisMyZone" type="checkbox" /> Axis MyZone</label>
-            <label for="axisNeo"><input id="axisNeo" type="checkbox" /> Axis Neo</label>
-            <label for="axisPrivilege"><input id="axisPrivilege" type="checkbox" /> Axis Privilege</label>
-            <label for="axisRewards"><input id="axisRewards" type="checkbox" /> Axis Rewards</label>
-            <div id="labelcontainer">
+            <!-- Axis Neo -->
+             <label for="axisNeo"><input id="axisNeo" type="checkbox" /> Axis Neo</label>
+            <!-- Axis Privilege -->
+             <label for="axisPrivilege"><input id="axisPrivilege" type="checkbox" /> Axis Privilege</label>
+            <!-- Axis Rewards -->
+             <label for="axisRewards"><input id="axisRewards" type="checkbox" /> Axis Rewards</label>
+            <!-- Axis Select -->
+             <div id="labelcontainer">
                 <input type="checkbox" id="axisSelect" name="axisSelect" />
                 <label for="axisSelect"> Axis Select : </label>
                 <div class="radio-inputs">
@@ -732,7 +767,8 @@
                             name="axisSelectPercent" />
                         <span class="name">Retail</span></label>
 
-                </div><span class="info-icon" id="amex-info-icon-select" onmouseover="showInfoBox('select')"
+                </div>
+                <span class="info-icon" id="amex-info-icon-select" onmouseover="showInfoBox('select')"
                     onmouseout="hideInfoBox('select')">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Minimalist_info_Icon.png"
                         alt="Info Icon" width="15" height="15" />
@@ -768,6 +804,34 @@
                             spends</span></label>
                 </div>
             </div>
+            <div id="labelcontainer">
+                <input type="checkbox" id="hdfcpixel" name="hdfcpixel" />
+                <label for="hdfcpixel"> HDFC Pixel :</label>
+                <div class="radio-inputs">
+                    <label for="hdfcpixel1" class="radio"><input type="radio" id="hdfcpixel1" checked="true"
+                            name="hdfcpixelPercent" value="1" />
+                        <span class="name">1%</span></label>
+                    <label for="hdfcpixel3" class="radio"><input type="radio" id="hdfcpixel3"
+                            name="hdfcpixelPercent" value="3" />
+                        <span class="name">3%</span></label>
+                    <label for="hdfcpixel5" class="radio"><input type="radio" id="hdfcpixel5"
+                            name="hdfcpixelPercent" value="5" />
+                        <span class="name">5%</span></label>
+                </div>
+                <span class="info-icon" id="amex-info-icon-pixel" onmouseover="showInfoBox('pixel')"
+                    onmouseout="hideInfoBox('pixel')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Minimalist_info_Icon.png"
+                        alt="Info Icon" width="15" height="15" />
+                </span>
+                <div class="info-box" id="amex-info-box-pixel">5% cashback on any 2 brands:
+                    <br>Zomato+Bookmyshow / Croma+Reliance Digital / Myntra+Nykaa / Blinkit+Smart bazaar / Makemytrip+Uber 
+                    <br>
+                    <br>3% cahback on any 1  - Payzapp / Amazon / Flipkart
+                    <br>
+                    <br>1% cashback on all other spends
+                </div>
+            </div>
+            
 
             <h3>HSBC Cards</h3>
             <label for="hsbc"><input id="hsbc" type="checkbox" /> HSBC Platinum</label>
@@ -864,6 +928,17 @@
             <label for="idfcwealth"><input id="idfcwealth" type="checkbox" /> IDFC First Wealth</label>
 
             <h3>INDUSIND Cards</h3>
+            <div id="labelcontainer">
+                <label for="indusindezdiner"><input id="indusindezdiner" type="checkbox" /> Indusind EazyDiner : </label>
+                <div class="radio-inputs">
+                    <label for="indusinddining" class="radio"><input type="radio" id="indusinddining"
+                            name="indusindezdiner" value="dining" checked><span
+                            class="name">Dining/Shopping/Entertainment</span></label>
+
+                    <label for="indusindezothers" class="radio"><input type="radio" id="indusindezothers"
+                            name="indusindezdiner" value="others"><span class="name">Other Spends</span></label>
+                </div>
+            </div>
             <div id="labelcontainer">
                 <label for="indusindlegend"><input id="indusindlegend" type="checkbox" /> Indusind Legend : </label>
                 <div class="radio-inputs">
@@ -1067,6 +1142,9 @@
                 indusindpinnacle : {name: "Indusind Pinnacle", spendToEarnRP: 100, rpValue: 0.75},
                 axisAtlas : { name: "Axis Atlas", spendToEarnRP: 50, rpValue: 1 },
                 axisSelect : { name: "Axis Select", spendToEarnRP: 20, rpValue: 0.2 },
+                indusindezdiner : { name: "Indusind EazyDiner", spendToEarnRP: 100, rpValue: 0.2 },
+                hdfcpixel: { name: "HDFC Pixel", spendToEarnRP: 100, rpValue: 1 },
+                amexplattravel: { name: "American Express Platinum Travel", spendToEarnRP: 50, rpValue: 1 },
             };
 
             // Get selected cards
@@ -1184,6 +1262,12 @@
                         const iciciRubyxPercent = parseFloat(document.querySelector('input[name="iciciRubyxPercent"]:checked').value) / 100;
                         earnedRP = amount * iciciRubyxPercent;
                     }
+                    else if (cardId === 'indusindezdiner' && document.getElementById('indusinddining').checked) {
+                        earnedRP = amount / cards[cardId].spendToEarnRP * 10;
+                    }
+                    else if (cardId === 'indusindezdiner' && document.getElementById('indusindezothers').checked) {
+                        earnedRP = amount / cards[cardId].spendToEarnRP * 4;
+                    }
                     else if (cardId === 'indusindlegend' && document.getElementById('indusindWeekday').checked) {
                         earnedRP = amount / cards[cardId].spendToEarnRP;
                     }
@@ -1271,6 +1355,24 @@
                         }
                     } else if (cardId === 'idfcwealth' && amount > 20000) {
                         earnedRP = 20000 / card.spendToEarnRP + (((amount - 20000) / card.spendToEarnRP) * 10);
+                    }
+                    else if (cardId === 'hdfcpixel' && document.getElementById('hdfcpixel1').checked) {
+                        const hdfcpixelPercent = parseFloat(document.querySelector('input[name="hdfcpixelPercent"]:checked').value) / 100;
+                        earnedRP = amount * hdfcpixelPercent;
+                    }
+                    else if (cardId === 'hdfcpixel' && document.getElementById('hdfcpixel3').checked) {
+                        const hdfcpixelPercent = parseFloat(document.querySelector('input[name="hdfcpixelPercent"]:checked').value) / 100;
+                        earnedRP = amount * hdfcpixelPercent;
+                    }
+                    else if (cardId === 'hdfcpixel' && document.getElementById('hdfcpixel5').checked) {
+                        const hdfcpixelPercent = parseFloat(document.querySelector('input[name="hdfcpixelPercent"]:checked').value) / 100;
+                        earnedRP = amount * hdfcpixelPercent;
+                    }
+                    else if (cardId === 'amexplattravel' && document.getElementById('amexplattravelnormal').checked) {
+                        earnedRP = amount / cards[cardId].spendToEarnRP;
+                    }
+                    else if (cardId === 'amexplattravel' && document.getElementById('amexplattravelfuel').checked) {
+                        earnedRP = amount / cards[cardId].spendToEarnRP * 0;
                     }
                     else {
                         earnedRP = amount / card.spendToEarnRP;
