@@ -175,7 +175,7 @@
             display: flex;
             align-items: center;
             margin-top: 10px;
-                    }
+        }
 
         #labelcontainer label {
             margin-right: 10px;
@@ -251,21 +251,21 @@
 
         /* Mobile Styles */
         @media screen and (max-width: 768px) {
-        #container {
-            flex-direction: column;
-            text-align: center;
-        }
+            #container {
+                flex-direction: column;
+                text-align: center;
+            }
 
-        #centered-image {
-            max-width: 100%;
-            height: auto;
-        }
+            #centered-image {
+                max-width: 100%;
+                height: auto;
+            }
 
-        marquee {
-            margin-top: 20px;
-            height: auto;
+            marquee {
+                margin-top: 20px;
+                height: auto;
+            }
         }
-    }
 
         marquee {
             height: 260px;
@@ -562,6 +562,7 @@
             font-size: 12px;
             color: #333;
         }
+
         .center-block {
             display: flex;
             justify-content: center;
@@ -569,7 +570,7 @@
             background-color: #d1eeee;
             border-radius: 5px;
             padding: 4px;
-}
+        }
     </style>
 </head>
 
@@ -590,7 +591,6 @@
         <!-- Recent updates marquee -->
         <marquee direction="up" height="300" scrollamount="2" behavior="scroll">
             <h2>Recent updates</h2>
-            <li><b>New card added:</b> Standard Chartered Platinum</li>
             <li><b>New card added:</b> SBI Prime</li>
             <li><b>New card feature:</b> Added calculation for 10x rewards for IDFC cards when amount exceeds 20000INR
             </li>
@@ -602,6 +602,7 @@
             <li><b>New card added:</b> Axis Select, Axis Atlas, SBI Elite</li>
             <li><b>New card added:</b> HDFC Pixel, Indusind EazyDiner, Amex Platinum Travel</li>
             <li><b>New card added:</b> IDFC Millenia and Kotak 811 Dream Different</li>
+            <li><b>New card added:</b> Indusind Pioneer Private</li>
             <!-- Add more updates as needed -->
         </marquee>
     </div>
@@ -620,16 +621,23 @@
         <div class="center-block">
             <!-- your HTML block here -->
             <a href="https://www.instagram.com/jerrythatcodes/?follow=true/" target="_blank">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/1200px-Instagram_logo_2016.svg.png" alt="Instagram Logo" class="instagram-logo" height="38" width="38">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/1200px-Instagram_logo_2016.svg.png"
+                    alt="Instagram Logo" class="instagram-logo" height="38" width="38">
             </a> &nbsp; &nbsp;
             <a href="https://www.youtube.com/@digipoint4033" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="Subscribe to my YouTube Channel" style="width:100px;height:45px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg"
+                    alt="Subscribe to my YouTube Channel" style="width:100px;height:45px;">
             </a>
             &nbsp; &nbsp;
-            <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FDigipnt&width=50&layout&action&size&share=false&height=35&appId" width="62" height="23" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-          </div>
-          &nbsp;
-          <h3 class="Contact">Want to get your cards added? Please fill out <a href="https://digiipoint.blogspot.com/p/contact-us.html">Contact us</a> form now.</h3>
+            <iframe
+                src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FDigipnt&width=50&layout&action&size&share=false&height=35&appId"
+                width="62" height="23" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+        &nbsp;
+        <h3 class="Contact">Want to get your cards added? Please fill out <a
+                href="https://digiipoint.blogspot.com/p/contact-us.html">Contact us</a> form now.</h3>
     </div>
     <form id="cardForm">
         <h2>Select Cards</h2>
@@ -669,7 +677,8 @@
                 <label for="amexplattravel"> American Express Platinum Travel : </label>
                 <div class="radio-inputs">
                     <label class="radio" for="amexplattravelnormal"><input type="radio" id="amexplattravelnormal"
-                            name="amexplattravelPercent" checked="true" /> <span class="name">Normal spends</span></label>
+                            name="amexplattravelPercent" checked="true" /> <span class="name">Normal
+                            spends</span></label>
                     <label class="radio" for="amexplattravelfuel"><input type="radio" id="amexplattravelfuel"
                             name="amexplattravelPercent" />
                         <span class="name">Fuel / Insurance / Utilities</span></label>
@@ -683,8 +692,8 @@
             <div class="info-box" id="amex-info-box-travel">1RP for every INR50 spent EXCEPT
                 <br>Fuel, Insurance, Utilities, Cash Transactions
                 <br> and EMI conversion at Point of Sale
-            </div> 
-            
+            </div>
+
 
             <h3>Axis Cards</h3>
             <!-- Axis Atlas -->
@@ -710,7 +719,7 @@
             <!-- Axis Reserve -->
             <label for="axisreserve"><input id="axisreserve" type="checkbox" /> Axis Bank Reserve</label>
             <!-- Axis Horizon -->
-             <div id="labelcontainer">
+            <div id="labelcontainer">
                 <input type="checkbox" id="axisHorizon" name="axisHorizon" />
                 <label for="axisHorizon"> Axis Horizon : </label>
                 <div class="radio-inputs">
@@ -771,13 +780,13 @@
             <!-- Axis Myzone -->
             <label for="axisMyZone"><input id="axisMyZone" type="checkbox" /> Axis MyZone</label>
             <!-- Axis Neo -->
-             <label for="axisNeo"><input id="axisNeo" type="checkbox" /> Axis Neo</label>
+            <label for="axisNeo"><input id="axisNeo" type="checkbox" /> Axis Neo</label>
             <!-- Axis Privilege -->
-             <label for="axisPrivilege"><input id="axisPrivilege" type="checkbox" /> Axis Privilege</label>
+            <label for="axisPrivilege"><input id="axisPrivilege" type="checkbox" /> Axis Privilege</label>
             <!-- Axis Rewards -->
-             <label for="axisRewards"><input id="axisRewards" type="checkbox" /> Axis Rewards</label>
+            <label for="axisRewards"><input id="axisRewards" type="checkbox" /> Axis Rewards</label>
             <!-- Axis Select -->
-             <div id="labelcontainer">
+            <div id="labelcontainer">
                 <input type="checkbox" id="axisSelect" name="axisSelect" />
                 <label for="axisSelect"> Axis Select : </label>
                 <div class="radio-inputs">
@@ -794,7 +803,8 @@
                         alt="Info Icon" width="15" height="15" />
                 </span>
             </div>
-            <div class="info-box" id="amex-info-box-select">Rent, Insurance, Fuel, Educational Services, Utilities, Government MCC and
+            <div class="info-box" id="amex-info-box-select">Rent, Insurance, Fuel, Educational Services, Utilities,
+                Government MCC and
                 <br>Gold/ Jewellery transactions do not earn any reward points.
             </div>
             <h3>HDFC Cards</h3>
@@ -831,11 +841,11 @@
                     <label for="hdfcpixel1" class="radio"><input type="radio" id="hdfcpixel1" checked="true"
                             name="hdfcpixelPercent" value="1" />
                         <span class="name">1%</span></label>
-                    <label for="hdfcpixel3" class="radio"><input type="radio" id="hdfcpixel3"
-                            name="hdfcpixelPercent" value="3" />
+                    <label for="hdfcpixel3" class="radio"><input type="radio" id="hdfcpixel3" name="hdfcpixelPercent"
+                            value="3" />
                         <span class="name">3%</span></label>
-                    <label for="hdfcpixel5" class="radio"><input type="radio" id="hdfcpixel5"
-                            name="hdfcpixelPercent" value="5" />
+                    <label for="hdfcpixel5" class="radio"><input type="radio" id="hdfcpixel5" name="hdfcpixelPercent"
+                            value="5" />
                         <span class="name">5%</span></label>
                 </div>
                 <span class="info-icon" id="amex-info-icon-pixel" onmouseover="showInfoBox('pixel')"
@@ -844,14 +854,15 @@
                         alt="Info Icon" width="15" height="15" />
                 </span>
                 <div class="info-box" id="amex-info-box-pixel">5% cashback on any 2 brands:
-                    <br>Zomato+Bookmyshow / Croma+Reliance Digital / Myntra+Nykaa / Blinkit+Smart bazaar / Makemytrip+Uber 
+                    <br>Zomato+Bookmyshow / Croma+Reliance Digital / Myntra+Nykaa / Blinkit+Smart bazaar /
+                    Makemytrip+Uber
                     <br>
-                    <br>3% cahback on any 1  - Payzapp / Amazon / Flipkart
+                    <br>3% cahback on any 1 - Payzapp / Amazon / Flipkart
                     <br>
                     <br>1% cashback on all other spends
                 </div>
             </div>
-            
+
 
             <h3>HSBC Cards</h3>
             <label for="hsbc"><input id="hsbc" type="checkbox" /> HSBC Platinum</label>
@@ -933,7 +944,8 @@
                             name="idfcmilleniaPercent" value="3" checked="true" /> <span class="name">All other
                             spends</span></label>
                     <label for="idfcmilleniaInsurance" class="radio"><input type="radio" id="idfcmilleniaInsurance"
-                            name="idfcmilleniaPercent" value="1" /> <span class="name">Insurance/Utilities</span></label>
+                            name="idfcmilleniaPercent" value="1" /> <span
+                            class="name">Insurance/Utilities</span></label>
                 </div>
                 <span class="info-icon" id="amex-info-icon-idfcmilleniabox" onmouseover="showInfoBox('idfcmilleniabox')"
                     onmouseout="hideInfoBox('idfcmilleniabox')">
@@ -973,7 +985,8 @@
 
             <h3>INDUSIND Cards</h3>
             <div id="labelcontainer">
-                <label for="indusindezdiner"><input id="indusindezdiner" type="checkbox" /> Indusind EazyDiner : </label>
+                <label for="indusindezdiner"><input id="indusindezdiner" type="checkbox" /> Indusind EazyDiner :
+                </label>
                 <div class="radio-inputs">
                     <label for="indusinddining" class="radio"><input type="radio" id="indusinddining"
                             name="indusindezdiner" value="dining" checked><span
@@ -994,7 +1007,8 @@
                     <label for="indusindWeekend" class="radio"><input type="radio" id="indusindWeekend"
                             name="indusindWeekdayWeekend" value="weekend"><span class="name">Weekend</span></label>
                     <label for="indusindlegendutils" class="radio"><input type="radio" id="indusindlegendutils"
-                            name="indusindWeekdayWeekend" value="utils"><span class="name">Utility/Insurance/Education/Real Estate</span></label>
+                            name="indusindWeekdayWeekend" value="utils"><span
+                            class="name">Utility/Insurance/Education/Real Estate</span></label>
                 </div>
             </div>
             <div id="labelcontainer">
@@ -1014,6 +1028,20 @@
                     <label for="indusindothers" class="radio"><input type="radio" id="indusindothers"
                             name="indusindpinnacleoptions" value="others"><span class="name">All other
                             spends</span></label>
+                </div>
+            </div>
+            <div id="labelcontainer">
+                <label for="indusindpioneer"><input id="indusindpioneer" type="checkbox" /> Indusind Pioneer Private :
+                </label>
+                <div class="radio-inputs">
+
+                    <label for="indusindpioneerother" class="radio"><input type="radio" id="indusindpioneerother"
+                            name="indusindpioneeroptions" value="other" checked><span class="name">All other
+                            spends</span></label>
+
+                    <label for="indusindpioneerutil" class="radio"><input type="radio" id="indusindpioneerutil"
+                            name="indusindpioneeroptions" value="utils"><span class="name">Utility / Insurance /
+                            Education / Real Estate</span></label>
                 </div>
             </div>
 
@@ -1085,8 +1113,9 @@
                 <div class="radio-inputs">
                     <label for="sbielitegroc" class="radio"><input type="radio" id="sbielitegroc" name="sbielitePercent"
                             value="5" checked="true" /><span class="name">Dining and Grocery</span> </label>
-                    <label for="sbieliteother" class="radio"><input type="radio" id="sbieliteother" name="sbielitePercent"
-                            value="2" /><span class="name">All other spends / International</span> </label>
+                    <label for="sbieliteother" class="radio"><input type="radio" id="sbieliteother"
+                            name="sbielitePercent" value="2" /><span class="name">All other spends /
+                            International</span> </label>
                 </div>
             </div>
             <label for="sbiprime"><input id="sbiprime" type="checkbox" /> SBI Prime</label>
@@ -1168,7 +1197,7 @@
                 sbi: { name: "SBI SimplyClick", spendToEarnRP: 100, rpValue: 0.25 },
                 sbicashback: { name: "SBI Cashback", spendToEarnRP: 100, rpValue: 1 },
                 sbiprime: { name: "SBI Prime [Dining/Groceries/Movies]", spendToEarnRP: 10, rpValue: 0.25 },
-                sbielite: {name:"SBI Elite", spendToEarnRP:50, rpValue: 0.25},
+                sbielite: { name: "SBI Elite", spendToEarnRP: 50, rpValue: 0.25 },
                 indusindlegend: { name: "Indusind Legend [2x on weekends]", spendToEarnRP: 100, rpValue: 0.75 },
                 rbl: { name: "RBL Shoprite", spendToEarnRP: 100, rpValue: 0.25 },
                 scapia: { name: "Scapia Forex Card", spendToEarnRP: 10, rpValue: 0.2 },
@@ -1195,13 +1224,14 @@
                 axisHorizon: { name: "Axis Horizon", spendToEarnRP: 50, rpValue: 0.2 },
                 hdfcmoneyback: { name: "HDFC Business MoneyBack", spendToEarnRP: 75, rpValue: 0.25 },
                 axisioclprem: { name: "Axis IndianOil Premium [formerly CITI]", spendToEarnRP: 150, rpValue: 1 },
-                indusindpinnacle : {name: "Indusind Pinnacle", spendToEarnRP: 100, rpValue: 0.75},
-                axisAtlas : { name: "Axis Atlas", spendToEarnRP: 50, rpValue: 1 },
-                axisSelect : { name: "Axis Select", spendToEarnRP: 20, rpValue: 0.2 },
-                indusindezdiner : { name: "Indusind EazyDiner", spendToEarnRP: 100, rpValue: 0.2 },
+                indusindpinnacle: { name: "Indusind Pinnacle", spendToEarnRP: 100, rpValue: 0.75 },
+                axisAtlas: { name: "Axis Atlas", spendToEarnRP: 50, rpValue: 1 },
+                axisSelect: { name: "Axis Select", spendToEarnRP: 20, rpValue: 0.2 },
+                indusindezdiner: { name: "Indusind EazyDiner", spendToEarnRP: 100, rpValue: 0.2 },
                 hdfcpixel: { name: "HDFC Pixel", spendToEarnRP: 100, rpValue: 1 },
                 amexplattravel: { name: "American Express Platinum Travel", spendToEarnRP: 50, rpValue: 1 },
                 kotak811dd: { name: "Kotak 811 Dream Different", spendToEarnRP: 100, rpValue: 0.25 },
+                indusindpioneer: { name: "Indusind Pioneer", spendToEarnRP: 100, rpValue: 1 }
             };
 
             // Get selected cards
@@ -1335,16 +1365,22 @@
                         earnedRP = amount / cards[cardId].spendToEarnRP * 0.7;
                     }
                     else if (cardId === 'indusindpinnacle' && document.getElementById('indusindecom').checked) {
-                        earnedRP = amount / cards[cardId].spendToEarnRP * 2.5 ;
+                        earnedRP = amount / cards[cardId].spendToEarnRP * 2.5;
                     }
                     else if (cardId === 'indusindpinnacle' && document.getElementById('indusindecomtna').checked) {
-                        earnedRP = amount / cards[cardId].spendToEarnRP * 1.5 ;
+                        earnedRP = amount / cards[cardId].spendToEarnRP * 1.5;
                     }
                     else if (cardId === 'indusindpinnacle' && document.getElementById('indusindutil').checked) {
                         earnedRP = amount / cards[cardId].spendToEarnRP * 0.7;
                     }
                     else if (cardId === 'indusindpinnacle' && document.getElementById('indusindothers').checked) {
                         earnedRP = amount / cards[cardId].spendToEarnRP;
+                    }
+                    else if (cardId === 'indusindpioneer' && document.getElementById('indusindpioneerother').checked) {
+                        earnedRP = amount / cards[cardId].spendToEarnRP * 3;
+                    }
+                    else if (cardId === 'indusindpioneer' && document.getElementById('indusindpioneerutil').checked) {
+                        earnedRP = amount / cards[cardId].spendToEarnRP * 0.7;
                     }
                     else if (cardId === 'axisMagnus' && document.getElementById('axisMagnusnormal').checked) {
                         earnedRP = amount / cards[cardId].spendToEarnRP;
