@@ -603,6 +603,7 @@
             <li><b>New card added:</b> HDFC Pixel, Indusind EazyDiner, Amex Platinum Travel</li>
             <li><b>New card added:</b> IDFC Millenia and Kotak 811 Dream Different</li>
             <li><b>New card added:</b> Indusind Pioneer Private</li>
+            <li><b>New card added:</b> HDFC Swiggy</li>
             <!-- Add more updates as needed -->
         </marquee>
     </div>
@@ -860,6 +861,21 @@
                     <br>3% cahback on any 1 - Payzapp / Amazon / Flipkart
                     <br>
                     <br>1% cashback on all other spends
+                </div>
+            </div>
+            <div id="labelcontainer">
+                <input type="checkbox" id="hdfcswiggy" name="hdfcswiggy" />
+                <label for="hdfcswiggy"> HDFC Swiggy :</label>
+                <div class="radio-inputs">
+                    <label for="hdfcswiggy10" class="radio"><input type="radio" id="hdfcswiggy10" checked="true"
+                            name="hdfcswiggyPercent" value="10" />
+                        <span class="name">Swiggy</span></label>
+                    <label for="hdfcswiggy5" class="radio"><input type="radio" id="hdfcswiggy5" name="hdfcswiggyPercent"
+                            value="5" />
+                        <span class="name">Online spends</span></label>
+                    <label for="hdfcswiggy1" class="radio"><input type="radio" id="hdfcswiggy1" name="hdfcswiggyPercent"
+                            value="1" />
+                        <span class="name">Other spends</span></label>
                 </div>
             </div>
 
@@ -1231,7 +1247,8 @@
                 hdfcpixel: { name: "HDFC Pixel", spendToEarnRP: 100, rpValue: 1 },
                 amexplattravel: { name: "American Express Platinum Travel", spendToEarnRP: 50, rpValue: 1 },
                 kotak811dd: { name: "Kotak 811 Dream Different", spendToEarnRP: 100, rpValue: 0.25 },
-                indusindpioneer: { name: "Indusind Pioneer", spendToEarnRP: 100, rpValue: 1 }
+                indusindpioneer: { name: "Indusind Pioneer", spendToEarnRP: 100, rpValue: 1 },
+                hdfcswiggy: {name:"HDFC Swiggy", spendToEarnRP: 100, rpValue: 1}
             };
 
             // Get selected cards
@@ -1472,6 +1489,18 @@
                     else if (cardId === 'hdfcpixel' && document.getElementById('hdfcpixel5').checked) {
                         const hdfcpixelPercent = parseFloat(document.querySelector('input[name="hdfcpixelPercent"]:checked').value) / 100;
                         earnedRP = amount * hdfcpixelPercent;
+                    }
+                    else if (cardId === 'hdfcswiggy' && document.getElementById('hdfcswiggy10').checked) {
+                        const hdfcswiggyPercent = parseFloat(document.querySelector('input[name="hdfcswiggyPercent"]:checked').value) / 100;
+                        earnedRP = amount * hdfcswiggyPercent;
+                    }
+                    else if (cardId === 'hdfcswiggy' && document.getElementById('hdfcswiggy5').checked) {
+                        const hdfcswiggyPercent = parseFloat(document.querySelector('input[name="hdfcswiggyPercent"]:checked').value) / 100;
+                        earnedRP = amount * hdfcswiggyPercent;
+                    }
+                    else if (cardId === 'hdfcswiggy' && document.getElementById('hdfcswiggy1').checked) {
+                        const hdfcswiggyPercent = parseFloat(document.querySelector('input[name="hdfcswiggyPercent"]:checked').value) / 100;
+                        earnedRP = amount * hdfcswiggyPercent;
                     }
                     else if (cardId === 'amexplattravel' && document.getElementById('amexplattravelnormal').checked) {
                         earnedRP = amount / cards[cardId].spendToEarnRP;
