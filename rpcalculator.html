@@ -528,6 +528,8 @@
             display: flex;
             align-items: center;
             margin-top: 2px;
+            margin-left: auto;
+            margin-right: 10%;
         }
 
         .radio-inputs .radio {
@@ -542,6 +544,7 @@
 
         .radio-inputs .radio .name {
             display: flex;
+            flex: 1;
             cursor: pointer;
             align-items: center;
             justify-content: center;
@@ -562,6 +565,39 @@
             font-size: 12px;
             color: #333;
         }
+
+        @media (max-width: 600px) {
+    .radio-inputs {
+        width: 90%; /* Use 90% of the screen width */
+        max-width: 270px; /* Ensure it doesn't get too wide */
+        margin-left: auto; /* Align to the right */
+        margin-right: 10px; /* Add a small margin to the right for spacing */
+    }
+
+    .radio-inputs .radio {
+        flex: 1 1 auto; /* Ensure buttons maintain symmetry */
+        text-align: center; /* Align text and buttons */
+    }
+
+    .radio-inputs .radio .name {
+        display: inline-flex;
+        justify-content: center; /* Keep the labels centered */
+        align-items: center;
+        padding: 0.2rem 0.5rem; /* Adjust padding for smaller buttons */
+        border-radius: 0.5rem;
+        color: rgba(51, 65, 85, 1);
+        transition: all 0.15s ease-in-out;
+    }
+
+    .radio-inputs .radio input {
+        margin-left: auto; /* Ensure radio buttons are aligned to the right */
+    }
+
+    .radio-inputs .radio input:checked + .name {
+        background-color: #a2cdc5;
+        font-weight: 500;
+    }
+}
 
         .center-block {
             display: flex;
@@ -589,7 +625,7 @@
             alt="Description of the image" height="300" width="350">
 
         <!-- Recent updates marquee -->
-        <marquee direction="up" height="300" scrollamount="2" behavior="scroll">
+        <marquee direction="up" height="300" scrollamount="4" behavior="scroll">
             <h2>Recent updates</h2>
             <li><b>New card added:</b> SBI Prime</li>
             <li><b>New card feature:</b> Added calculation for 10x rewards for IDFC cards when amount exceeds 20000INR
