@@ -414,18 +414,18 @@
         }
 
         .info-box {
-            display: none;
-            position: absolute;
-            background-color: rgba(169, 169, 169, 0.9);
-            /* Grey 70% transparent */
-            padding: 10px;
-            border-radius: 5px;
-            width: auto;
-            text-align: center;
-            z-index: 1;
-            top: auto;
-            right: 335px;
-            text-align: left;
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay on top */
+            background-color: rgba(170, 168, 168, 0.95); /* White background, slightly transparent */
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%; /* Responsive width */
+            max-width: 400px; /* Maximum width */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Center the popup */
+            z-index: 1000; /* On top of everything else */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .info-icon img {
