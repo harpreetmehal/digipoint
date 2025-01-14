@@ -414,17 +414,23 @@
         }
 
         .info-box {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay on top */
-            background-color: rgba(170, 168, 168, 0.95); /* White background, slightly transparent */
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay on top */
+            background-color: rgba(170, 168, 168, 0.95);
+            /* White background, slightly transparent */
             padding: 20px;
             border-radius: 10px;
-            width: 80%; /* Responsive width */
-            max-width: 400px; /* Maximum width */
+            width: 80%;
+            max-width: 400px;
+            /* Maximum width */
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%); /* Center the popup */
-            z-index: 1000; /* On top of everything else */
+            transform: translate(-50%, -50%);
+            /* Center the popup */
+            z-index: 1000;
+            /* On top of everything else */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
@@ -567,37 +573,46 @@
         }
 
         @media (max-width: 600px) {
-    .radio-inputs {
-        width: 90%; /* Use 90% of the screen width */
-        max-width: 270px; /* Ensure it doesn't get too wide */
-        margin-left: auto; /* Align to the right */
-        margin-right: 10px; /* Add a small margin to the right for spacing */
-    }
+            .radio-inputs {
+                width: 90%;
+                /* Use 90% of the screen width */
+                max-width: 270px;
+                /* Ensure it doesn't get too wide */
+                margin-left: auto;
+                /* Align to the right */
+                margin-right: 10px;
+                /* Add a small margin to the right for spacing */
+            }
 
-    .radio-inputs .radio {
-        flex: 1 1 auto; /* Ensure buttons maintain symmetry */
-        text-align: center; /* Align text and buttons */
-    }
+            .radio-inputs .radio {
+                flex: 1 1 auto;
+                /* Ensure buttons maintain symmetry */
+                text-align: center;
+                /* Align text and buttons */
+            }
 
-    .radio-inputs .radio .name {
-        display: inline-flex;
-        justify-content: center; /* Keep the labels centered */
-        align-items: center;
-        padding: 0.2rem 0.5rem; /* Adjust padding for smaller buttons */
-        border-radius: 0.5rem;
-        color: rgba(51, 65, 85, 1);
-        transition: all 0.15s ease-in-out;
-    }
+            .radio-inputs .radio .name {
+                display: inline-flex;
+                justify-content: center;
+                /* Keep the labels centered */
+                align-items: center;
+                padding: 0.2rem 0.5rem;
+                /* Adjust padding for smaller buttons */
+                border-radius: 0.5rem;
+                color: rgba(51, 65, 85, 1);
+                transition: all 0.15s ease-in-out;
+            }
 
-    .radio-inputs .radio input {
-        margin-left: auto; /* Ensure radio buttons are aligned to the right */
-    }
+            .radio-inputs .radio input {
+                margin-left: auto;
+                /* Ensure radio buttons are aligned to the right */
+            }
 
-    .radio-inputs .radio input:checked + .name {
-        background-color: #a2cdc5;
-        font-weight: 500;
-    }
-}
+            .radio-inputs .radio input:checked+.name {
+                background-color: #a2cdc5;
+                font-weight: 500;
+            }
+        }
 
         .center-block {
             display: flex;
@@ -606,6 +621,37 @@
             background-color: #d1eeee;
             border-radius: 5px;
             padding: 4px;
+        }
+
+        .welcome-image {
+            max-width: 100%;
+            height: auto;
+            opacity: 0;
+            animation: fade-in-out 1.85s ease-in-out forwards;
+        }
+
+        @keyframes fade-in-out {
+            0% {
+                opacity: 0;
+            }
+
+            25% {
+                opacity: 1;
+            }
+
+            75% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            img {
+                width: 80%;
+            }
         }
     </style>
 </head>
@@ -1284,7 +1330,7 @@
                 amexplattravel: { name: "American Express Platinum Travel", spendToEarnRP: 50, rpValue: 1 },
                 kotak811dd: { name: "Kotak 811 Dream Different", spendToEarnRP: 100, rpValue: 0.25 },
                 indusindpioneer: { name: "Indusind Pioneer", spendToEarnRP: 100, rpValue: 1 },
-                hdfcswiggy: {name:"HDFC Swiggy", spendToEarnRP: 100, rpValue: 1}
+                hdfcswiggy: { name: "HDFC Swiggy", spendToEarnRP: 100, rpValue: 1 }
             };
 
             // Get selected cards
