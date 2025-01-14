@@ -435,8 +435,8 @@
         }
 
         .info-icon img {
-            width: 17px;
-            height: 17px;
+            width: 30px;
+            height: 30px;
             background-color: #fff;
             padding: inherit;
         }
@@ -572,48 +572,6 @@
             color: #333;
         }
 
-        @media (max-width: 600px) {
-            .radio-inputs {
-                width: 90%;
-                /* Use 90% of the screen width */
-                max-width: 270px;
-                /* Ensure it doesn't get too wide */
-                margin-left: auto;
-                /* Align to the right */
-                margin-right: 10px;
-                /* Add a small margin to the right for spacing */
-            }
-
-            .radio-inputs .radio {
-                flex: 1 1 auto;
-                /* Ensure buttons maintain symmetry */
-                text-align: center;
-                /* Align text and buttons */
-            }
-
-            .radio-inputs .radio .name {
-                display: inline-flex;
-                justify-content: center;
-                /* Keep the labels centered */
-                align-items: center;
-                padding: 0.2rem 0.5rem;
-                /* Adjust padding for smaller buttons */
-                border-radius: 0.5rem;
-                color: rgba(51, 65, 85, 1);
-                transition: all 0.15s ease-in-out;
-            }
-
-            .radio-inputs .radio input {
-                margin-left: auto;
-                /* Ensure radio buttons are aligned to the right */
-            }
-
-            .radio-inputs .radio input:checked+.name {
-                background-color: #a2cdc5;
-                font-weight: 500;
-            }
-        }
-
         .center-block {
             display: flex;
             justify-content: center;
@@ -621,37 +579,6 @@
             background-color: #d1eeee;
             border-radius: 5px;
             padding: 4px;
-        }
-
-        .welcome-image {
-            max-width: 100%;
-            height: auto;
-            opacity: 0;
-            animation: fade-in-out 1.85s ease-in-out forwards;
-        }
-
-        @keyframes fade-in-out {
-            0% {
-                opacity: 0;
-            }
-
-            25% {
-                opacity: 1;
-            }
-
-            75% {
-                opacity: 1;
-            }
-
-            100% {
-                opacity: 0;
-            }
-        }
-
-        @media (max-width: 600px) {
-            img {
-                width: 80%;
-            }
         }
     </style>
 </head>
