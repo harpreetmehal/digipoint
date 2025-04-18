@@ -887,6 +887,28 @@
                         <span class="name">Other spends</span></label>
                 </div>
             </div>
+            <div id="labelcontainer">
+                <input type="checkbox" id="hdfcmillenia" name="hdfcmillenia" />
+                <label for="hdfcmillenia"> HDFC Millenia :</label>
+                <div class="radio-inputs">
+                    <label for="hdfcmillenia1" class="radio"><input type="radio" id="hdfcmillenia1" checked="true"
+                            name="hdfcmilleniaPercent" value="1" />
+                        <span class="name">Other spends</span></label>
+                    <label for="hdfcmillenia5" class="radio"><input type="radio" id="hdfcmillenia5" name="hdfcmilleniaPercent"
+                            value="5" />
+                        <span class="name">Amazon, BookMyShow, Cult.fit, Flipkart, Myntra, Sony LIV, Swiggy, Tata CLiQ, Uber and Zomato</span></label>
+                </div>
+                <span class="info-icon" id="amex-info-icon-millenia" onmouseover="showInfoBox('millenia')"
+                    onmouseout="hideInfoBox('millenia')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Minimalist_info_Icon.png"
+                        alt="Info Icon" width="15" height="15" />
+                </span>
+                <div class="info-box" id="amex-info-box-millenia">5% cashback on :
+                    <br>Amazon, BookMyShow, Cult.fit, Flipkart, Myntra, Sony LIV, Swiggy, Tata CLiQ, Uber and Zomato
+                    <br>
+                    <br>1% cashback on all other spends
+                </div>
+            </div>
 
 
             <h3>HSBC Cards</h3>
@@ -1257,7 +1279,8 @@
                 amexplattravel: { name: "American Express Platinum Travel", spendToEarnRP: 50, rpValue: 1 },
                 kotak811dd: { name: "Kotak 811 Dream Different", spendToEarnRP: 100, rpValue: 0.25 },
                 indusindpioneer: { name: "Indusind Pioneer", spendToEarnRP: 100, rpValue: 1 },
-                hdfcswiggy: { name: "HDFC Swiggy", spendToEarnRP: 100, rpValue: 1 }
+                hdfcswiggy: { name: "HDFC Swiggy", spendToEarnRP: 100, rpValue: 1 },
+                hdfcmillenia: { name: "HDFC Millenia", spendToEarnRP: 100, rpValue: 1 },
             };
 
             // Get selected cards
@@ -1498,6 +1521,14 @@
                     else if (cardId === 'hdfcpixel' && document.getElementById('hdfcpixel5').checked) {
                         const hdfcpixelPercent = parseFloat(document.querySelector('input[name="hdfcpixelPercent"]:checked').value) / 100;
                         earnedRP = amount * hdfcpixelPercent;
+                    }
+                    else if (cardId === 'hdfcmillenia' && document.getElementById('hdfcmillenia1').checked) {
+                        const hdfcmilleniaPercent = parseFloat(document.querySelector('input[name="hdfcmilleniaPercent"]:checked').value) / 100;
+                        earnedRP = amount * hdfcmilleniaPercent;
+                    }
+                    else if (cardId === 'hdfcmillenia' && document.getElementById('hdfcmillenia5').checked) {
+                        const hdfcmilleniaPercent = parseFloat(document.querySelector('input[name="hdfcmilleniaPercent"]:checked').value) / 100;
+                        earnedRP = amount * hdfcmilleniaPercent;
                     }
                     else if (cardId === 'hdfcswiggy' && document.getElementById('hdfcswiggy10').checked) {
                         const hdfcswiggyPercent = parseFloat(document.querySelector('input[name="hdfcswiggyPercent"]:checked').value) / 100;
